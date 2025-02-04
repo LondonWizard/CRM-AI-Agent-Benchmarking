@@ -1,0 +1,162 @@
+[
+    {
+        "question_id": "Q1",
+        "question_text": "Which user has the highest total closed-won amount?",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "Margaret Carter has the highest total closed-won opportunity amount.",
+            "acceptable_variants": [
+                "Margaret Carter is the top performer by closed-won revenue",
+                "Margaret Carter leads all users in closed-won deals by amount"
+            ],
+            "wrong_variants": [
+                "John Roberts has the highest total closed-won amount",
+                "Anyone else is the top for closed-won"
+            ]
+        }
+    },
+    {
+        "question_id": "Q2",
+        "question_text": "Which user has the best conversion rate?",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "John Roberts has the best conversion rate.",
+            "acceptable_variants": [
+                "John Roberts leads in conversion ratio",
+                "John Roberts closes the highest proportion of deals"
+            ],
+            "wrong_variants": [
+                "Margaret Carter has the best conversion rate",
+                "Michael Brown has the best conversion rate"
+            ]
+        }
+    },
+    {
+        "question_id": "Q3",
+        "question_text": "Which user has the fastest average close time?",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "Michael Brown has the fastest average close time.",
+            "acceptable_variants": [
+                "Michael Brown closes deals the quickest",
+                "Michael Brown's deals close fastest on average"
+            ],
+            "wrong_variants": [
+                "Margaret Carter is the fastest closer",
+                "Susan Davis is the fastest closer"
+            ]
+        }
+    },
+    {
+        "question_id": "Q4",
+        "question_text": "Which user has the most email activity?",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "Rachel Adams has the most email activity.",
+            "acceptable_variants": [
+                "Rachel Adams owns the most email messages",
+                "Rachel Adams leads in number of emails"
+            ],
+            "wrong_variants": [
+                "James Wilson has the most email activity",
+                "Kevin Lee has the most email activity"
+            ]
+        }
+    },
+    {
+        "question_id": "Q5",
+        "question_text": "Which user is currently inactive?",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "James Wilson is inactive in the system.",
+            "acceptable_variants": [
+                "James Wilson is not active",
+                "James Wilson is deactivated"
+            ],
+            "wrong_variants": [
+                "Rachel Adams is inactive",
+                "Michael Brown is inactive"
+            ]
+        }
+    },
+    {
+        "question_id": "Q6",
+        "question_text": "Which user is in the Marketing department?",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "Patricia Nguyen is in the Marketing department.",
+            "acceptable_variants": [
+                "Patricia Nguyen is the marketing specialist",
+                "Patricia is part of marketing"
+            ],
+            "wrong_variants": [
+                "Susan Davis is in Marketing",
+                "James Wilson is in Marketing"
+            ]
+        }
+    },
+    {
+        "question_id": "Q7",
+        "question_text": "How could you provide direct performance feedback to John Roberts?",
+        "category": "feedback_to_employees",
+        "correct_answer": {
+            "main_answer": "A suitable feedback approach is praising John Roberts for achieving a strong conversion rate and encouraging him to share his methods with others.",
+            "acceptable_variants": [
+                "Compliment John for his high conversion ratio and suggest knowledge sharing",
+                "Recognize John's closed-won success and advise continued collaboration"
+            ],
+            "wrong_variants": [
+                "Criticize John for poor performance",
+                "Fire John Roberts"
+            ]
+        }
+    },
+    {
+        "question_id": "Q8",
+        "question_text": "Review the 'Discussion about Enterprise Deal A' email. What insight can you extract for the next step with the client?",
+        "category": "email_analysis",
+        "correct_answer": {
+            "main_answer": "Margaret Carter is awaiting client questions about the proposal; the next step is to follow up and address any concerns to finalize the deal.",
+            "acceptable_variants": [
+                "Margaret provided the proposal, so we need to check if the client has any questions or modifications",
+                "We should schedule a Q&A or meeting with the client to finalize the deal"
+            ],
+            "wrong_variants": [
+                "Margaret Carter is recommending not to proceed with the deal",
+                "The client has already signed"
+            ]
+        }
+    },
+    {
+        "question_id": "Q9",
+        "question_text": "What improvement recommendations can be made to increase closed-won deals overall?",
+        "category": "improvement_recs",
+        "correct_answer": {
+            "main_answer": "Hire additional Sales Reps to handle more leads, continue sharing best practices from top performers like Margaret Carter, and provide more training on negotiation.",
+            "acceptable_variants": [
+                "Expand the sales team, replicate top performers’ processes, offer negotiation training",
+                "Recruit new hires for sales, highlight Margaret Carter’s success strategies, enhance training"
+            ],
+            "wrong_variants": [
+                "Fire all sales staff",
+                "Remove training budget"
+            ]
+        }
+    },
+    {
+        "question_id": "Q10",
+        "question_text": "Look at Q1 Upsell for John Roberts. What insight can you extract from that deal specifically?",
+        "category": "deal_insights",
+        "correct_answer": {
+            "main_answer": "John Roberts closed a Q1 Upsell with a total of 50,000, indicating he's effective at upselling existing clients quickly.",
+            "acceptable_variants": [
+                "He won a 50k upsell, demonstrating strong upsell skills and efficiency",
+                "He closed a 50k deal quickly during Q1, showcasing account growth"
+            ],
+            "wrong_variants": [
+                "The Q1 Upsell was lost at 15,000",
+                "Margaret Carter closed the Q1 Upsell"
+            ]
+        }
+    }
+]

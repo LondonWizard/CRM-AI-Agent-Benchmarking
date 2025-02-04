@@ -1,91 +1,57 @@
-import pandas as pd
-from openai import OpenAI
-from dotenv import load_dotenv
+import json
 import os
+from dotenv import load_dotenv
+from openai import OpenAI
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-def test_top_deals(deals_df):
-    """
-    Return an expected conclusion about who has the highest deals.
-    """
-    deals_top = deals_df.loc[deals_df['total_deals'].idxmax(), 'employee_name']
-    return f"The employee with the highest total deals is {deals_top}."
+# Example weighting scheme (adjust these percentages as needed):
+CATEGORY_WEIGHTS = {
+    "employee_performance": 0.35,
+    "feedback_to_employees": 0.15,
+    "email_analysis": 0.15,
+    "improvement_recs": 0.15,
+    "deal_insights": 0.20
+}
 
-def test_top_revenue(deals_df):
+def load_questions_from_json(json_path="questions.json"):
     """
-    Return an expected conclusion about who has the highest revenue.
+    Reads a JSON file containing questions and their correct answer structures.
+    Returns a list of dicts.
     """
-    revenue_top = deals_df.loc[deals_df['total_revenue'].idxmax(), 'employee_name']
-    return f"The employee with the highest total revenue is {revenue_top}."
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data
 
-def test_top_conversion(deals_df):
+def evaluate_response_with_variants(agent_response, correct_answer_data, model="gpt-4o"):
     """
-    Return an expected conclusion about who has the best (highest) conversion rate.
-    """
-    conversion_top = deals_df.loc[deals_df['conversion_rate'].idxmax(), 'employee_name']
-    return f"The employee with the best (highest) conversion rate is {conversion_top}."
+    We pass the main_answer, acceptable_variants, and wrong_variants to GPT.
+    The system prompt instructs GPT to produce a single numeric rating from 0.000 to 1.000
+    (with exactly three decimals) that reflects how correct the agent's response is.
 
-def test_fastest_cycle(deals_df):
+    Returns: (score_from_model, raw_str_or_error)
+        Where score_from_model is a float in [0.0 ... 1.0], truncated/rounded to 3 decimals.
+        raw_str_or_error is the text for debugging or fallback.
     """
-    Return an expected conclusion about who has the fastest (lowest) average sale cycle.
-    """
-    fastest_cycle = deals_df.loc[deals_df['average_sale_cycle_days'].idxmin(), 'employee_name']
-    return f"The employee with the fastest (lowest) average sale cycle is {fastest_cycle}."
+    main_answer = correct_answer_data["main_answer"]
+    acceptable = correct_answer_data.get("acceptable_variants", [])
+    wrong = correct_answer_data.get("wrong_variants", [])
 
-def test_region_mention(employees_df):
-    """
-    Example: check which region has the most employees, just to create a conclusion.
-    """
-    region_counts = employees_df['region'].value_counts()
-    top_region = region_counts.idxmax()
-    count = region_counts.max()
-    return f"The region with the most employees is {top_region} with {count} employee(s)."
-
-def compile_expected_conclusions(employees_df, deals_df):
-    """
-    Gathers all test conclusions into a dictionary for easy evaluation.
-    """
-    conclusions = {}
-    conclusions["top_deals"] = test_top_deals(deals_df)
-    conclusions["top_revenue"] = test_top_revenue(deals_df)
-    conclusions["top_conversion"] = test_top_conversion(deals_df)
-    conclusions["fastest_cycle"] = test_fastest_cycle(deals_df)
-    conclusions["top_region"] = test_region_mention(employees_df)
-    return conclusions
-
-
-def score_agent_response_extended(agent_response, expected_statement, model="gpt-4o"):
-    """
-    Classify the agent's response into one of the following categories:
-      - correct: if it fully aligns with the expected statement
-      - opposite: if it contradicts the statement
-      - unrelated: if it does not address the statement at all
-      - partially correct: if it addresses the statement but is only partially aligned
-
-    We then map those categories to numeric scores, for instance:
-      correct = 1.0
-      partially correct = 0.5
-      opposite = 0.0
-      unrelated = 0.0
-
-    Return both the string category and the numeric score.
-    """
-
-    # We'll do a short system prompt that instructs GPT to categorize.
-    # NOTE: We do not alter the "client" usage or object. We keep the same pattern.
     prompt = (
-        f"System:\n"
-        f"You are a strict evaluator of CRM insights.\n"
-        f"Expected conclusion:\n{expected_statement}\n\n"
-        f"Agent's response:\n{agent_response}\n\n"
-        f"Classify the agent's response into exactly one of these categories:\n"
-        f"- correct\n"
-        f"- opposite\n"
-        f"- unrelated\n"
-        f"- partially correct\n\n"
-        f"Output ONLY the single category name."
+        "System:\n"
+        "You are a strict evaluator of CRM insights. We have:\n\n"
+        f"MAIN correct statement:\n{main_answer}\n\n"
+        f"ACCEPTABLE variants:\n{'; '.join(acceptable)}\n\n"
+        f"WRONG variants:\n{'; '.join(wrong)}\n\n"
+        "Agent's response:\n"
+        f"{agent_response}\n\n"
+        "Please provide a single numeric rating from 0.000 to 1.000 (with exactly three decimals),\n"
+        "where:\n"
+        "  1.000 = the agent's response perfectly aligns with the main/acceptable statements without contradiction.\n"
+        "  0.000 = the agent's response directly contradicts the correct statements or is entirely unrelated.\n"
+        "Values in between represent partial correctness (e.g., 0.500 if partially correct, etc.).\n"
+        "Output ONLY the numeric rating with three decimals (e.g., 0.750)."
     )
 
     try:
@@ -94,22 +60,78 @@ def score_agent_response_extended(agent_response, expected_statement, model="gpt
             messages=[{"role": "system", "content": prompt}],
             temperature=0
         )
-        category = response.choices[0].message.content.lower().strip()
+        rating_str = response.choices[0].message.content.strip()
     except Exception as e:
         print(f"OpenAI API error: {e}")
-        # If there's an error, default to 'unrelated'
-        category = "unrelated"
+        return 0.0, "Error in API call"
 
-    # Map to numeric
-    if category.startswith("correct"):
-        score = 1.0
-    elif category.startswith("partially"):
-        score = 0.5
-    elif category.startswith("opposite"):
-        score = 0.0
-    else:
-        # Treat all else as 'unrelated'
-        score = 0.0
-        category = "unrelated"
+    # Attempt to parse rating_str as float
+    # Must be in [0.0, 1.0], with up to 3 decimals
+    try:
+        raw_score = float(rating_str)
+        # clamp to [0.0, 1.0] just in case
+        if raw_score < 0:
+            raw_score = 0.0
+        elif raw_score > 1:
+            raw_score = 1.0
+        # round to 3 decimals
+        raw_score = round(raw_score, 3)
+        return raw_score, rating_str
+    except ValueError:
+        # If the model fails to produce a parseable float, default to 0
+        return 0.0, rating_str
 
-    return category, score
+def compute_weighted_score(results):
+    """
+    Given a list of question results, each with (category, score),
+    compute a weighted final. For each category, we average the scores
+    of questions in that category, then multiply by the category weight,
+    then sum across categories.
+    """
+    category_scores = {}
+    category_counts = {}
+
+    for r in results:
+        cat = r["category"]
+        sc = r["score"]
+        if cat not in category_scores:
+            category_scores[cat] = 0
+            category_counts[cat] = 0
+        category_scores[cat] += sc
+        category_counts[cat] += 1
+
+    final_weighted = 0.0
+    for cat, total_score in category_scores.items():
+        avg_score_cat = total_score / category_counts[cat] if category_counts[cat] else 0
+        weight = CATEGORY_WEIGHTS.get(cat, 0)  # default 0 if not found
+        final_weighted += avg_score_cat * weight
+
+    return round(final_weighted, 3)
+
+def run_benchmark(agent_responses, questions_json="questions.json", model="gpt-4o"):
+    questions = load_questions_from_json(questions_json)
+    results = {}
+
+    for agent_name, text_response in agent_responses.items():
+        question_results = []
+        for q in questions:
+            raw_score, rating_str = evaluate_response_with_variants(
+                agent_response=text_response,
+                correct_answer_data=q["correct_answer"],
+                model=model
+            )
+            question_results.append({
+                "question_id": q["question_id"],
+                "category": q["category"],
+                "question_text": q["question_text"],
+                "score": raw_score,
+                "model_raw_output": rating_str  # store exactly what the model returned (for debugging)
+            })
+
+        final_weighted = compute_weighted_score(question_results)
+        results[agent_name] = {
+            "weighted_score": final_weighted,
+            "details": question_results
+        }
+
+    return results
