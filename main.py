@@ -8,31 +8,32 @@ load_dotenv()
 if __name__ == "__main__":
     # Two mock "agents" with aggregated answers
     agent_responses = {
-        "agent_perfect": (
-            "Margaret Carter has the highest total closed-won opportunity amount. "
-            "John Roberts has the best conversion rate. "
-            "Michael Brown has the fastest average close time. "
-            "Rachel Adams has the most email activity. "
-            "James Wilson is inactive in the system. "
-            "Patricia Nguyen is in the Marketing department. "
-            "I would praise John Roberts for his strong conversion ratio and recommend sharing tips. "
-            "Regarding the 'Discussion about Enterprise Deal A' email, Margaret is awaiting questions; I'd follow up promptly. "
-            "To improve closed-won deals, let's hire more Sales Reps, replicate Margaret's best practices, and do negotiation training. "
-            "Looking at Q1 Upsell for John Roberts, he closed a 50k upsell fast, showing strong upsell skills."
-        ),
-        "agent_incorrect": (
-            "John Roberts is top for closed-won. "
-            "Margaret Carter has the best conversion rate. "
-            "Susan Davis closes deals the fastest. "
-            "Kevin Lee has the most email activity. "
-            "Rachel Adams is inactive. "
-            "James Wilson is in Marketing. "
-            "We should fire John for poor performance. "
-            "The 'Discussion about Enterprise Deal A' email indicates the deal won't proceed. "
-            "To improve deals, I'd remove training budget. "
-            "Q1 Upsell was lost at 15,000 so it's a failure."
-        )
-    }
+    "agent_perfect": (
+        "The largest Qualification deal is OPPae1eb29a-60e0-4a5e-b1dd-e5cbafe5797e for Cunningham-Hendricks. "
+        "Clark, Erickson and Sullivan (OPP5f29e438-1160-4dbb-8d93-c7121ddf71ed) is assigned to EMPed896d30. "
+        "Hunter Group (OPP71ce8161-7802-4aff-94a8-e69f06058551) is in the Proposal stage with a 2023 close date. "
+        "The negotiation for Clark, Erickson and Sullivan references final scalability and support terms. "
+        "Mccall, Jackson and Carey’s proposal is the highest-value in that stage, at 126,412.61. "
+        "Stafford Ltd and Cunningham-Hendricks are the two companies in Qualification. "
+        "Qualification is where you gather initial requirements and assess fit. "
+        "EMPa9a28170 handles King, Tucker and Rowe (Qualification) and Hunter Group (Proposal). "
+        "Cunningham-Hendricks specifically asked about integration capabilities. "
+        "Mccall, Jackson and Carey (OPP02519fbe-e3da-4d20-849d-cb75e0c01b3a) is in Proposal and assigned to EMP76730cb2."
+    ),
+    "agent_incorrect": (
+        "Stafford Ltd is the biggest deal in Proposal. "
+        "EMPed896d30 actually works with Hunter Group. "
+        "The client with a 2023 close date in Proposal is Clark, Erickson and Sullivan. "
+        "King, Tucker and Rowe is in Negotiation talking about support. "
+        "Hunter Group has the highest proposal at 200,000. "
+        "Every company is in the Qualification stage. "
+        "Negotiation is the stage for initial requirement gathering. "
+        "EMPa9a28170 does not handle any deals in Qualification. "
+        "Cunningham-Hendricks asked for budget approvals, not integration. "
+        "Stafford Ltd is assigned to EMP76730cb2 and is in the Proposal stage."
+    )
+}
+
 
     results = run_benchmark(agent_responses, questions_json="questions.json", model="gpt-4o")
 

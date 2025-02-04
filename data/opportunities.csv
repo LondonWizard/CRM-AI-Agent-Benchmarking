@@ -1,13 +1,311 @@
-Id,Name,StageName,Amount,CloseDate,CreatedDate,OwnerId
-0069000001XYZ001,Enterprise Deal A,Closed Won,95000,2025-03-15,2025-02-15,0059000001abcAAA
-0069000001XYZ002,Enterprise Deal B,Closed Won,75000,2025-04-01,2025-03-10,0059000001abcAAA
-0069000001XYZ003,Mid-Market Deal,Proposal,40000,2025-06-01,2025-04-20,0059000001abcAAA
-0069000001XYZ004,Renewal Contract,Closed Won,30000,2025-01-20,2025-01-10,0059000001abcAAB
-0069000001XYZ005,Q1 Upsell,Closed Won,50000,2025-02-25,2025-02-10,0059000001abcAAB
-0069000001XYZ006,Small Deal A,Closed Lost,15000,2025-02-15,2025-01-25,0059000001abcAAB
-0069000001XYZ007,Quick Win,Closed Won,20000,2025-03-30,2025-03-23,0059000001abcAAD
-0069000001XYZ008,Prospecting Deal,Prospecting,35000,2025-08-01,2025-07-10,0059000001abcAAD
-0069000001XYZ009,Marketing Opp,Proposal,18000,2025-05-01,2025-04-05,0059000001abcAAC
-0069000001XYZ00A,Support Upgrade,Closed Lost,10000,2025-03-15,2025-02-25,0059000001abcAAE
-0069000001XYZ00B,Inactive Account1,Closed Lost,22000,2025-04-01,2025-02-10,0059000001abcAAF
-0069000001XYZ00C,Operations Project,Negotiation,55000,2025-07-01,2025-04-30,0059000001abcAAG
+opportunity_id,sales_rep_id,client_name,stage,amount,close_date,renewal_date,email_conversations
+OPPc5ce3397-e141-41c4-a78f-da86f1bd786e,EMP76730cb2,Stafford Ltd,Qualification,128561.47,2024-06-05,2025-06-05,"Subject: Inquiry About NimbusCloud Solutions
+
+---
+
+**From: Michael Wood <michael.wood@staffordltd.com>**  
+**To: John Johnson <john.johnson@nimbuscloudsolutions.com>**  
+**Date: 2023-10-10**
+
+Hi John,
+
+I hope this message finds you well. I am reaching out from Stafford Ltd as we are currently reviewing cloud solutions to enhance our business operations. Could you please provide more details about your offerings, particularly around scalability and security features? Also, what kind of support do you offer during the onboarding process?
+
+Looking forward to hearing from you soon.
+
+Best regards,  
+Michael Wood
+
+---
+
+**From: John Johnson <john.johnson@nimbuscloudsolutions.com>**  
+**To: Michael Wood <michael.wood@staffordltd.com>**  
+**Date: 2023-10-11**
+
+Hi Michael,
+
+Thank you for reaching out to NimbusCloud Solutions. I'm glad to hear that you are considering us as a partner to enhance your business operations. We offer highly scalable solutions, robust security measures, and dedicated support. Let's schedule a meeting to discuss further.
+
+Best regards,  
+John Johnson
+
+---
+
+**From: Michael Wood <michael.wood@staffordltd.com>**  
+**To: John Johnson <john.johnson@nimbuscloudsolutions.com>**  
+**Date: 2023-10-12**
+
+Hi John,
+
+Thank you for the details. Could we schedule a meeting for next week to dive deeper into how NimbusCloud Solutions can align with our expansion plans?
+
+Regards,  
+Michael Wood
+
+---
+
+**From: John Johnson <john.johnson@nimbuscloudsolutions.com>**  
+**To: Michael Wood <michael.wood@staffordltd.com>**  
+**Date: 2023-10-13**
+
+Hi Michael,
+
+Tuesday, October 17th at 10:00 AM works for me. Let me know if that suits you!
+
+Best regards,  
+John Johnson
+"
+OPP9372e17c-725a-4c1e-b2b6-54c58a3a5bf7,EMPa9a28170,"King, Tucker and Rowe",Qualification,125964.46,2024-11-24,2025-11-24,"---
+
+### Email Thread
+
+#### Email 1: From Juan Kline to Jennifer Murphy
+
+**Date:** 2023-10-15
+
+**Subject:** Initial Inquiry Into NimbusCloud Offerings
+
+---
+
+Hi Jennifer,
+
+My name is Juan Kline, and I'm a partner at King, Tucker and Rowe. We are exploring options to enhance our cloud infrastructure and came across NimbusCloud Solutions. Could you please provide more details about your offerings, especially around scalability and security? Also, how does your pricing model work?
+
+Looking forward to your insights.
+
+Best,
+
+Juan Kline
+
+---
+
+#### Email 2: From Jennifer Murphy to Juan Kline
+
+**Date:** 2023-10-16
+
+Hi Juan,
+
+Thank you for reaching out and your interest in NimbusCloud Solutions. We specialize in customizable and scalable cloud solutions tailored to meet diverse client needs. Our platform is designed with top-notch security protocols to ensure data integrity. Our pricing model is flexible, typically depending on the services and support levels required.
+
+Could we schedule a call this week to discuss your specific requirements?
+
+Best regards,
+
+Jennifer Murphy
+
+---
+
+#### Email 3: From Juan Kline to Jennifer Murphy
+
+**Date:** 2023-10-17
+
+Hi Jennifer,
+
+Thank you for the details. A call sounds great. We are available on Thursday afternoon. Also, if you have any references from similar firms, that would be helpful for our review.
+
+Thanks again,
+
+Juan
+"
+OPP02519fbe-e3da-4d20-849d-cb75e0c01b3a,EMP76730cb2,"Mccall, Jackson and Carey",Proposal,126412.61,2024-10-26,2025-10-26,"### Email Thread:
+
+**From:** Xavier Ortiz <xavier.ortiz@mccalljacksoncarey.com>  
+**To:** John Johnson <john.johnson@nimbuscloudsolutions.com>  
+**Date:** 2023-10-01  
+Subject: Next Steps on Our Proposal
+
+Hi John,
+
+We have received your proposal. It looks promising, but I’d like to discuss a few specifics, particularly about the integration timeline and associated costs. Could you let me know your availability for a call this week?
+
+Best regards,  
+Xavier Ortiz
+
+---
+
+**From:** John Johnson <john.johnson@nimbuscloudsolutions.com>  
+**To:** Xavier Ortiz <xavier.ortiz@mccalljacksoncarey.com>  
+**Date:** 2023-10-02
+
+Hi Xavier,
+
+I'm available Wednesday or Thursday. Let me know which works best, and we can finalize the details.
+
+Best,  
+John Johnson
+
+---
+
+**From:** Xavier Ortiz <xavier.ortiz@mccalljacksoncarey.com>  
+**To:** John Johnson <john.johnson@nimbuscloudsolutions.com>  
+**Date:** 2023-10-05
+
+Hi John,
+
+Thank you for the call today. Please send a revised proposal reflecting the changes we discussed by next week.
+
+Best,  
+Xavier
+"
+OPP5f29e438-1160-4dbb-8d93-c7121ddf71ed,EMPed896d30,"Clark, Erickson and Sullivan",Negotiation,116051.01,2023-12-10,2024-12-09,"Subject: Request for Final Proposal and Terms
+
+---
+
+**From:** Tamara Jackson <tamara.jackson@cesullivan.com>  
+**To:** Eric Black <eric.black@nimbuscloudsolutions.com>  
+**Date:** 2023-11-15  
+
+Hi Eric,
+
+We have carefully reviewed the initial proposal for our cloud infrastructure upgrade and would like to understand a bit more about the contract terms, especially regarding scalability and support. Could you send over a revised proposal or suggest a time for a call?
+
+Best regards,
+
+Tamara Jackson  
+Project Manager  
+Clark, Erickson and Sullivan  
+
+---
+
+**From:** Eric Black <eric.black@nimbuscloudsolutions.com>  
+**To:** Tamara Jackson <tamara.jackson@cesullivan.com>  
+**Date:** 2023-11-16  
+
+Hi Tamara,
+
+Attached is the revised proposal with detailed info on scalability and support. Let me know if you'd like to schedule a call to discuss next steps.
+
+Best regards,
+
+Eric Black  
+NimbusCloud Solutions
+
+---
+
+**From:** Tamara Jackson <tamara.jackson@cesullivan.com>  
+**To:** Eric Black <eric.black@nimbuscloudsolutions.com>  
+**Date:** 2023-11-17  
+
+Hi Eric,
+
+Thanks for sending that over. Could we connect on Thursday at 2:00 PM to finalize the terms?
+
+Warm regards,
+
+Tamara Jackson
+
+---
+
+**From:** Eric Black <eric.black@nimbuscloudsolutions.com>  
+**To:** Tamara Jackson <tamara.jackson@cesullivan.com>  
+**Date:** 2023-11-17  
+
+Hi Tamara,
+
+Thursday at 2:00 PM works perfectly. I'll come prepared to finalize the details. Looking forward to our discussion.
+
+Best regards,
+
+Eric Black
+"
+OPPae1eb29a-60e0-4a5e-b1dd-e5cbafe5797e,EMP5a65638f,Cunningham-Hendricks,Qualification,146114.39,2024-11-26,2025-11-26,"Below is the email conversation between Gina Harmon at NimbusCloud Solutions and Maria Sullivan from Cunningham-Hendricks, regarding an initial qualification:
+
+---
+
+**From:** Maria Sullivan <maria.sullivan@cunningham-hendricks.com>  
+**To:** Gina Harmon <gina.harmon@nimbuscloudsolutions.com>  
+**Date:** 2023-10-01  
+Subject: Inquiry About Cloud Solutions
+
+Hi Gina,
+
+We are exploring potential cloud solutions and interested in hearing more about your offerings. Could you provide detailed information about scalability and integration capabilities?
+
+Best regards,  
+Maria Sullivan
+
+---
+
+**From:** Gina Harmon <gina.harmon@nimbuscloudsolutions.com>  
+**To:** Maria Sullivan <maria.sullivan@cunningham-hendricks.com>  
+**Date:** 2023-10-02  
+
+Hi Maria,
+
+Thank you for reaching out. Our cloud solutions are designed to be scalable and integrate seamlessly with existing systems. Could we schedule a call to discuss your particular requirements further?
+
+Warm regards,  
+Gina
+
+---
+
+**From:** Maria Sullivan <maria.sullivan@cunningham-hendricks.com>  
+**To:** Gina Harmon <gina.harmon@nimbuscloudsolutions.com>  
+**Date:** 2023-10-03  
+
+Hi Gina,
+
+I'm available on Thursday at 11 AM. I'd like to focus on integration specifics and any scalability limits. Thanks!
+
+Best,  
+Maria
+"
+OPP71ce8161-7802-4aff-94a8-e69f06058551,EMPa9a28170,Hunter Group,Proposal,67825.64,2023-12-17,2024-12-16,"---
+
+**Email Thread**
+
+---
+
+**From:** Brian Whitaker <brian.whitaker@huntergroup.com>  
+**To:** Jennifer Murphy <j.murphy@nimbuscloudsolutions.com>  
+**Sent:** 2023-10-10 09:00 AM  
+Subject: Proposal Discussion for Hunter Group  
+
+Hi Jennifer,
+
+We've reviewed the proposal you sent last week for our cloud infrastructure upgrade. I have a few questions regarding the implementation timeline and the scalability options. Could we schedule a call?
+
+Best regards,  
+Brian Whitaker  
+Hunter Group
+
+---
+
+**From:** Jennifer Murphy <j.murphy@nimbuscloudsolutions.com>  
+**To:** Brian Whitaker <brian.whitaker@huntergroup.com>  
+**Sent:** 2023-10-10 11:15 AM  
+
+Hi Brian,
+
+Thank you for reviewing our proposal. Let's schedule a call for tomorrow at 2:00 PM to go over the timeline, scalability, and any customizations you might need.
+
+Best regards,  
+Jennifer Murphy  
+NimbusCloud Solutions
+
+---
+
+**From:** Brian Whitaker <brian.whitaker@huntergroup.com>  
+**To:** Jennifer Murphy <j.murphy@nimbuscloudsolutions.com>  
+**Sent:** 2023-10-10 02:00 PM  
+
+Hi Jennifer,
+
+Tomorrow at 2:00 PM works great. Thank you for your prompt response.
+
+Best,  
+Brian
+
+---
+
+**From:** Jennifer Murphy <j.murphy@nimbuscloudsolutions.com>  
+**To:** Brian Whitaker <brian.whitaker@huntergroup.com>  
+**Sent:** 2023-10-11 03:30 PM  
+
+Hi Brian,
+
+Thank you for the discussion earlier. I’ll send over the final documentation on customization options by tomorrow.
+
+Best regards,  
+Jennifer Murphy
+"

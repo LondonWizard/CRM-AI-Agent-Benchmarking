@@ -58,7 +58,8 @@ def evaluate_response_with_variants(agent_response, correct_answer_data, model="
         response = client.chat.completions.create(
             model=model,
             messages=[{"role": "system", "content": prompt}],
-            temperature=0
+            temperature=0.0,
+
         )
         rating_str = response.choices[0].message.content.strip()
     except Exception as e:
@@ -82,31 +83,29 @@ def evaluate_response_with_variants(agent_response, correct_answer_data, model="
         return 0.0, rating_str
 
 def compute_weighted_score(results):
-    """
-    Given a list of question results, each with (category, score),
-    compute a weighted final. For each category, we average the scores
-    of questions in that category, then multiply by the category weight,
-    then sum across categories.
-    """
     category_scores = {}
     category_counts = {}
 
     for r in results:
         cat = r["category"]
         sc = r["score"]
-        if cat not in category_scores:
-            category_scores[cat] = 0
-            category_counts[cat] = 0
-        category_scores[cat] += sc
-        category_counts[cat] += 1
+        category_scores[cat] = category_scores.get(cat, 0) + sc
+        category_counts[cat] = category_counts.get(cat, 0) + 1
+
+    # Identify only those categories present in the results
+    categories_in_use = list(category_scores.keys())
+
+    # If you prefer *equal weighting per category*, do this:
+    weight_per_category = 1.0 / len(categories_in_use) if categories_in_use else 0.0
 
     final_weighted = 0.0
-    for cat, total_score in category_scores.items():
-        avg_score_cat = total_score / category_counts[cat] if category_counts[cat] else 0
-        weight = CATEGORY_WEIGHTS.get(cat, 0)  # default 0 if not found
-        final_weighted += avg_score_cat * weight
+    for cat in categories_in_use:
+        avg_score_cat = category_scores[cat] / category_counts[cat]
+        final_weighted += avg_score_cat * weight_per_category
 
+    # final_weighted should be in [0,1]
     return round(final_weighted, 3)
+
 
 def run_benchmark(agent_responses, questions_json="questions.json", model="gpt-4o"):
     questions = load_questions_from_json(questions_json)
