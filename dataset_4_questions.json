@@ -1,0 +1,82 @@
+[
+    {
+        "question_id": "D4Q1",
+        "question_text": "Rule 1 (Send follow-up emails within 3 days): List 5 sales reps who always follow this rule.",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "EMP123, EMP456, EMP789, EMPabc, EMPxyz always followed up within 3 days in the last 10 opportunities.",
+            "acceptable_variants": [
+                "EMP123, EMP456, EMP789, EMPabc, EMPxyz always on time with follow-ups",
+                "They all adhered to the 3-day rule consistently"
+            ],
+            "wrong_variants": [
+                "Mentioning any reps who have not followed up within 3 days",
+                "Listing fewer or more than 5 reps"
+            ]
+        }
+    },
+    {
+        "question_id": "D4Q2",
+        "question_text": "Rule 2 (Always personalize follow-ups): Do sales reps who follow this rule deliver more revenue than those who do not? If so, how much?",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "Yes, personalized follow-ups led to 20% higher average deal size, about $10,000 more per deal.",
+            "acceptable_variants": [
+                "They see a 20 percent bump in revenue due to personalization",
+                "Following the rule yields a $10k bigger average deal"
+            ],
+            "wrong_variants": [
+                "Claiming no difference",
+                "Any revenue difference not close to 20% or $10k"
+            ]
+        }
+    },
+    {
+        "question_id": "D4Q3",
+        "question_text": "Rule 3 (Close deals that are in the pipeline for more than 30 days): How many sales reps are compliant with this rule?",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "Seven sales reps proactively closed or updated deals older than 30 days in Q2.",
+            "acceptable_variants": [
+                "7 reps complied fully with the 30-day rule in Q2",
+                "Seven actively closed or updated stale deals"
+            ],
+            "wrong_variants": [
+                "Stating a different number of reps",
+                "Claiming none or all are compliant"
+            ]
+        }
+    },
+    {
+        "question_id": "D4Q4",
+        "question_text": "Rule 4 (Do not offer more than 10% discount): How many sales reps are compliant with this rule?",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "Only three reps never exceeded a 10% discount this quarter, while the others had at least one larger discount.",
+            "acceptable_variants": [
+                "Three are strictly under 10% discount every time",
+                "3 fully complied with the discount rule"
+            ],
+            "wrong_variants": [
+                "None complied",
+                "Everyone complied"
+            ]
+        }
+    },
+    {
+        "question_id": "D4Q5",
+        "question_text": "Rule 5: How many sales reps are compliant with this rule (whatever the specific rule #5 might be)?",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "Five reps adhered to the final rule regarding maximum allowed free training hours.",
+            "acceptable_variants": [
+                "Five complied with rule #5 restricting free training hours",
+                "5 reps never exceeded the free training limit"
+            ],
+            "wrong_variants": [
+                "Any incorrect number or misinterpretation of the rule",
+                "Claiming zero compliance"
+            ]
+        }
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "question_id": "D2Q1",
+        "question_text": "What is the sentiment of this email thread (e.g. positive, neutral, or negative), and what key concern is the customer expressing?",
+        "category": "email_analysis",
+        "correct_answer": {
+            "main_answer": "The sentiment is generally positive, but the customer is concerned about implementation delays.",
+            "acceptable_variants": [
+                "Positive overall, but concerned about timeline or implementation schedule",
+                "They seem upbeat; main worry is potential delays"
+            ],
+            "wrong_variants": [
+                "Claiming the sentiment is negative",
+                "Mentioning a different concern like pricing"
+            ]
+        }
+    },
+    {
+        "question_id": "D2Q2",
+        "question_text": "Based on the conversation, what stage of the sales process is this opportunity likely in, and what is the prospect’s main objection or hesitation?",
+        "category": "email_analysis",
+        "correct_answer": {
+            "main_answer": "They are likely in the Negotiation stage, and the key hesitation is the total cost of add-on services.",
+            "acceptable_variants": [
+                "Negotiation stage; they're worried about cost of extras",
+                "They’re in negotiation and the main sticking point is the cost of additional services"
+            ],
+            "wrong_variants": [
+                "Saying they are in the Prospecting or Qualified stage",
+                "No mention of cost-related objections"
+            ]
+        }
+    },
+    {
+        "question_id": "D2Q3",
+        "question_text": "Summarize the key points of the exchange and suggest an appropriate next step for the sales rep to move the deal forward.",
+        "category": "email_analysis",
+        "correct_answer": {
+            "main_answer": "Key points: They confirmed budget range, timelines, and need for a quick demo. Next step: rep should schedule a demo within a week and provide a detailed quote.",
+            "acceptable_variants": [
+                "They discussed budget, timeline, and a demo request. Next step is to set a demo ASAP and share a formal quote",
+                "Budget confirmed, timeline urgent, they want a demo. The rep should arrange a demonstration swiftly."
+            ],
+            "wrong_variants": [
+                "Suggesting no follow-up is needed",
+                "Stating that pricing was not discussed at all"
+            ]
+        }
+    },
+    {
+        "question_id": "D2Q4",
+        "question_text": "Based on all email threads from the past, look at closed lost deals and identify which one has the highest potential to be re-engaged.",
+        "category": "email_analysis",
+        "correct_answer": {
+            "main_answer": "The Jaguar Services deal had a strong initial rapport and lost on timing; they now appear ready to revisit the conversation.",
+            "acceptable_variants": [
+                "Jaguar Services is the best for re-engagement due to previous positive relationship and timing issues",
+                "They previously liked the product but had no budget. Now that they do, Jaguar is the top re-engagement candidate"
+            ],
+            "wrong_variants": [
+                "Any deal that was lost due to a product mismatch or no interest",
+                "Claiming none have re-engagement potential"
+            ]
+        }
+    }
+]

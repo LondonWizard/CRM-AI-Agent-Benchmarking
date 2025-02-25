@@ -1,0 +1,82 @@
+[
+    {
+        "question_id": "D1Q1",
+        "question_text": "How many deals are currently in the Negotiation stage, and what is the total Amount of those Negotiation deals?",
+        "category": "pipeline_insights",
+        "correct_answer": {
+            "main_answer": "There are 4 deals in the Negotiation stage, totaling 250,000 in potential revenue.",
+            "acceptable_variants": [
+                "4 deals in Negotiation with a combined sum of 250,000",
+                "Negotiation stage has four deals, total Amount 250k"
+            ],
+            "wrong_variants": [
+                "Any mention of 3 or fewer deals in Negotiation",
+                "Total less or more than 250,000"
+            ]
+        }
+    },
+    {
+        "question_id": "D1Q2",
+        "question_text": "Which Lead Source has produced the most close won deals, and what was the conversion ratio?",
+        "category": "pipeline_insights",
+        "correct_answer": {
+            "main_answer": "The 'Webinar' lead source generated the most close-won deals with a 30% conversion ratio.",
+            "acceptable_variants": [
+                "Webinar leads had the highest conversion at 30%",
+                "Webinar was the top-performing source with a 30 percent close rate"
+            ],
+            "wrong_variants": [
+                "Any mention of another source as #1",
+                "Any ratio significantly different from 30%"
+            ]
+        }
+    },
+    {
+        "question_id": "D1Q3",
+        "question_text": "Identify the largest deal in the dataset (by Amount) and specify which sales Owner is responsible for it.",
+        "category": "pipeline_insights",
+        "correct_answer": {
+            "main_answer": "Acme Corp renewal at 500,000 is the largest deal, owned by EMP476bbd.",
+            "acceptable_variants": [
+                "The biggest deal is Acme Corp (500k), owned by EMP476bbd",
+                "EMP476bbd manages the largest deal, Acme Corp, at half a million"
+            ],
+            "wrong_variants": [
+                "Any deal under 500,000 listed as largest",
+                "Any mention of a different rep"
+            ]
+        }
+    },
+    {
+        "question_id": "D1Q4",
+        "question_text": "Which deals have missing data?",
+        "category": "pipeline_insights",
+        "correct_answer": {
+            "main_answer": "Two deals, Northstar and Redline, lack a close date and a next step, respectively.",
+            "acceptable_variants": [
+                "Northstar lacks close date, Redline lacks next step",
+                "Northstar and Redline missing critical data fields"
+            ],
+            "wrong_variants": [
+                "Any mention of deals that do not have missing data",
+                "Claiming that no data is missing"
+            ]
+        }
+    },
+    {
+        "question_id": "D1Q5",
+        "question_text": "Which two records likely refer to the same client, and what steps should you take to resolve the duplicate to maintain data cleanliness?",
+        "category": "pipeline_insights",
+        "correct_answer": {
+            "main_answer": "Both 'Global Industries' and 'Global Ind.' appear to be duplicates. Merge the records, confirm correct contact details, and remove the duplicate entry.",
+            "acceptable_variants": [
+                "Global Industries and Global Ind. appear to be the same; merging them is needed",
+                "Likely duplicates are 'Global Industries' / 'Global Ind.', so combine and retain correct info"
+            ],
+            "wrong_variants": [
+                "Any mention of different or unrelated records as duplicates",
+                "Ignoring the need to merge or unify data"
+            ]
+        }
+    }
+]

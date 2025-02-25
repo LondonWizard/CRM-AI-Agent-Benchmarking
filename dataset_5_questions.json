@@ -1,0 +1,98 @@
+[
+    {
+        "question_id": "D5Q1",
+        "question_text": "What performance trend do you observe over the year, and what might this imply for the next quarter’s focus or targets?",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "Opportunity volume grew 15% each quarter, but win rates declined from 40% to 35%. Next quarter focus: better qualification to boost conversion.",
+            "acceptable_variants": [
+                "They have more deals but fewer are closing. Must improve the qualification process or the final close approach",
+                "Win rate is dropping despite an increase in pipeline, so the goal is to improve close rates"
+            ],
+            "wrong_variants": [
+                "Claiming no growth in volume or a rising win rate",
+                "Stating a contradictory focus (e.g., fewer deals overall)."
+            ]
+        }
+    },
+    {
+        "question_id": "D5Q2",
+        "question_text": "Which 5 sales reps have the biggest revenue results?",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "Reps with IDs EMP111, EMP222, EMP333, EMP444, and EMP555 lead in revenue with over $200k each.",
+            "acceptable_variants": [
+                "EMP111, EMP222, EMP333, EMP444, EMP555 are top earners",
+                "Five top performers: 111, 222, 333, 444, 555"
+            ],
+            "wrong_variants": [
+                "Any set of reps not among these IDs",
+                "Naming more or fewer than five reps"
+            ]
+        }
+    },
+    {
+        "question_id": "D5Q3",
+        "question_text": "Which sales rep is performing more effectively, and what metrics support that conclusion (consider a 50% win rate, 40% quota attainment, and 10% average deal size)?",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "EMPxyz is more effective, showing a 55% win rate, 45% quota attainment, and a 12% average deal size growth, beating the baseline metrics.",
+            "acceptable_variants": [
+                "EMPxyz outperforms with higher metrics across all categories",
+                "They exceed the 50% win rate and 40% attainment thresholds"
+            ],
+            "wrong_variants": [
+                "Naming someone below the baseline in these metrics",
+                "Misreporting the target metrics"
+            ]
+        }
+    },
+    {
+        "question_id": "D5Q4",
+        "question_text": "At which stage of the funnel is the largest drop-off occurring? Offer a recommendation to improve conversion at that stage.",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "The biggest drop-off occurs from Proposal to Negotiation. Recommendation: provide more training on presenting proposals and ROI justification.",
+            "acceptable_variants": [
+                "Proposal to Negotiation has the biggest loss; train reps on better proposals",
+                "They fail from proposal to negotiation, so improved ROI demonstration is key"
+            ],
+            "wrong_variants": [
+                "Saying the largest drop-off is from initial contact to Qualification or something else",
+                "No recommendation to fix the stage"
+            ]
+        }
+    },
+    {
+        "question_id": "D5Q5",
+        "question_text": "Provide strategic recommendations to improve overall sales performance. (Think in terms of training, process changes, resource allocation, or pipeline adjustments.)",
+        "category": "employee_performance",
+        "correct_answer": {
+            "main_answer": "We recommend advanced negotiation training, refining lead qualification, realigning resources for high-volume quarters, and implementing a monthly pipeline review.",
+            "acceptable_variants": [
+                "Focus on negotiation coaching, better lead sorting, allocate resources to busiest months, monthly pipeline check",
+                "Train reps on high-level negotiation, standardize lead scoping, dedicate more resources to high pipeline periods"
+            ],
+            "wrong_variants": [
+                "Suggesting random tactics with no connection to data (e.g., slash all prices by 50%)",
+                "No mention of training, process changes, or resource shifts"
+            ]
+        }
+    },
+    {
+        "question_id": "D5Q6",
+        "question_text": "List the common sales pipeline stages (e.g., Prospecting, Qualification, Proposal, etc.) and briefly describe what happens in each stage.",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "Typical stages: Prospecting (initial contact), Qualification (assessing fit), Proposal (offering solution), Negotiation (finalizing terms), Closed Won/Lost (deal conclusion).",
+            "acceptable_variants": [
+                "Stages: 1) Prospecting, 2) Qualify, 3) Propose, 4) Negotiate, 5) Close. Explaining each step’s main actions",
+                "Common pipeline steps: Prospect, Qualify, Propose, Negotiate, Close, plus any post-sale stage"
+            ],
+            "wrong_variants": [
+                "Listing inaccurate or random stages (e.g., skipping Qualification or listing them out of logical order)",
+                "No descriptions given"
+            ]
+        }
+    }
+]

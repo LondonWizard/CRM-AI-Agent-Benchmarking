@@ -1,0 +1,98 @@
+[
+    {
+        "question_id": "D3Q1",
+        "question_text": "Update XYZ opportunity’s Stage to Closed Won.",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "The Stage is changed from Proposal to Closed Won for XYZ opportunity.",
+            "acceptable_variants": [
+                "XYZ is now marked as Closed Won",
+                "Stage changed to Closed Won for the XYZ deal"
+            ],
+            "wrong_variants": [
+                "Status changed to anything else but Closed Won",
+                "No stage change mentioned"
+            ]
+        }
+    },
+    {
+        "question_id": "D3Q2",
+        "question_text": "Calculate the expected total forecasted revenue from these opportunities and identify which deals to mark as high-confidence wins for this quarter.",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "The total forecast is $350,000. Mark Northbound (80% probability) and DeltaOne (75% probability) as high-confidence wins.",
+            "acceptable_variants": [
+                "350,000 in total forecast; Northbound at 80% and DeltaOne at 75%",
+                "The sum is 350k, and we flag Northbound & DeltaOne as high-confidence"
+            ],
+            "wrong_variants": [
+                "Any total different from 350,000",
+                "Flagging the wrong opportunities as high-confidence"
+            ]
+        }
+    },
+    {
+        "question_id": "D3Q3",
+        "question_text": "Which opportunities should be flagged as at-risk, and why?",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "Optima and RoverTech are at-risk because they’ve been in the pipeline 90 days with no activity.",
+            "acceptable_variants": [
+                "Optima and RoverTech are stalling for over 90 days, so they are at-risk",
+                "They have had zero progress for three months, marking them at-risk"
+            ],
+            "wrong_variants": [
+                "Naming deals with recent updates as at-risk",
+                "Claiming none are at-risk"
+            ]
+        }
+    },
+    {
+        "question_id": "D3Q4",
+        "question_text": "Here are 10 upcoming leads and 100 historical leads (some sold, some not). Rank the 10 leads based on the historical data, and explain.",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "The 10 leads are ranked from highest to lowest potential based on match with historically won demographics. For example, TechAlpha is #1 because it matches four success markers.",
+            "acceptable_variants": [
+                "Prioritize leads matching successful patterns: TechAlpha first due to matching 4 markers, etc.",
+                "We use historical data to see which leads have similar attributes to previously won deals"
+            ],
+            "wrong_variants": [
+                "Any random ranking with no correlation to historical data",
+                "Suggesting no ranking is possible"
+            ]
+        }
+    },
+    {
+        "question_id": "D3Q5",
+        "question_text": "Here is a transcript of a meeting. Provide notes, analysis, and specific employee notes.",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "Meeting notes: product synergy discussed, timeline extended by 2 weeks, tasks assigned to rep A, rep B. Suggest continued follow-up. Employee note: rep A needs to clarify feature set, rep B to confirm budget.",
+            "acceptable_variants": [
+                "They discussed synergy, timeline, tasks, and each rep’s action items. Summarize key takeaways and next steps",
+                "Analysis: synergy is good, timeline extended. Rep A handles features, rep B verifies budget"
+            ],
+            "wrong_variants": [
+                "No mention of tasks or timeline changes",
+                "Contradicting the actual transcript content (e.g. that they asked for immediate discounting if that never happened)"
+            ]
+        }
+    },
+    {
+        "question_id": "D3Q6",
+        "question_text": "Draft a sales follow-up email to the MavTech deal (just lost in the final stage).",
+        "category": "general_sales_knowledge",
+        "correct_answer": {
+            "main_answer": "A friendly but concise email acknowledging their decision, offering future assistance, and inviting them to revisit if priorities change.",
+            "acceptable_variants": [
+                "Email that politely thanks them, asks for feedback, and keeps the door open for future opportunities",
+                "Follow-up referencing next steps or possibility for a new discussion if their needs evolve"
+            ],
+            "wrong_variants": [
+                "Aggressive or pushy email, ignoring their final decision",
+                "No mention of acknowledging they’ve chosen another vendor"
+            ]
+        }
+    }
+]

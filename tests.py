@@ -1,120 +1,117 @@
-import json
 import os
+import json
 from dotenv import load_dotenv
 from openai import OpenAI
+from http import client as http_client
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Example weighting scheme (adjust these percentages as needed):
-CATEGORY_WEIGHTS = {
-    "employee_performance": 0.35,
-    "feedback_to_employees": 0.15,
-    "email_analysis": 0.15,
-    "improvement_recs": 0.15,
-    "deal_insights": 0.20
+# Adjust as needed if you add or rename categories
+CATEGORY_SECTION_WEIGHTS = {
+    "pipeline_insights": 0.75,
+    "email_analysis": 0.75,
+    "general_sales_knowledge": 0.50,
+    "employee_performance": 0.25
 }
 
-def load_questions_from_json(json_path="questions.json"):
+def load_dataset_json(json_path):
     """
-    Reads a JSON file containing questions and their correct answer structures.
-    Returns a list of dicts.
+    Loads a dataset JSON file that contains either:
+      - A dict with keys "dataset_description", "crm_data", "questions"
+      OR
+      - A list of question objects (like the original questions.json).
+    Returns the entire JSON.
     """
     with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     return data
 
-def evaluate_response_with_variants(agent_response, correct_answer_data, model="gpt-4o"):
+def evaluate_response_with_variants(agent_response, correct_answer_data, model="gpt-4"):
     """
-    We pass the main_answer, acceptable_variants, and wrong_variants to GPT.
-    The system prompt instructs GPT to produce a single numeric rating from 0.000 to 1.000
-    (with exactly three decimals) that reflects how correct the agent's response is.
+    Uses the OpenAI API to evaluate an agent's response compared to the correct answer,
+    acceptable variants, and wrong variants.
 
-    Returns: (score_from_model, raw_str_or_error)
-        Where score_from_model is a float in [0.0 ... 1.0], truncated/rounded to 3 decimals.
-        raw_str_or_error is the text for debugging or fallback.
+    Returns:
+        (score, raw_output): score is a float [0.0, 1.0]
     """
     main_answer = correct_answer_data["main_answer"]
     acceptable = correct_answer_data.get("acceptable_variants", [])
     wrong = correct_answer_data.get("wrong_variants", [])
 
     prompt = (
-        "System:\n"
-        "You are a strict evaluator of CRM insights. We have:\n\n"
+        "You are a strict evaluator of CRM insights. Evaluate the following agent's response "
+        "against the correct answer criteria.\n\n"
         f"MAIN correct statement:\n{main_answer}\n\n"
         f"ACCEPTABLE variants:\n{'; '.join(acceptable)}\n\n"
         f"WRONG variants:\n{'; '.join(wrong)}\n\n"
         "Agent's response:\n"
         f"{agent_response}\n\n"
-        "Please provide a single numeric rating from 0.000 to 1.000 (with exactly three decimals),\n"
-        "where:\n"
-        "  1.000 = the agent's response perfectly aligns with the main/acceptable statements without contradiction.\n"
-        "  0.000 = the agent's response directly contradicts the correct statements or is entirely unrelated.\n"
-        "Values in between represent partial correctness (e.g., 0.500 if partially correct, etc.).\n"
-        "Output ONLY the numeric rating with three decimals (e.g., 0.750)."
+        "Please provide a single numeric rating from 0.000 to 1.000 (with exactly three decimals), "
+        "where 1.000 means perfect alignment and 0.000 means complete mismatch. Output ONLY the numeric rating."
     )
 
     try:
         response = client.chat.completions.create(
             model=model,
             messages=[{"role": "system", "content": prompt}],
-            temperature=0.0,
-
         )
         rating_str = response.choices[0].message.content.strip()
     except Exception as e:
         print(f"OpenAI API error: {e}")
         return 0.0, "Error in API call"
 
-    # Attempt to parse rating_str as float
-    # Must be in [0.0, 1.0], with up to 3 decimals
     try:
         raw_score = float(rating_str)
-        # clamp to [0.0, 1.0] just in case
-        if raw_score < 0:
-            raw_score = 0.0
-        elif raw_score > 1:
-            raw_score = 1.0
-        # round to 3 decimals
+        raw_score = max(0.0, min(raw_score, 1.0))
         raw_score = round(raw_score, 3)
         return raw_score, rating_str
     except ValueError:
-        # If the model fails to produce a parseable float, default to 0
+        # If GPT returns something not parseable as float
         return 0.0, rating_str
 
-def compute_weighted_score(results):
-    category_scores = {}
-    category_counts = {}
+def compute_weighted_score(question_results):
+    """
+    Computes a weighted overall score (as a percentage) from individual question scores.
+    Weighted by the category weights in CATEGORY_SECTION_WEIGHTS.
+    """
+    total_weight = 0.0
+    weighted_sum = 0.0
 
-    for r in results:
-        cat = r["category"]
-        sc = r["score"]
-        category_scores[cat] = category_scores.get(cat, 0) + sc
-        category_counts[cat] = category_counts.get(cat, 0) + 1
+    for result in question_results:
+        category = result["category"]
+        weight = CATEGORY_SECTION_WEIGHTS.get(category, 0)
+        weighted_sum += result["score"] * weight
+        total_weight += weight
 
-    # Identify only those categories present in the results
-    categories_in_use = list(category_scores.keys())
+    if total_weight == 0:
+        return 0.0
 
-    # If you prefer *equal weighting per category*, do this:
-    weight_per_category = 1.0 / len(categories_in_use) if categories_in_use else 0.0
+    final_fraction = weighted_sum / total_weight
+    return round(final_fraction * 100, 2)
 
-    final_weighted = 0.0
-    for cat in categories_in_use:
-        avg_score_cat = category_scores[cat] / category_counts[cat]
-        final_weighted += avg_score_cat * weight_per_category
-
-    # final_weighted should be in [0,1]
-    return round(final_weighted, 3)
-
-
-def run_benchmark(agent_responses, questions_json="questions.json", model="gpt-4o"):
-    questions = load_questions_from_json(questions_json)
+def run_benchmark(agent_responses, dataset_json_path, model="gpt-4"):
+    """
+    Runs the benchmark by evaluating multiple agent responses against
+    the question set from a single dataset JSON.
+    Supports both JSON files that are lists of questions and those wrapped in a dict.
+    """
+    dataset = load_dataset_json(dataset_json_path)
+    
+    if isinstance(dataset, list):
+        # File is a list of question objects (e.g., original questions.json)
+        questions = dataset
+        dataset_description = ""
+    else:
+        questions = dataset.get("questions", [])
+        dataset_description = dataset.get("dataset_description", "")
+    
     results = {}
 
     for agent_name, text_response in agent_responses.items():
         question_results = []
         for q in questions:
-            raw_score, rating_str = evaluate_response_with_variants(
+            score, raw_output = evaluate_response_with_variants(
                 agent_response=text_response,
                 correct_answer_data=q["correct_answer"],
                 model=model
@@ -123,14 +120,50 @@ def run_benchmark(agent_responses, questions_json="questions.json", model="gpt-4
                 "question_id": q["question_id"],
                 "category": q["category"],
                 "question_text": q["question_text"],
-                "score": raw_score,
-                "model_raw_output": rating_str  # store exactly what the model returned (for debugging)
+                "score": score,
+                "model_raw_output": raw_output
             })
 
-        final_weighted = compute_weighted_score(question_results)
+        weighted_score = compute_weighted_score(question_results)
         results[agent_name] = {
-            "weighted_score": final_weighted,
+            "dataset_description": dataset_description,
+            "weighted_score_percentage": weighted_score,
             "details": question_results
         }
 
     return results
+
+if __name__ == "__main__":
+    # Example usage with dummy agent responses
+    # You can test with real or mock responses that attempt to answer the dataset questions.
+    dummy_agent_responses = {
+        "AgentA": "Dummy response that might be partially correct.",
+        "AgentB": "Another dummy answer with different details."
+    }
+
+    # Evaluate a single dataset (e.g., Dataset 1)
+    ds1_results = run_benchmark(
+        agent_responses=dummy_agent_responses,
+        dataset_json_path="dataset_1_questions.json",
+        model="o1"  # Replace with your model, e.g., "gpt-4"
+    )
+    print("Results on Dataset 1:")
+    print(json.dumps(ds1_results, indent=2))
+
+    # Optionally, loop through multiple dataset files:
+    dataset_files = [
+        "dataset_1_questions.json",
+        "dataset_2_questions.json",
+        "dataset_3_questions.json",
+        "dataset_4_questions.json",
+        "dataset_5_questions.json"
+    ]
+
+    for ds_file in dataset_files:
+        print(f"\nEvaluating {ds_file}...")
+        results = run_benchmark(
+            agent_responses=dummy_agent_responses,
+            dataset_json_path=ds_file,
+            model="o1"
+        )
+        print(json.dumps(results, indent=2))
