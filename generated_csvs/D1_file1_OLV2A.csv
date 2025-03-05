@@ -1,0 +1,10 @@
+DealName,Stage,Amount,OwnerID,LeadSource,CloseDate,NextStep
+Acme Corp renewal,Proposal,500000,EMP476bbd,Webinar,2025-12-31,Phone follow-up
+Northstar,Negotiation,60000,EMP111111,Webinar,,Needs next step
+Redline,Negotiation,40000,EMP222222,Trade Show,2025-09-10,
+Stafford Ltd,Negotiation,50000,EMP333333,Referral,2025-10-01,Follow-up call
+"King, Tucker & Rowe",Negotiation,100000,EMP444444,Webinar,2025-07-15,Send revised proposal
+Global Industries,Qualification,150000,EMP555555,Webinar,2025-06-30,Confirm details
+Global Ind.,Qualification,150000,EMP666666,Webinar,2025-06-29,Review next steps
+YMQ5W2,Closed Lost,54713,EMP543743,Cold Call,2025-08-15,Phone meeting
+HWL2NS,Proposal,39282,EMP240892,Webinar,2025-05-12,

@@ -1,150 +1,65 @@
 
-# CRM AI Agent Benchmark (Continuous Scoring)
+################################################################################
+# README.md
+################################################################################
+"""
+# CRM AI Agent Benchmark System
 
-This repository provides a **benchmark framework** for AI agents that analyze synthetic Salesforce-like CRM data, then answer specific **JSON-based** questions. Each question is scored with a **0.000–1.000** numeric rating (3 decimal places), allowing for more nuanced partial correctness.
+This project provides a minimal viable product for benchmarking AI-based CRM agents
+against a set of standardized questions and correct answers. It includes:
 
-## Data Files
+1. **CSV Data Generation** – Creates CSVs that contain relevant data for each question set.
+2. **Benchmark Library** – Contains code to:
+   - Ask each question to your AI Agent,
+   - Capture the response and timing,
+   - Evaluate the correctness of the agent’s answer,
+   - Produce a final numeric score.
+3. **Flask Website** – A simple user registration, login, and leaderboard to store and
+   display agent performance. Each user receives an API key upon registration.
 
-We supply **three CSV files** representing typical Salesforce exports:
+## Installation
 
-1. **`users.csv`**: Basic user information (ID, name, department, active status).  
-2. **`opportunities.csv`**: Deal records (ID, name, stage, amount, owner, etc.).  
-3. **`emailmessages.csv`**: Email messages referencing deals (subject, from/to addresses, text body, etc.).
+1. Clone or download this repository.
+2. Make sure you have Python 3.8+ installed.
+3. Install required libraries:
 
-There are **no aggregated columns** in these CSVs. The AI must interpret raw data—like summing amounts or calculating close times—if it needs to answer deeper questions about top performers, close ratios, etc.
-
-## Questions File
-
-- **`questions.json`**: Contains a set of **10** example questions. Each question has:
-  - A **`question_id`**  
-  - A **`question_text`**  
-  - A **`category`** (e.g., `employee_performance`, `feedback_to_employees`, etc.)  
-  - A **`correct_answer`** object with:
-    - **`main_answer`**  
-    - **`acceptable_variants`** (phrases also considered correct)  
-    - **`wrong_variants`** (explicitly incorrect statements)
-
-**Example** of one question entry:
-
-```json
-{
-  "question_id": "Q1",
-  "question_text": "Which user has the highest total closed-won amount?",
-  "category": "employee_performance",
-  "correct_answer": {
-    "main_answer": "Margaret Carter has the highest total closed-won opportunity amount.",
-    "acceptable_variants": [
-      "Margaret Carter is the top performer by closed-won revenue",
-      "Margaret Carter leads all users in closed-won deals by amount"
-    ],
-    "wrong_variants": [
-      "John Roberts has the highest total closed-won amount",
-      "Anyone else is the top for closed-won"
-    ]
-  }
-}
+```bash
+pip install -r requirements.txt
 ```
 
-## Code Structure
+## Setup
 
-1. **`tests.py`**  
-   - **`evaluate_response_with_variants`**: Sends a prompt to GPT instructing it to produce a single **numeric rating** in `[0.000...1.000]`.  
-   - **`compute_weighted_score`**: Averages question scores by category and applies custom weighting (e.g., `employee_performance` = 35%, `feedback_to_employees` = 15%, etc.).  
-   - **`run_benchmark`**: Loads the questions, evaluates each agent’s entire response, and compiles a final **weighted** score.
-
-2. **`main.py`**  
-   - Demonstrates how to call `run_benchmark` with multiple “mock” agent responses.  
-   - Prints final results, including a **weighted score** and a breakdown per question.
-
-3. **CSV Files**  
-   - `users.csv`, `opportunities.csv`, `emailmessages.csv` (see `data/` folder, for instance).  
-   - These contain realistic examples but **no** aggregated fields.
-
-4. **`questions.json`**  
-   - Where each question and correct/acceptable/wrong answers are stored.
-
-## Installation and Setup
-
-1. **Clone** this repo or download the files.  
-2. **Create a virtual environment** (recommended):
+1. **Generate the CSV data** for each question set by running:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # macOS/Linux
-   # or
-   venv\Scripts\activate  # Windows
+   python generate_csvs.py
    ```
-3. **Install dependencies**, typically including:
+   This will create 5 CSV files per question set (total 25 CSVs) in a `generated_csvs/`
+   folder (created automatically).
+
+2. **Run the Flask website** (for user signup and leaderboard):
    ```bash
-   pip install openai python-dotenv pandas
+   cd website
+   flask run
    ```
-4. **Set your OpenAI API key**. Create a file named `.env` in the project root with:
-   ```
-   OPENAI_API_KEY=sk-...
-   ```
-5. **Make sure** the CSV files (`users.csv`, `opportunities.csv`, `emailmessages.csv`) and `questions.json` are in the correct location so the scripts can find them.
+   By default, it runs on http://127.0.0.1:5000.
 
-## Running the Benchmark
+3. **Using the Benchmark Library**:
+   - See `main.py` for an example. In short:
+     - You provide a function that calls your AI agent:
+       ```python
+       def my_agent_function(input_text: str, dataframe) -> str:
+           # 1) Possibly parse the CSV data (in 'dataframe') if needed
+           # 2) Send 'input_text' to your AI model (not shown here)
+           # 3) Return the model's response as a string
+           return "Agent's best guess."
+       ```
+     - Then pass it to `run_benchmark()` in `benchmark.py` to evaluate your agent
+       on any question dataset JSON file.
 
-1. **Edit** or **create** new “mock” agent responses in `main.py`.  
-2. **Run**:
-   ```bash
-   python main.py
-   ```
-3. **Observe** the output. Each agent will have a **weighted_score** between `0.000` and `1.000`. For each question, a separate rating is printed, along with the raw text from the model (e.g. `0.750`).
+## Future Extensions
 
-## Understanding the Scoring
+- Integrate an API endpoint to submit results automatically to the website's
+  leaderboard (by implementing the placeholder function inside the library).
+- Expand question sets, CSV generation logic, or scoring logic as needed.
 
-- The prompt **instructs** GPT to produce a numeric rating from **`0.000` to `1.000`**.  
-- **`1.000`** means the response **perfectly** aligns with the **main** or **acceptable** statements, no contradictions.  
-- **`0.000`** means the response contradicts or is entirely irrelevant.  
-- Values **in-between** (like `0.350`, `0.750`) indicate partially correct or incomplete.
-
-### Weighted Final Score
-
-The benchmark groups questions by category (e.g., `employee_performance`, `feedback_to_employees`, `email_analysis`, `improvement_recs`, `deal_insights`) and:
-
-1. **Averages** the scores of all questions in that category.  
-2. **Multiplies** by the category’s weight (defined in `tests.py`’s `CATEGORY_WEIGHTS`).  
-3. **Sums** across all categories => final weighted score.  
-
-Example weighting:
-
-- `employee_performance`: 0.35  
-- `feedback_to_employees`: 0.15  
-- `email_analysis`: 0.15  
-- `improvement_recs`: 0.15  
-- `deal_insights`: 0.20  
-
-These can be changed if you want a different weighting scheme.
-
-## Example Output
-
-A typical run might produce:
-
-```
-=== Benchmark Results ===
-
-Agent: agent_perfect
-Weighted Score: 0.964
-  - QQ1 (employee_performance) => Score: 1.000
-    Model raw output: 1.000
-  - QQ2 (employee_performance) => Score: 0.950
-    Model raw output: 0.950
-  - QQ3 (employee_performance) => Score: 1.000
-    ...
-  (etc.)
-
-Agent: agent_incorrect
-Weighted Score: 0.000
-  - QQ1 (employee_performance) => Score: 0.000
-    ...
-  (etc.)
-```
-
-Here, **`agent_perfect`** is near-perfect, while **`agent_incorrect`** fails the test. The exact numeric values will vary depending on how GPT interprets partial correctness.
-
-## Customization
-
-- **Add or remove** questions in `questions.json`. The scoring logic automatically picks them up.  
-- **Adjust** the system prompt in `evaluate_response_with_variants` if you want different instructions or scoring scale.  
-- **Integrate** your real AI agent output by collecting its responses to each question, then pass them into `run_benchmark`.  
+Enjoy benchmarking your CRM AI agent!

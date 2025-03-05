@@ -1,0 +1,15 @@
+# leaderboard.html
+{% extends 'base.html' %}
+{% block content %}
+<h2>Leaderboard</h2>
+<table border="1">
+  <tr><th>User</th><th>Agent Name</th><th>Score</th></tr>
+  {% for row in scores %}
+  <tr>
+    <td>{{row.username}}</td>
+    <td>{{row.agent_name}}</td>
+    <td>{{row.score}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

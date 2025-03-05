@@ -1,0 +1,7 @@
+RepID,FollowUp3Days,PersonalizedFollowUp,CloseStaleDeals,DiscountUnder10pct,Rule5Compliant,TotalRevenueThisQuarter
+EMP123,True,False,False,False,True,39360
+EMP124,True,False,True,True,True,35738
+EMP125,True,True,True,True,True,36444
+EMP126,True,False,True,False,False,26508
+EMP127,True,True,False,False,True,44664
+EMP128,False,False,True,True,False,39862

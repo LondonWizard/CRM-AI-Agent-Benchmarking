@@ -1,0 +1,21 @@
+RecordType,Name,Stage,Amount,Probability,LastActivityDays,Notes
+Opportunity,XYZ Opportunity,Proposal,50000.0,60.0,5.0,Ready to close soon
+Opportunity,Northbound,Qualification,150000.0,80.0,10.0,High confidence
+Opportunity,DeltaOne,Negotiation,150000.0,75.0,8.0,Also high confidence
+Opportunity,Optima,Proposal,80000.0,50.0,91.0,No updates in over 90 days
+Opportunity,RoverTech,Qualification,70000.0,40.0,95.0,No updates in over 90 days
+Lead,TechAlpha,,,,10.0,1 success markers
+Lead,BizSolutions,,,,30.0,3 success markers
+Lead,StartupX,,,,1.0,1 success markers
+Lead,EnterpriseY,,,,10.0,2 success markers
+Lead,RetailZ,,,,14.0,3 success markers
+Lead,AutoMates,,,,19.0,3 success markers
+Lead,FoodServ,,,,13.0,2 success markers
+Lead,LogiTech,,,,21.0,4 success markers
+Lead,EduServe,,,,22.0,1 success markers
+Lead,FinGroup,,,,5.0,1 success markers
+Meeting,Sales Team Sync,,,,,"Discussed synergy, timeline extended 2 weeks, rep A clarifies features, rep B confirms budget"
+Opportunity,MavTech,Closed Lost,120000.0,0.0,0.0,Lost in final stage to competitor
+Opportunity,Random0,,,83.0,24.0,Filler data
+Opportunity,Random1,,42055.0,,69.0,Filler data
+Meeting,Random2,Closed Lost,76957.0,40.0,56.0,Filler data
