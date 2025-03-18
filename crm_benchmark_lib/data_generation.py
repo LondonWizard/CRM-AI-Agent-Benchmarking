@@ -1,374 +1,521 @@
 # data_generation.py
 """
-Functions that generate data for each question set (D1, D2, D3, D4, D5).
-We've minimized the random generation so that the main trends are unmistakable.
+Generates synthetic data for questions D1 through D5 using a Pydantic + Faker + ChatGPT approach.
+ - Preserves key 'signature' records.
+ - Uses the 'chat' function from chatgpt.py to produce realistic, custom text fields.
+ - Stores each dataset as a CSV in the 'data/' folder.
 """
 
-import pandas as pd
+import os
 import random
 import string
+from datetime import datetime, timedelta
 
-def _create_random_string(length=6):
-    return ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
+import pandas as pd
+from faker import Faker
+from pydantic import BaseModel, Field
 
-def generate_dataset_for_d1():
+# Import your chat function EXACTLY as your system is set up:
+from chatgpt import chat
+
+fake = Faker()
+Faker.seed(0)
+
+# -------- D1 DATASET --------
+class D1Deal(BaseModel):
+    deal_name: str = Field(..., description="Name of the deal")
+    stage: str = Field(..., description="Current stage of the deal")
+    amount: float = Field(..., description="Deal amount in USD")
+    owner_id: str = Field(..., description="Employee/sales rep ID")
+    lead_source: str = Field(..., description="Lead source or channel")
+    close_date: str = Field(..., description="Expected close date (YYYY-MM-DD)")
+    next_step: str = Field(..., description="Next step or action in the pipeline")
+
+def generate_dataset_for_d1(csv_path="data/d1_deals.csv"):
     """
-    D1: pipeline insights, includes:
-    - 4 deals in Negotiation => total 250K
-    - Largest deal: Acme Corp renewal = 500K, Owner EMP476bbd
-    - Duplicates: "Global Industries" & "Global Ind."
-    - Northstar missing close date
-    - Redline missing next step
+    D1: pipeline insights with signature deals:
+      - 4 deals in Negotiation => total 250K
+      - Largest deal: Acme Corp renewal = 500K
+      - Duplicates: "Global Industries" & "Global Ind."
+      - Northstar missing close date
+      - Redline missing next step
+    Then generate many more deals. Store to CSV.
     """
-    data = [
-        {
-            "DealName": "Acme Corp renewal",
-            "Stage": "Proposal",  # Not in negotiation
-            "Amount": 500000,  # largest deal
-            "OwnerID": "EMP476bbd",
-            "LeadSource": "Webinar",
-            "CloseDate": "2025-12-31",
-            "NextStep": "Phone follow-up"
-        },
-        {
-            "DealName": "Northstar",
-            "Stage": "Negotiation",
-            "Amount": 60000,
-            "OwnerID": "EMP111111",
-            "LeadSource": "Webinar",
-            "CloseDate": None,  # missing close date
-            "NextStep": "Needs next step"
-        },
-        {
-            "DealName": "Redline",
-            "Stage": "Negotiation",
-            "Amount": 40000,
-            "OwnerID": "EMP222222",
-            "LeadSource": "Trade Show",
-            "CloseDate": "2025-09-10",
-            "NextStep": None  # missing next step
-        },
-        {
-            "DealName": "Stafford Ltd",
-            "Stage": "Negotiation",
-            "Amount": 50000,
-            "OwnerID": "EMP333333",
-            "LeadSource": "Referral",
-            "CloseDate": "2025-10-01",
-            "NextStep": "Follow-up call"
-        },
-        {
-            "DealName": "King, Tucker & Rowe",
-            "Stage": "Negotiation",
-            "Amount": 100000,
-            "OwnerID": "EMP444444",
-            "LeadSource": "Webinar",
-            "CloseDate": "2025-07-15",
-            "NextStep": "Send revised proposal"
-        },
-        {
-            "DealName": "Global Industries",
-            "Stage": "Qualification",
-            "Amount": 150000,
-            "OwnerID": "EMP555555",
-            "LeadSource": "Webinar",
-            "CloseDate": "2025-06-30",
-            "NextStep": "Confirm details"
-        },
-        {
-            "DealName": "Global Ind.",
-            "Stage": "Qualification",
-            "Amount": 150000,
-            "OwnerID": "EMP666666",
-            "LeadSource": "Webinar",
-            "CloseDate": "2025-06-29",
-            "NextStep": "Review next steps"
-        }
+    # Signature records (ensuring Q&A correctness):
+    signature_records = [
+        D1Deal(
+            deal_name="Acme Corp renewal",
+            stage="Proposal",
+            amount=500000,
+            owner_id="EMP476bbd",
+            lead_source="Webinar",
+            close_date="2025-12-31",
+            next_step="Phone follow-up"
+        ),
+        D1Deal(
+            deal_name="Northstar",
+            stage="Negotiation",
+            amount=60000,
+            owner_id="EMP111111",
+            lead_source="Webinar",
+            close_date="",  # Missing close date
+            next_step="Needs next step"
+        ),
+        D1Deal(
+            deal_name="Redline",
+            stage="Negotiation",
+            amount=40000,
+            owner_id="EMP222222",
+            lead_source="Trade Show",
+            close_date="2025-09-10",
+            next_step=""  # Missing next step
+        ),
+        D1Deal(
+            deal_name="Stafford Ltd",
+            stage="Negotiation",
+            amount=50000,
+            owner_id="EMP333333",
+            lead_source="Referral",
+            close_date="2025-10-01",
+            next_step="Follow-up call"
+        ),
+        D1Deal(
+            deal_name="King, Tucker & Rowe",
+            stage="Negotiation",
+            amount=100000,
+            owner_id="EMP444444",
+            lead_source="Webinar",
+            close_date="2025-07-15",
+            next_step="Send revised proposal"
+        ),
+        D1Deal(
+            deal_name="Global Industries",
+            stage="Qualification",
+            amount=150000,
+            owner_id="EMP555555",
+            lead_source="Webinar",
+            close_date="2025-06-30",
+            next_step="Confirm details"
+        ),
+        D1Deal(
+            deal_name="Global Ind.",
+            stage="Qualification",
+            amount=150000,
+            owner_id="EMP666666",
+            lead_source="Webinar",
+            close_date="2025-06-29",
+            next_step="Review next steps"
+        ),
     ]
-    # 4 deals in Negotiation => 60k + 40k + 50k + 100k = 250k total
 
-    # Add a couple random deals in random stages, just to flesh it out
-    for _ in range(2):
-        data.append({
-            "DealName": _create_random_string(),
-            "Stage": random.choice(["Closed Won", "Closed Lost", "Proposal"]),
-            "Amount": random.randint(20000, 80000),
-            "OwnerID": "EMP"+str(random.randint(100000,999999)),
-            "LeadSource": random.choice(["Cold Call", "Referral", "Webinar"]),
-            "CloseDate": f"2025-0{random.randint(1,9)}-{random.randint(1,28):02d}",
-            "NextStep": random.choice(["", "Schedule demo", "Phone meeting"])
-        })
+    stages = ["Prospecting", "Qualification", "Proposal", "Negotiation", "Closed Won", "Closed Lost"]
+    lead_sources = ["Webinar", "Referral", "Cold Call", "Trade Show", "Partner"]
+    extra_records = []
 
-    df = pd.DataFrame(data)
+    # Generate many random deals
+    for _ in range(200):
+        deal = D1Deal(
+            deal_name=fake.company(),
+            stage=random.choice(stages),
+            amount=float(random.randint(10000, 200000)),
+            owner_id=f"EMP{random.randint(100000,999999)}",
+            lead_source=random.choice(lead_sources),
+            close_date=(datetime.now() + timedelta(days=random.randint(1, 400))).strftime("%Y-%m-%d"),
+            next_step=random.choice([
+                "Schedule demo",
+                "Email follow-up",
+                "Call next week",
+                "",
+                "Arrange site visit"
+            ])
+        )
+        extra_records.append(deal)
+
+    # Combine and save
+    final_records = [r.dict() for r in signature_records] + [r.dict() for r in extra_records]
+    df = pd.DataFrame(final_records)
+    os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+    df.to_csv(csv_path, index=False)
+    print("D1 deals dataset generated at:", csv_path)
     return df
 
 
-def generate_dataset_for_d2():
+# -------- D2 DATASET --------
+class D2Email(BaseModel):
+    thread_id: str = Field(..., description="Unique thread ID")
+    sender: str = Field(..., description="Sender's email address")
+    recipient: str = Field(..., description="Recipient's email address")
+    sentiment: str = Field(..., description="Overall sentiment")
+    content: str = Field(..., description="Full email content")
+    stage_guess: str = Field(..., description="Sales stage guess from the email")
+    objection: str = Field(..., description="Main objection or concern if any")
+
+def generate_dataset_for_d2(csv_path="data/d2_emails.csv"):
     """
-    D2: email analysis:
-    - Positive sentiment, but concern about implementation delays
-    - Negotiation stage, cost objections
-    - Possibly re-engaging a closed lost (Jaguar Services)
+    D2: email analysis with signature threads, plus random emails whose content
+    is custom-generated by ChatGPT (via chatgpt.py) so there's no filler content.
     """
-    data = [
-        {
-            "ThreadID": "T1001",
-            "Sender": "customer@client.com",
-            "Recipient": "rep@company.com",
-            "Sentiment": "Positive",
-            "Content": "We're excited about moving forward, but very worried about implementation delays.",
-            "StageGuess": "Negotiation",
-            "Objection": "Implementation timeline"
-        },
-        {
-            "ThreadID": "T1002",
-            "Sender": "customer@client.com",
-            "Recipient": "rep@company.com",
-            "Sentiment": "Positive",
-            "Content": "Budget range is set. Let's discuss add-on costs. Could we do a quick demo soon?",
-            "StageGuess": "Negotiation",
-            "Objection": "Cost"
-        },
-        {
-            "ThreadID": "T1003",
-            "Sender": "rep@company.com",
-            "Recipient": "customer@client.com",
-            "Sentiment": "Neutral",
-            "Content": "Let's schedule that demo next week and finalize numbers.",
-            "StageGuess": "Negotiation",
-            "Objection": None
-        },
-        {
-            "ThreadID": "T1004",
-            "Sender": "old_customer@lost.com",
-            "Recipient": "rep@company.com",
-            "Sentiment": "Neutral",
-            "Content": "We had to pass on the deal due to scheduling. Now we might revisit it soon.",
-            "StageGuess": "Closed Lost",
-            "Objection": "Timing"
-        },
-        {
-            "ThreadID": "T1005",
-            "Sender": "rep@company.com",
-            "Recipient": "old_customer@lost.com",
-            "Sentiment": "Positive",
-            "Content": "We'd be happy to reconnect whenever you're ready. Keep in touch!",
-            "StageGuess": "Closed Lost",
-            "Objection": None
-        },
-        {
-            "ThreadID": "T2001",
-            "Sender": "info@jaguarservices.com",
-            "Recipient": "rep@company.com",
-            "Sentiment": "Positive",
-            "Content": "We liked your product but lost on timing last year. Let's talk again!",
-            "StageGuess": "Closed Lost",
-            "Objection": "Timing"
-        }
+    # Signature threads
+    signature_threads = [
+        D2Email(
+            thread_id="T1001",
+            sender="customer@client.com",
+            recipient="rep@company.com",
+            sentiment="Positive",
+            content="We're excited about moving forward, but very worried about implementation delays.",
+            stage_guess="Negotiation",
+            objection="Implementation timeline"
+        ),
+        D2Email(
+            thread_id="T1002",
+            sender="customer@client.com",
+            recipient="rep@company.com",
+            sentiment="Positive",
+            content="Budget range is set. Let's discuss add-on costs. Could we do a quick demo soon?",
+            stage_guess="Negotiation",
+            objection="Cost"
+        ),
+        D2Email(
+            thread_id="T1003",
+            sender="rep@company.com",
+            recipient="customer@client.com",
+            sentiment="Neutral",
+            content="Let's schedule that demo next week and finalize numbers.",
+            stage_guess="Negotiation",
+            objection=""
+        ),
+        D2Email(
+            thread_id="T1004",
+            sender="old_customer@lost.com",
+            recipient="rep@company.com",
+            sentiment="Neutral",
+            content="We had to pass on the deal due to scheduling. Now we might revisit it soon.",
+            stage_guess="Closed Lost",
+            objection="Timing"
+        ),
+        D2Email(
+            thread_id="T1005",
+            sender="rep@company.com",
+            recipient="old_customer@lost.com",
+            sentiment="Positive",
+            content="We'd be happy to reconnect whenever you're ready. Keep in touch!",
+            stage_guess="Closed Lost",
+            objection=""
+        ),
+        D2Email(
+            thread_id="T2001",
+            sender="info@jaguarservices.com",
+            recipient="rep@company.com",
+            sentiment="Positive",
+            content="We liked your product but lost on timing last year. Let's talk again!",
+            stage_guess="Closed Lost",
+            objection="Timing"
+        )
     ]
 
-    # Add a few random filler threads
-    for i in range(5):
-        data.append({
-            "ThreadID": f"FILLER{i}",
-            "Sender": f"random{i}@client.com",
-            "Recipient": "rep@company.com",
-            "Sentiment": random.choice(["Positive","Neutral","Negative"]),
-            "Content": "Random filler email content, might not be relevant.",
-            "StageGuess": random.choice(["Qualification","Proposal","Negotiation","Closed Won","Closed Lost"]),
-            "Objection": random.choice(["Price","Timeline","Features",None])
-        })
+    # We create additional random emails, using ChatGPT to generate custom content
+    # so we never have "Filler email content" placeholders.
+    sentiments = ["Positive","Neutral","Negative"]
+    stage_guesses = ["Qualification","Proposal","Negotiation","Closed Won","Closed Lost","Unknown"]
+    possible_objections = ["Price","Timeline","Features","Implementation","Budget","", "Support"]
 
-    df = pd.DataFrame(data)
+    additional_threads = []
+    for i in range(300):
+        # We'll ask ChatGPT to generate a short email about sales or product queries
+        # in plain text (no JSON). We'll store that in the "content" field.
+        prompt = (
+            "Please write a short email excerpt for a sales conversation. "
+            "Include a random mention of budget, timeline, or features. "
+            "No disclaimers, just the email text in a couple of sentences."
+        )
+        generated_text = chat(prompt).strip()
+
+        email = D2Email(
+            thread_id=f"RND-{i:04d}",
+            sender=fake.email(),
+            recipient="rep@company.com",
+            sentiment=random.choice(sentiments),
+            content=generated_text,
+            stage_guess=random.choice(stage_guesses),
+            objection=random.choice(possible_objections)
+        )
+        additional_threads.append(email)
+
+    final_emails = [t.dict() for t in signature_threads] + [t.dict() for t in additional_threads]
+    df = pd.DataFrame(final_emails)
+    os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+    df.to_csv(csv_path, index=False)
+    print("D2 emails dataset generated at:", csv_path)
     return df
 
 
-def generate_dataset_for_d3():
-    """
-    D3: general sales knowledge
-    - XYZ => stage => now Closed Won
-    - forecasted revenue => sum
-    - at-risk deals => 90+ days
-    - ranking leads
-    - meeting transcripts
-    - lost deal => follow-up email
-    """
-    data = []
+# -------- D3 DATASET --------
+class D3Record(BaseModel):
+    record_type: str = Field(..., description="Opportunity, Lead, or Meeting")
+    name: str = Field(..., description="Name of the record")
+    stage: str = Field(..., description="Stage if it is an opportunity")
+    amount: float = Field(..., description="Potential amount if opportunity")
+    probability: float = Field(..., description="Probability to close if opportunity")
+    last_activity_days: int = Field(..., description="Days since last activity")
+    notes: str = Field(..., description="Any additional notes")
 
-    # Key opportunities:
-    data.extend([
-        {
-            "RecordType": "Opportunity",
-            "Name": "XYZ Opportunity",
-            "Stage": "Proposal",   # might be changed to 'Closed Won'
-            "Amount": 50000,
-            "Probability": 60,
-            "LastActivityDays": 5,
-            "Notes": "Ready to close soon"
-        },
-        {
-            "RecordType": "Opportunity",
-            "Name": "Northbound",
-            "Stage": "Qualification",
-            "Amount": 150000,
-            "Probability": 80,
-            "LastActivityDays": 10,
-            "Notes": "High confidence"
-        },
-        {
-            "RecordType": "Opportunity",
-            "Name": "DeltaOne",
-            "Stage": "Negotiation",
-            "Amount": 150000,
-            "Probability": 75,
-            "LastActivityDays": 8,
-            "Notes": "Also high confidence"
-        },
-        {
-            "RecordType": "Opportunity",
-            "Name": "Optima",
-            "Stage": "Proposal",
-            "Amount": 80000,
-            "Probability": 50,
-            "LastActivityDays": 91,
-            "Notes": "No updates in over 90 days"
-        },
-        {
-            "RecordType": "Opportunity",
-            "Name": "RoverTech",
-            "Stage": "Qualification",
-            "Amount": 70000,
-            "Probability": 40,
-            "LastActivityDays": 95,
-            "Notes": "No updates in over 90 days"
-        }
-    ])
+def generate_dataset_for_d3(csv_path="data/d3_records.csv"):
+    """
+    D3: general sales knowledge, includes:
+      - 'XYZ Opportunity' (Proposal, $50k, Prob=60)
+      - 'Northbound' (Qualification, $150k, Prob=80)
+      - 'DeltaOne' (Negotiation, $150k, Prob=75)
+      - 'Optima' (Proposal, $80k, 50%, no update 90 days)
+      - 'RoverTech' (Qualification, $70k, 40%, no update 90 days)
+      - 10 leads with some success markers
+      - 1 meeting transcript
+      - 1 lost deal (MavTech)
+      Then random expansions + saving CSV.
+    """
+    signature_records = [
+        D3Record(
+            record_type="Opportunity",
+            name="XYZ Opportunity",
+            stage="Proposal",
+            amount=50000,
+            probability=60,
+            last_activity_days=5,
+            notes="Ready to close soon"
+        ),
+        D3Record(
+            record_type="Opportunity",
+            name="Northbound",
+            stage="Qualification",
+            amount=150000,
+            probability=80,
+            last_activity_days=10,
+            notes="High confidence"
+        ),
+        D3Record(
+            record_type="Opportunity",
+            name="DeltaOne",
+            stage="Negotiation",
+            amount=150000,
+            probability=75,
+            last_activity_days=8,
+            notes="Also high confidence"
+        ),
+        D3Record(
+            record_type="Opportunity",
+            name="Optima",
+            stage="Proposal",
+            amount=80000,
+            probability=50,
+            last_activity_days=91,
+            notes="No updates in over 90 days"
+        ),
+        D3Record(
+            record_type="Opportunity",
+            name="RoverTech",
+            stage="Qualification",
+            amount=70000,
+            probability=40,
+            last_activity_days=95,
+            notes="No updates in over 90 days"
+        ),
+    ]
 
-    # Some leads
+    # Add 10 leads
     leads = ["TechAlpha","BizSolutions","StartupX","EnterpriseY","RetailZ",
              "AutoMates","FoodServ","LogiTech","EduServe","FinGroup"]
     for lead in leads:
-        data.append({
-            "RecordType": "Lead",
-            "Name": lead,
-            "Stage": None,
-            "Amount": None,
-            "Probability": None,
-            "LastActivityDays": random.randint(1,30),
-            "Notes": f"{random.randint(1,4)} success markers"
-        })
+        signature_records.append(
+            D3Record(
+                record_type="Lead",
+                name=lead,
+                stage="",
+                amount=0,
+                probability=0,
+                last_activity_days=random.randint(1,30),
+                notes=f"{random.randint(1,4)} success markers"
+            )
+        )
 
-    # A meeting transcript
-    data.append({
-        "RecordType": "Meeting",
-        "Name": "Sales Team Sync",
-        "Stage": None,
-        "Amount": None,
-        "Probability": None,
-        "LastActivityDays": None,
-        "Notes": "Discussed synergy, timeline extended 2 weeks, rep A clarifies features, rep B confirms budget"
-    })
+    # Add 1 meeting transcript
+    signature_records.append(
+        D3Record(
+            record_type="Meeting",
+            name="Sales Team Sync",
+            stage="",
+            amount=0,
+            probability=0,
+            last_activity_days=0,
+            notes="Discussed synergy, timeline extended 2 weeks, rep A clarifies features, rep B confirms budget"
+        )
+    )
 
-    # A lost deal to do a follow-up email
-    data.append({
-        "RecordType": "Opportunity",
-        "Name": "MavTech",
-        "Stage": "Closed Lost",
-        "Amount": 120000,
-        "Probability": 0,
-        "LastActivityDays": 0,
-        "Notes": "Lost in final stage to competitor"
-    })
+    # Lost deal
+    signature_records.append(
+        D3Record(
+            record_type="Opportunity",
+            name="MavTech",
+            stage="Closed Lost",
+            amount=120000,
+            probability=0,
+            last_activity_days=0,
+            notes="Lost in final stage to competitor"
+        )
+    )
 
-    # A few random fillers
-    for i in range(3):
-        data.append({
-            "RecordType": random.choice(["Opportunity","Lead","Meeting"]),
-            "Name": f"Random{i}",
-            "Stage": random.choice([None, "Qualification","Proposal","Negotiation","Closed Won","Closed Lost"]),
-            "Amount": random.randint(30000, 100000) if random.random()<0.6 else None,
-            "Probability": random.randint(10,90) if random.random()<0.6 else None,
-            "LastActivityDays": random.randint(0,120),
-            "Notes": "Filler data"
-        })
+    # Random expansions
+    record_types = ["Opportunity", "Lead", "Meeting"]
+    opp_stages = ["Qualification","Proposal","Negotiation","Closed Won","Closed Lost",""]
+    extra_records = []
+    for _ in range(200):
+        rt = random.choice(record_types)
+        st = random.choice(opp_stages) if rt == "Opportunity" else ""
+        amt = random.uniform(10000, 150000) if rt == "Opportunity" else 0
+        prob = random.randint(10,90) if rt == "Opportunity" else 0
+        rec = D3Record(
+            record_type=rt,
+            name=fake.company(),
+            stage=st,
+            amount=round(amt,2),
+            probability=prob,
+            last_activity_days=random.randint(0,120),
+            notes="Additional record from random generation"
+        )
+        extra_records.append(rec)
 
-    df = pd.DataFrame(data)
+    final_data = [r.dict() for r in signature_records] + [r.dict() for r in extra_records]
+    df = pd.DataFrame(final_data)
+    os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+    df.to_csv(csv_path, index=False)
+    print("D3 records dataset generated at:", csv_path)
     return df
 
 
-def generate_dataset_for_d4():
+# -------- D4 DATASET --------
+class D4RepCompliance(BaseModel):
+    rep_id: str = Field(..., description="Sales rep ID")
+    follow_up_3days: bool = Field(..., description="Rule 1 compliance")
+    personalized_followup: bool = Field(..., description="Rule 2 compliance => +20% revenue")
+    close_stale_deals: bool = Field(..., description="Rule 3 compliance")
+    discount_under_10pct: bool = Field(..., description="Rule 4 compliance")
+    rule5_compliant: bool = Field(..., description="Rule 5 compliance")
+    total_revenue_this_quarter: float = Field(..., description="Total revenue adjusted by compliance")
+
+def generate_dataset_for_d4(csv_path="data/d4_reps.csv"):
     """
     D4: sales rules compliance
-    - 1) Follow-up in 3 days
-    - 2) Personalize => +20% revenue
-    - 3) Close deals older than 30
-    - 4) <=10% discount
-    - 5) Max free training hours
-    We'll keep only 6 reps so it's easy to see who complies or not.
+    1) Follow up in 3 days
+    2) Personalize => +20% revenue
+    3) Close deals older than 30 days
+    4) <=10% discount
+    5) max free training hours
+    We'll create ~100 random reps, with some compliance flags,
+    then compute total revenue. Save to CSV.
     """
-    reps = [f"EMP{i}" for i in range(123,129)]  # 6 reps
     data = []
+    for _ in range(100):
+        rep_id = f"EMP{fake.random_number(digits=4)}"
+        follow3 = bool(random.getrandbits(1))
+        personal = bool(random.getrandbits(1))
+        stale = bool(random.getrandbits(1))
+        discount_ok = bool(random.getrandbits(1))
+        r5 = bool(random.getrandbits(1))
 
-    for r in reps:
-        # We'll systematically set their booleans so the pattern is clear
-        followed_3day = random.choice([True, False])
-        personalized = random.choice([True, False])
-        closed_30 = random.choice([True, False])
-        discount_ok = random.choice([True, False])
-        rule5_comply = random.choice([True, False])
+        base_revenue = random.randint(20000, 100000)
+        if personal:
+            base_revenue *= 1.2  # +20% if personalized
 
-        base_revenue = random.randint(20000, 40000)
-        if personalized:
-            base_revenue = int(base_revenue * 1.2)  # +20%
+        rec = D4RepCompliance(
+            rep_id=rep_id,
+            follow_up_3days=follow3,
+            personalized_followup=personal,
+            close_stale_deals=stale,
+            discount_under_10pct=discount_ok,
+            rule5_compliant=r5,
+            total_revenue_this_quarter=round(base_revenue,2)
+        )
+        data.append(rec)
 
-        data.append({
-            "RepID": r,
-            "FollowUp3Days": followed_3day,
-            "PersonalizedFollowUp": personalized,
-            "CloseStaleDeals": closed_30,
-            "DiscountUnder10pct": discount_ok,
-            "Rule5Compliant": rule5_comply,
-            "TotalRevenueThisQuarter": base_revenue
-        })
-
-    df = pd.DataFrame(data)
+    df = pd.DataFrame([r.dict() for r in data])
+    os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+    df.to_csv(csv_path, index=False)
+    print("D4 reps dataset generated at:", csv_path)
     return df
 
 
-def generate_dataset_for_d5():
+# -------- D5 DATASET --------
+class D5Performance(BaseModel):
+    rep_id: str = Field(..., description="Sales rep ID")
+    year: int = Field(..., description="Year of the data")
+    quarter: str = Field(..., description="Q1, Q2, Q3, Q4")
+    total_deals: int = Field(..., description="Number of total deals in that quarter")
+    closed_won: int = Field(..., description="Number of closed-won deals")
+    total_revenue: float = Field(..., description="Total revenue from closed-won deals")
+    avg_win_rate: float = Field(..., description="Percentage, e.g. 38.5 = 38.5%")
+
+def generate_dataset_for_d5(csv_path="data/d5_performance.csv"):
     """
     D5: employee performance
-    - 8 reps total (5 big earners + 3 normal)
-    - Each has 4 quarters
-    - Opportunity volume grows each quarter
-    - Win rate drops each quarter
-    - 5 big earners: EMP111..EMP555
-    - 3 normal: EMP666, EMP777, EMPxyz
+    - 8 'core' reps + 10 extra
+    - 2 years, 4 quarters each
+    - volume up each quarter, win rate down
+    - store in CSV
     """
+    core_reps = ["EMP111","EMP222","EMP333","EMP444","EMP555","EMP666","EMP777","EMPxyz"]
+    extra_reps = [f"EMP{fake.random_number(digits=4)}" for _ in range(10)]
+    all_reps = core_reps + extra_reps
+
     data = []
-    reps = ["EMP111","EMP222","EMP333","EMP444","EMP555","EMP666","EMP777","EMPxyz"]
+    for rep in all_reps:
+        for year in [2024, 2025]:
+            for q_idx, qtr in enumerate(["Q1","Q2","Q3","Q4"]):
+                base_deals = 20 + q_idx*5
+                deals_variation = random.randint(-3,3)
+                total_deals = base_deals + deals_variation
 
-    # We'll keep it simpler with no random variation except small increments
-    for rep in reps:
-        for q_idx, qtr in enumerate(["Q1","Q2","Q3","Q4"]):
-            # baseline deals
-            base_deals = 20 + q_idx*5  # Q1=20, Q2=25, Q3=30, Q4=35
-            # Win rate from 40% => 35% => 30% => 25%
-            base_win_rate = 0.40 - 0.05*q_idx
-            closed_won = int(base_deals * base_win_rate)
+                # baseline ~40%, drops 5% each quarter
+                base_win_rate = 0.40 - 0.05 * q_idx
+                actual_win_rate = base_win_rate + random.uniform(-0.03, 0.03)
+                actual_win_rate = max(0.1, min(0.9, actual_win_rate))
+                closed_won = int(total_deals * actual_win_rate)
 
-            # big earners => double revenue
-            big_earner_factor = 2.0 if rep in ["EMP111","EMP222","EMP333","EMP444","EMP555"] else 1.0
-            total_revenue = int(closed_won * 2000 * big_earner_factor)
+                # bigger factor for core reps
+                big_factor = 2.0 if rep in core_reps[:5] else 1.0
+                avg_deal = (2000 * big_factor) + random.randint(-500, 500)
+                avg_deal = max(avg_deal, 500)
+                total_rev = closed_won * avg_deal
 
-            data.append({
-                "RepID": rep,
-                "Quarter": qtr,
-                "TotalDeals": base_deals,
-                "ClosedWon": closed_won,
-                "TotalRevenue": total_revenue,
-                "AvgWinRate": round(base_win_rate*100,2)
-            })
+                perf = D5Performance(
+                    rep_id=rep,
+                    year=year,
+                    quarter=qtr,
+                    total_deals=total_deals,
+                    closed_won=closed_won,
+                    total_revenue=round(total_rev,2),
+                    avg_win_rate=round(actual_win_rate*100,2)
+                )
+                data.append(perf)
 
-    df = pd.DataFrame(data)
+    df = pd.DataFrame([r.dict() for r in data])
+    os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+    df.to_csv(csv_path, index=False)
+    print("D5 performance dataset generated at:", csv_path)
     return df
+
+
+# ---------- MASTER FUNCTION -------------
+def generate_all_datasets():
+    """
+    Helper function to generate all five datasets at once.
+    They will be saved to CSV in the data/ folder.
+    """
+    generate_dataset_for_d1()
+    generate_dataset_for_d2()
+    generate_dataset_for_d3()
+    generate_dataset_for_d4()
+    generate_dataset_for_d5()
+    print("All D1–D5 datasets generated.")
+
+
+if __name__ == "__main__":
+    # Example usage: generate all sets
+    generate_all_datasets()

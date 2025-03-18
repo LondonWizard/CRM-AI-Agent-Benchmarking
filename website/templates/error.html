@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="error-container">
+    <div class="error-content scale-in">
+        <h2 class="animate__animated animate__fadeInUp">Error {{ error_code }}</h2>
+        <div class="error-icon animate__animated animate__pulse animate__infinite">
+            {% if error_code == 404 %}
+                <span>🔍</span>
+            {% elif error_code == 500 %}
+                <span>⚠️</span>
+            {% else %}
+                <span>❌</span>
+            {% endif %}
+        </div>
+        <p class="error-message">{{ message }}</p>
+        <p>Sorry for the inconvenience. Please try again or return to the homepage.</p>
+        
+        <div class="error-actions animate__animated animate__fadeIn animate__delay-1s">
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Return Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

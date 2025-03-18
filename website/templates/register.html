@@ -1,12 +1,24 @@
-# register.html
 {% extends 'base.html' %}
 {% block content %}
-<h2>Register</h2>
-<form method="POST">
-  <label>Username:</label>
-  <input type="text" name="username" required/><br>
-  <label>Password:</label>
-  <input type="password" name="password" required/><br>
-  <button type="submit">Register</button>
-</form>
+<div class="auth-container">
+    <h2 class="animate__animated animate__fadeInUp">Register</h2>
+    <form method="POST" class="auth-form slide-up">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required autofocus />
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    
+    <div class="auth-links animate__animated animate__fadeIn animate__delay-1s">
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+</div>
 {% endblock %}

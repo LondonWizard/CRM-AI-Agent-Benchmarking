@@ -1,22 +1,68 @@
-# base.html
 <!DOCTYPE html>
 <html>
 <head>
     <title>CRM Benchmark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
 <body>
-    <h1>CRM Benchmark</h1>
-    <hr>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-        {% for message in messages %}
-          <li>{{message}}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-    <hr>
-    {% block content %}{% endblock %}
+    <div class="container">
+        <header class="animate__animated animate__fadeIn">
+            <h1>CRM Benchmark</h1>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                {% if 'username' in session %}
+                <a href="{{ url_for('profile') }}">Profile</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                <a href="{{ url_for('register') }}">Register</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                {% endif %}
+                <a href="{{ url_for('leaderboard') }}">Leaderboard</a>
+            </nav>
+        </header>
+        
+        <main>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <div class="flash-messages animate__animated animate__fadeIn">
+                {% for category, message in messages %}
+                  <div class="message {{ category }}">
+                    {% if category == 'error' %}
+                      <span class="message-icon">❌</span>
+                    {% elif category == 'success' %}
+                      <span class="message-icon">✅</span>
+                    {% elif category == 'warning' %}
+                      <span class="message-icon">⚠️</span>
+                    {% else %}
+                      <span class="message-icon">ℹ️</span>
+                    {% endif %}
+                    {{message}}
+                  </div>
+                {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+            
+            <div class="content animate__animated animate__fadeIn">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+        
+        <footer class="animate__animated animate__fadeIn">
+            <p>&copy; 2023 CRM AI Benchmark. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="https://github.com/example/crm-ai-benchmark" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="{{ url_for('about') }}#contact">Contact</a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='animations.js') }}"></script>
 </body>
 </html>

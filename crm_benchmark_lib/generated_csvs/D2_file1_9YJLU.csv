@@ -1,0 +1,889 @@
+thread_id,sender,recipient,sentiment,content,stage_guess,objection
+T1001,customer@client.com,rep@company.com,Positive,"We're excited about moving forward, but very worried about implementation delays.",Negotiation,Implementation timeline
+T1002,customer@client.com,rep@company.com,Positive,Budget range is set. Let's discuss add-on costs. Could we do a quick demo soon?,Negotiation,Cost
+T1003,rep@company.com,customer@client.com,Neutral,Let's schedule that demo next week and finalize numbers.,Negotiation,
+T1004,old_customer@lost.com,rep@company.com,Neutral,We had to pass on the deal due to scheduling. Now we might revisit it soon.,Closed Lost,Timing
+T1005,rep@company.com,old_customer@lost.com,Positive,We'd be happy to reconnect whenever you're ready. Keep in touch!,Closed Lost,
+T2001,info@jaguarservices.com,rep@company.com,Positive,We liked your product but lost on timing last year. Let's talk again!,Closed Lost,Timing
+RND-0000,aduran@example.net,rep@company.com,Neutral,"Hey [Name], thanks for your interest in our platform! We can finalize the budget details once we’ve discussed your goals and timeline, ensuring everything fits both your short-term and long-term strategy.",Closed Lost,Implementation
+RND-0001,christinasnyder@example.com,rep@company.com,Negative,"Hi Sarah,
+
+I hope you’re doing well. I wanted to follow up and see if you have any questions about the platform’s tracking feature set. If we can lock in the budget by next week, our team can still meet your June rollout timeline. Let me know what you think!",Qualification,Support
+RND-0002,ericpatterson@example.com,rep@company.com,Positive,"Hi [Name],
+
+I appreciate you sharing your priorities with me and would love to learn more about your budget constraints as we finalize the proposal. Our new feature set should fit perfectly into your timeline and help you streamline operations before the end of the quarter.",Unknown,Budget
+RND-0003,johnnyhaynes@example.org,rep@company.com,Positive,"Hi [Name],
+
+Thanks for taking the time to review our proposal. Let me know if you have any feedback on the new reporting features, and I'll be happy to chat about how it fits within your budget and timeline. I look forward to hearing your thoughts!",Closed Won,
+RND-0004,turnervanessa@example.org,rep@company.com,Positive,"Hey [Name],
+
+We can certainly integrate the advanced data analytics feature you requested, and the timeline suggests completion within six weeks. Let me know if the proposed budget of $5,000 meets your expectations.",Unknown,Implementation
+RND-0005,ferrelljohn@example.com,rep@company.com,Negative,"Hi Sarah,
+
+I wanted to circle back on our conversation regarding the new software platform. The timeline for implementation will be around six weeks, and with the proposed budget of $20,000, we can include all the advanced reporting features we discussed. Let me know if you’d like to schedule a call to finalize the details.",Closed Won,
+RND-0006,aimee65@example.net,rep@company.com,Neutral,"Hi [Name],
+
+I’m excited to share our new service package, which includes an expanded analytics feature set designed to streamline your team’s workflow. Would you have a moment this week to discuss how this aligns with your budget and overall project timeline?",Negotiation,Budget
+RND-0007,hhenry@example.com,rep@company.com,Negative,"Hi Mark,
+
+I hope you’re doing well! Our team has been working on a new feature set that fits within your existing budget constraints and can be delivered by October. Let me know when you’d like to connect so we can discuss the details.",Negotiation,Implementation
+RND-0008,jonathan46@example.net,rep@company.com,Positive,"Hi [Name],
+
+I hope you’re doing well. I wanted to check in about the new software rollout—specifically, how we can integrate the advanced reporting features within your proposed three-month timeline. Let me know if this aligns with your current budget and if you’d like to schedule a call to discuss next steps.",Qualification,Budget
+RND-0009,porterdebbie@example.net,rep@company.com,Negative,"Hi [Name],
+
+I hope you’ve had a chance to review our proposal. I'm confident we can align our solution with your budget and meet the three-week timeline we discussed. Let me know if there's anything else you need as we move forward.",Unknown,
+RND-0010,robertsimon@example.com,rep@company.com,Negative,"Hello [Name], I’m excited to discuss how our new scheduling feature can fit seamlessly into your project, especially since you mentioned aiming to keep everything under a $30K budget. Let me know if we can hop on a quick call this week to talk next steps and align our timelines.",Negotiation,Support
+RND-0011,sanfordrobert@example.org,rep@company.com,Neutral,"Hi [Name],
+
+I wanted to circle back on the project we discussed—particularly the custom reporting features and the budget we outlined around $10K. If we finalize everything this week, we can aim for a four-week timeline to complete your initial rollout. Let me know if you'd like to jump on a quick call to review next steps!
+
+Best regards,
+[Your Name]",Unknown,Features
+RND-0012,jennifer00@example.com,rep@company.com,Neutral,"Hi [Name], I’m thrilled to share how our advanced analytics feature can speed up your team’s workflow. We can easily tailor our proposal to fit your budget and align with your project timeline.",Proposal,Price
+RND-0013,wvaughan@example.net,rep@company.com,Neutral,"Hi [Name], thanks so much for taking an interest in our new platform. We’re currently finalizing our product roadmap and would love to know if this fits within your projected budget—let me know when you have a moment to chat more about the features you’re most excited about.",Negotiation,Budget
+RND-0014,jwarren@example.net,rep@company.com,Positive,"Hi [Name],
+
+I hope you’re doing well! I’d love to circle back on the platform’s custom reporting features we discussed—especially since aligning them with your Q2 budget and launch timeline can help us finalize a robust solution that fits your goals. Let me know your thoughts so we can move forward!",Negotiation,Budget
+RND-0015,zlane@example.net,rep@company.com,Negative,I hope you’ve been doing well and had a chance to review our proposal. We can certainly align the premium features with your current budget and still meet the July launch date you mentioned. Let me know if you have any questions or if there’s a good time this week to discuss next steps.,Qualification,Budget
+RND-0016,lawsonjason@example.com,rep@company.com,Negative,"Hi [Name], 
+
+I hope you’re having a great day! Based on our previous conversation, our proposed timeline for implementation is just under four weeks, and we can easily stay within your suggested budget while including all the analytics features discussed. I’d love to schedule a quick call to discuss next steps—let me know what works best for you.",Negotiation,Price
+RND-0017,robinsonfrederick@example.net,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well! I’d love to discuss how our platform’s new analytics features could fit within your budget and ensure we meet the two-week timeline you mentioned. Let me know when you’re free to talk through the details.
+
+Best regards,
+[Your Name]",Qualification,Budget
+RND-0018,ffuller@example.com,rep@company.com,Negative,"Hi [Name], I wanted to check in about our new analytics dashboard—it simplifies reporting while staying within your existing budget. Let me know if this fits your timeline, and we can schedule a call to dive into the details.",Proposal,Price
+RND-0019,jdalton@example.com,rep@company.com,Negative,"Hi [Name],
+
+I’m excited to show you how our latest feature upgrade can streamline your workflow within your current timeline. Let me know if you’d like to discuss the budget options, so we can get started right away.",Qualification,Support
+RND-0020,travis83@example.org,rep@company.com,Negative,"Hi [Name],
+
+I’d love to schedule a quick call to chat about the advanced features we can offer and get a sense of your budget and timeline. Let me know if a brief meeting next week works for you so we can map out the next steps.",Closed Lost,Timeline
+RND-0021,sandra46@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thanks for expressing interest in our new software solution. I'd love to schedule a quick call next week to discuss how our advanced features can help optimize your workflow while staying within your budget. Let me know what day works for you, and we’ll get everything set up!",Unknown,Support
+RND-0022,parkerdavid@example.org,rep@company.com,Neutral,"Hey [Name],
+
+Thanks for checking out our platform! I’d love to chat about how we can tailor our features to fit your budget and meet your launch timeline. Let me know a good time to connect.",Proposal,Features
+RND-0023,calebmorgan@example.org,rep@company.com,Neutral,"Hey [Name],
+
+Thanks for your interest in our solution! We’re confident our core features will align well with your requirements, and based on our initial conversation, we’ve estimated a budget around $5,000. I’d love to hear your thoughts on the timeline before we move forward. 
+
+Best regards,
+[Your Name]",Proposal,Implementation
+RND-0024,burnschristian@example.net,rep@company.com,Neutral,"Hi [Name],
+
+Thanks for reaching out about our new software solution. I’m confident we can streamline the features you need within your budget and still meet your aggressive timeline. Let’s schedule a quick call to discuss next steps.",Proposal,Features
+RND-0025,taylorsteven@example.org,rep@company.com,Negative,"Hi [Recipient],
+
+I’m excited to show you how our new software’s customization features can streamline your team's workflow. Could you let me know if the current budget allocation allows for an early Q4 rollout? Let’s set up a quick call to discuss next steps.
+
+Best regards,
+[Your Name]",Closed Lost,Price
+RND-0026,christopher52@example.com,rep@company.com,Neutral,"Hi [Name], 
+I wanted to quickly touch base about our new cloud-based platform that streamlines data analysis and integrates seamlessly with your existing tools. We can work within your Q4 timeline and still keep the overall budget under $15,000. Let me know if you’d like more details or a quick demo!",Qualification,
+RND-0027,brad11@example.net,rep@company.com,Positive,"Hi [Name],
+
+I’m excited to share more details about our new CRM platform, especially its robust reporting features which can be tailored to fit your current budget. Let me know if you’re available for a quick chat next week so we can map out a timeline that aligns with your goals.",Proposal,Budget
+RND-0028,torreskyle@example.net,rep@company.com,Negative,"Hi [Name],
+
+I’m excited to share that our updated software includes the analytics dashboard feature you requested, and we can implement it within your six-week timeline as long as we finalize the budget by the end of this week. Let me know if that works for you, and I'll gladly walk you through the next steps.",Unknown,Implementation
+RND-0029,henry07@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’ve been doing well. I wanted to follow up on our conversation regarding your next product launch—specifically, how we can fit our solution within your current budget while still meeting your deadline next quarter. Let me know when you’d like to hop on a call to discuss further. 
+
+Best regards,
+[Your Name]",Negotiation,Implementation
+RND-0030,fchen@example.com,rep@company.com,Positive,"Hi [Name],
+
+I appreciate the chance to connect and learn more about your needs. I'd love to show you how our new platform’s collaboration features can cut your workflow time in half and stay well within your current budget. Let me know if we can schedule a quick call to discuss the details.",Negotiation,Features
+RND-0031,sherry67@example.com,rep@company.com,Neutral,"Hi [Name],
+
+Thank you for your interest in our solution. Given your team’s requirements, our standard package fits within a $15k to $20k budget, and we can have everything up and running by mid-November. Let me know what you think, and I’d be happy to discuss next steps in detail.",Closed Won,Price
+RND-0032,rubenharris@example.com,rep@company.com,Negative,"Hi [Name],
+
+I enjoyed our conversation about upgrading your current system. With your target timeline of eight weeks in mind, it would be great to know which features are an absolute must for you so we can tailor the solution to fit your needs. Let me know if you have any questions, and I’ll be happy to walk you through the details.",Unknown,Features
+RND-0033,josephpacheco@example.com,rep@company.com,Neutral,"Hi David,
+
+Thank you for inquiring about our platform. We estimate the premium features can be integrated within your budget of $10K and delivered by mid-November. Let me know if you’d like to connect further to discuss details.",Unknown,Price
+RND-0034,michael75@example.org,rep@company.com,Neutral,"Hi [Name],
+
+I wanted to follow up on our conversation about how our new collaboration tool can be tailored to fit your budget while still offering advanced project automation features. Let me know if you’d like to hop on a quick call to discuss next steps.",Closed Won,Price
+RND-0035,stevenanderson@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’re doing well! Our new platform offers customizable reporting features that can fit neatly within your proposed budget and meet your six-week timeline. Let me know if you’d like to discuss next steps.",Qualification,Features
+RND-0036,tylerdavis@example.net,rep@company.com,Positive,"Hi [Name],
+
+It was great connecting with you about our new software solution. If your budget allows, I can arrange a pilot program within the next three weeks to review all features in action and discuss a longer-term deployment plan.
+
+Best regards,
+[Your Name]",Negotiation,Price
+RND-0037,ldaniel@example.org,rep@company.com,Positive,"Hi [Name],
+
+Thanks for sharing your project goals! We’re eager to explore how our latest software features can streamline your workflow, and once we’ve nailed down the core requirements, we can finalize both the budget and timeline to keep everything on track. Let me know your thoughts, and we’ll take it from there.",Unknown,Timeline
+RND-0038,frank51@example.org,rep@company.com,Positive,"Hi [Name],
+
+I appreciate the opportunity to discuss how our new marketing platform could enhance your outreach efforts. We can tailor the feature set to match your budget while ensuring we meet the three-week timeline you mentioned. Let me know if you’d like to set up a quick demo.",Proposal,Price
+RND-0039,umorris@example.com,rep@company.com,Neutral,"Hi Alex, 
+Thanks for your interest in our platform! We can finalize the project timeline once we confirm that the proposed budget aligns with the advanced scheduling features you’re looking to implement.",Closed Lost,
+RND-0040,melissa03@example.net,rep@company.com,Negative,"Hi [Name],
+
+I wanted to follow up on our conversation about the new software solution. We can integrate it seamlessly within your two-month timeline, and there's flexibility in the budget to accommodate your growth needs. Let me know when you’d like to discuss next steps.",Closed Won,
+RND-0041,danielle28@example.org,rep@company.com,Neutral,"Hi [Name], 
+
+Thanks for your interest in our new CRM solution. I believe we can tailor our package to fit your upcoming Q1 budget constraints while still hitting the key features you listed. Let me know if you’d like to discuss next steps or schedule a quick call.",Proposal,Features
+RND-0042,fbenjamin@example.net,rep@company.com,Neutral,"Hey [Name], I hope you’re doing well! I’d love to discuss whether we can adjust the budget to incorporate the new features you have in mind, and how this might impact our timeline for launch. Let me know your availability so we can schedule a follow-up soon.",Closed Lost,
+RND-0043,peggy10@example.com,rep@company.com,Positive,"Hey [Name],
+
+I hope you're doing well! Our latest proposal includes all the custom features you requested, and we can easily accommodate them within your Q1 timeline without exceeding your $5,000 budget. Let me know if you'd like more details or want to set up a quick call.",Proposal,Budget
+RND-0044,myerstodd@example.org,rep@company.com,Neutral,"Hi [Name],
+
+Thanks for checking out our solution. We can tailor our features to fit your stated budget and still deliver on the timeline you mentioned last week. Let me know when you’d like to explore the details further.",Proposal,Features
+RND-0045,brianrodriguez@example.net,rep@company.com,Positive,"Hi [Name],  
+We’d love to confirm your timeline for integrating our new collaboration features, as we're confident we can keep this within your budget constraints. Please let me know a good time to connect and take the next steps.",Negotiation,Timeline
+RND-0046,conleycathy@example.org,rep@company.com,Negative,"Hi Alex, I’m excited to share the enhanced features we can incorporate into the platform, and we estimate it will fit comfortably within the $50k budget. Let me know if Thursday’s timeline still works so we can finalize the details.",Closed Lost,Support
+RND-0047,christopher91@example.org,rep@company.com,Positive,"Hello [Name],
+
+I wanted to follow up on our conversation about your upcoming launch. We can implement our premium reporting features well within your projected Q1 budget and have everything live in just six weeks. Let me know when you’d like to discuss the specifics further.",Unknown,Budget
+RND-0048,megan62@example.net,rep@company.com,Negative,"Hi [Name], I'd love to set up a brief call to discuss how our solution can fit into your budget and expedite your implementation timeline. We’ll also explore the advanced analytics features you mentioned to ensure everything aligns with your project’s goals.",Unknown,Timeline
+RND-0049,wpark@example.com,rep@company.com,Negative,"Hi [Name],
+
+I appreciate your interest in our platform and would love to chat about how our newest features can directly support your team's goals. If you're aiming to complete implementation by next quarter, I'd be happy to walk you through how we can align with your budget and timeline. Let me know when you’d be available for a quick call!",Closed Lost,Timeline
+RND-0050,deborahpowell@example.org,rep@company.com,Negative,"Hi [Client],
+
+I appreciate your interest in our solution and wanted to follow up on your plan to finalize a budget and timeline. Could you share any specific features your team is looking for, so we can tailor our proposal to your needs? 
+
+Best regards,
+[Your Name]",Qualification,Timeline
+RND-0051,mallorymiller@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thanks so much for your interest in our new software. We can absolutely work within your $2,500 budget, and we’re ready to get started by mid-November to have everything in place before your holiday promotions. Let me know if you’d like more details on the analytics and reporting features we’ve included.",Closed Lost,Features
+RND-0052,emma71@example.com,rep@company.com,Negative,"Hey [Name],
+
+I’m excited to share that the updated platform now includes customizable reporting features, and we can deliver it within your ideal timeline. Let me know if you have a moment to discuss next steps—looking forward to your thoughts!",Proposal,Support
+RND-0053,trobles@example.com,rep@company.com,Positive,"Hi [Name],
+
+I'm writing to confirm that our proposed solution fits within your current budget, with a tentative delivery timeline of mid-next quarter. Let me know if you'd like to explore any additional features before we finalize details.",Qualification,Budget
+RND-0054,taylorgregory@example.org,rep@company.com,Positive,"Hi [Recipient Name],
+
+Thank you for your interest in our solution! We can typically work within a $10k–$15k budget, depending on added analytics features, and our usual timeline from kickoff to launch is six weeks. Let me know if you’d like to discuss next steps or if you have any questions.",Qualification,Implementation
+RND-0055,cameronmoon@example.com,rep@company.com,Neutral,I wanted to circle back on our proposal and see if you’ve had a chance to review. We’ve factored in your budget constraints and can meet your desired timeline while ensuring the advanced analytics features shine through.,Proposal,Support
+RND-0056,wgarcia@example.org,rep@company.com,Negative,"Hi [Name],
+
+Thank you for reviewing our proposal for the new marketing software. With robust features to streamline your campaigns, we can comfortably accommodate your budget range so you can launch within your desired timeline.",Negotiation,Features
+RND-0057,morrisjames@example.net,rep@company.com,Positive,"Hello [Name],
+
+I hope you’re doing well! I’d love to discuss how our new mobile app’s advanced reporting features can fit within your budget and be ready before your upcoming product launch. Let me know a good time to connect!",Negotiation,Price
+RND-0058,donna59@example.net,rep@company.com,Neutral,"Hi [Name],
+
+Thanks for your interest in our solution. From our initial conversation, it sounds like you’re aiming to stay under a $10K budget and have everything in place by early March. I’d love to walk you through how our real-time analytics features can fit neatly into those parameters. Let me know when you’re free to connect!",Unknown,Budget
+RND-0059,qvalenzuela@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I’d love to follow up regarding your interest in our new solution and discuss how it can fit within your budget. Additionally, I'd like to highlight some of the advanced reporting features we've recently introduced.",Negotiation,
+RND-0060,andrew92@example.com,rep@company.com,Negative,"Hi [Name],
+
+Thanks for your interest in our new project management tool. We believe the advanced reporting features will streamline your workflow, and we can adjust the implementation timeline to fit within your current budgeting requirements.",Closed Lost,Implementation
+RND-0061,vincentfletcher@example.org,rep@company.com,Positive,"Hi [Name],
+
+I hope you’re having a great week. We’ve refined the new software features you asked about, and it looks like we can meet your requested timeline without increasing your initial $5,000 budget. Let me know if you’re free to connect this week for a quick rundown.
+
+Best regards,
+[Your Name]",Negotiation,Budget
+RND-0062,scott10@example.com,rep@company.com,Negative,"Hi [Name],
+I hope you’re doing well! We’ve streamlined our latest collaboration feature to stay within your proposed budget, and we’re ready to meet your desired timeline for launch. Let me know if you’d like to schedule a quick call to discuss next steps.",Proposal,Budget
+RND-0063,uberg@example.net,rep@company.com,Neutral,"Hi [Name], I’m excited to share how our new dashboard feature can help you stay within the budget you mentioned while delivering results ahead of schedule. Let’s set up a quick call so I can walk you through the details and discuss next steps.",Closed Lost,Implementation
+RND-0064,jeremy57@example.org,rep@company.com,Positive,"Hi [Name],
+
+Our new platform’s advanced analytics features are ready for testing within the Q1 timeline you mentioned, and we’ve kept the budget flexible to accommodate any last-minute tweaks. Let me know when you’d like to discuss next steps.",Unknown,Budget
+RND-0065,hestertimothy@example.org,rep@company.com,Positive,"Hi [Name],
+
+I hope you’ve been well! We recently enhanced our platform with new security features, and I’d love to explore how this fits with your Q3 budget. Let me know if you have time next week to discuss further.
+
+Best regards,
+[Your Name]",Qualification,
+RND-0066,millermelissa@example.org,rep@company.com,Positive,"Hi [Name],
+
+I hope you’re doing well! We recently launched our new platform, and I’d love to discuss how its advanced reporting features can fit into your budget and project timeline. Let me know if you’re available for a quick chat this week.",Qualification,Features
+RND-0067,brownrebecca@example.net,rep@company.com,Neutral,"Hi [Name],
+
+Thanks for reaching out about our solution. I’d love to show how we can work within your current budget to deliver the new reporting features in time for your Q2 launch. Let me know if you’d like to schedule a quick call or if you prefer a brief demo!",Closed Lost,
+RND-0068,katieleonard@example.org,rep@company.com,Negative,"Hi [Name], 
+
+I hope all is well! I’m reaching out because our latest feature enhancements could align perfectly with your $5,000 budget and your goal to launch in early August. Let me know if you’d like more details or if you have a moment to schedule a quick call.",Qualification,Implementation
+RND-0069,patriciaward@example.com,rep@company.com,Positive,"Hi Sarah,  
+I’m excited to hear about your interest in our new platform. If your budget aligns with our standard package, we can finalize your custom analytics feature in just two weeks. Let me know your thoughts so we can move forward!",Closed Lost,Implementation
+RND-0070,paula36@example.net,rep@company.com,Negative,"Hi [Name],
+
+Thanks for showing interest in our solution! We can easily accommodate your budget range of $10k, and we’re confident we can have everything ready within six weeks. Let me know if you’d like to schedule a quick call to go over the key product features and get started.",Closed Lost,Implementation
+RND-0071,carlsonjeffrey@example.org,rep@company.com,Positive,"Hi [Name], thanks for reaching out! I’d love to set up a quick call next week to walk you through our latest dashboard features and discuss how we can align with your budget to maximize ROI.",Unknown,Timeline
+RND-0072,arojas@example.org,rep@company.com,Positive,"Hi [Name],
+
+Thanks for your interest in our platform. I'd love to hear more about your timeline and see how we can customize our features to fit your budget. Let me know a few dates that work for you.",Closed Lost,Timeline
+RND-0073,bryanfields@example.com,rep@company.com,Negative,"Hello [Name],
+
+We’d love to walk you through our updated dashboard features and see how they align with your current budget. If this fits within your timeline, I’m confident we can deliver the results you need without compromising on quality.",Unknown,Support
+RND-0074,nicole75@example.net,rep@company.com,Neutral,"Hi Casey,
+
+Thanks for your interest in our platform. Have you established a target budget yet, so we can align our proposal accordingly? Let me know if you have any questions or if you’d like to set up a quick call.",Qualification,Support
+RND-0075,zhenry@example.com,rep@company.com,Positive,"Hi [Name],
+
+Thank you for your time on the call earlier. Our team can deliver the key features within a six-week timeline, and we’ve allocated a flexible budget plan to ensure everything meets your goals. Let me know if you need any additional details before we move forward.",Closed Won,Price
+RND-0076,scott85@example.com,rep@company.com,Neutral,"Hello [Name], I’m excited to share our initial proposal for your upcoming campaign. The estimated budget is around $5,000, and we can meet your requested four-week timeline if we move forward this week. Let me know if you have any questions or would like to discuss further details.",Unknown,Implementation
+RND-0077,sarah40@example.org,rep@company.com,Positive,"Hi [Recipient],
+
+Thanks for taking the time to review our proposal. I’d love to finalize the budget by next Friday so we can stay on track for your Q4 rollout, and I’m excited to show you the new scheduling feature we recently unveiled.
+
+Best regards,
+[Your Name]",Unknown,Features
+RND-0078,zmullins@example.com,rep@company.com,Negative,"Hi Taylor, thanks for taking a look at our new analytics platform! I’d love to schedule a quick call to walk you through our advanced reporting features and work out a budget that fits your needs—let me know when you’re free.",Unknown,Price
+RND-0079,samanthawhite@example.org,rep@company.com,Neutral,"Hi Sarah,  
+Thank you for your interest in our advanced analytics suite. With all the premium reporting features included, we can roll this out by your Q3 deadline while staying within your current budget plan.",Closed Won,Implementation
+RND-0080,claudiaschaefer@example.org,rep@company.com,Positive,"Hi [Name],
+
+I wanted to circle back regarding our new software solution, which can significantly reduce your manual workload. We can tailor the features to fit your team's workflow, and I'd be happy to discuss your desired budget range and a timeline that gets you up and running before next quarter.",Qualification,Price
+RND-0081,wayne82@example.net,rep@company.com,Neutral,"Hey [Name],
+
+I’m following up on the new platform we discussed. Our team can deliver the key features within your $15k budget by early November, which aligns with the timeline we mentioned. Let me know if you have any questions or want to hop on a call to finalize details.",Qualification,Timeline
+RND-0082,dorismartinez@example.org,rep@company.com,Neutral,"Hi [Name],
+
+Thanks again for your interest in our platform! We’ve been refining a new feature that streamlines reporting and should align well with your goal of reducing manual processes. I know the budget is a key factor for you, so I'd be happy to work out flexible options that fit your needs.
+
+Best regards,
+[Your Name]",Negotiation,Budget
+RND-0083,hschmitt@example.org,rep@company.com,Positive,"Hi [Name],
+
+I hope you’ve been well. We’ve just updated our software solution with new collaboration features that streamline reporting and cut down on manual work. Let me know if you have a preferred timeline and budget in mind, and we can schedule a quick call to explore the details.",Unknown,Support
+RND-0084,warnervirginia@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thank you again for expressing interest in our solution. I’d love to set up a quick call to discuss next steps, especially regarding the features you mentioned and how they might fit into your Q1 budget. Let me know if next Tuesday or Wednesday works for a brief chat.",Qualification,Support
+RND-0085,warebrittany@example.org,rep@company.com,Positive,"Hi [Name],
+
+I’m glad you're interested in our new platform. To help finalize the details, could you give me a ballpark budget and a rough timeline for implementation, so we can tailor the features that suit you best? Let me know when you’d like to move forward.",Closed Won,Timeline
+RND-0086,debbiediaz@example.org,rep@company.com,Positive,"Hey [Name],
+
+I hope you’re doing well! I wanted to quickly touch base about our new software upgrade—its advanced analytics feature could really streamline your processes. Also, if you have a tight Q4 budget, we can work out a tailored plan to fit your needs.
+
+Best regards,
+[Your Name]",Unknown,Timeline
+RND-0087,vfreeman@example.net,rep@company.com,Negative,"Hey [Name],
+
+Thanks again for your interest in our platform. Our latest release includes an advanced analytics feature to help streamline your workflow, and I’d love to walk you through it. Let me know your budget range, and I'll prepare a tailored proposal that aligns with both your timeline and your team's goals.
+
+Best,
+[Your Name]",Proposal,
+RND-0088,catherinegallagher@example.net,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’re doing well! I’d love to set up a quick call to discuss how we can fit the expanded feature set into your current budget and still meet the end-of-quarter deadline. Let me know your availability, and we’ll get something scheduled.
+
+Best regards,
+[Your Name]",Proposal,Timeline
+RND-0089,gmorrison@example.org,rep@company.com,Neutral,"Hi [Name],  
+I’m excited to discuss how we can tailor our platform to meet your specific workflow requirements. To ensure everything stays on track, let’s chat about the budget you have in mind and the timeline you’re aiming for, so we can craft the perfect plan together.",Unknown,Implementation
+RND-0090,glarsen@example.net,rep@company.com,Negative,"Hi [Name],
+I hope you’re doing well! We’d love to discuss how our new platform can streamline your workflows, and we can tailor the implementation to match your budget and timeline. Let me know what works for you, and I’ll send over a quick summary of key features we believe will help.",Closed Lost,
+RND-0091,shelbyanderson@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thanks for chatting with me about the customized software solution earlier. Given your proposed budget, I'm confident we can include the advanced reporting features and still meet the six-week go-live timeline we discussed. Let me know your thoughts, and we can finalize the details.",Closed Lost,Budget
+RND-0092,joshua52@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I’m excited to share that we’ve refined our solution to target your core features while staying within the budget framework you mentioned last week. With this approach, we can also meet your ideal timeline and ensure a seamless launch.
+
+Best regards,
+[Your Name]",Qualification,Price
+RND-0093,amy16@example.org,rep@company.com,Neutral,"Hi [Name], just wanted to circle back and see how flexible your budget might be for exploring our advanced analytics features. If we can confirm your requirements by mid-next week, we should be able to meet your desired launch timeline seamlessly.",Proposal,
+RND-0094,lopezryan@example.org,rep@company.com,Positive,"Hi [Client Name],
+
+I hope you’re doing well! Our latest solution offers advanced analytics features that fit comfortably within your budget, and we can implement them in as little as six weeks. Let me know if you’d like to review the specifics and set a timeline to get started.",Closed Won,Budget
+RND-0095,sara91@example.com,rep@company.com,Neutral,"Hi [Recipient Name],
+
+Thank you again for your interest in our solution. We’d love to discuss how we can customize it to your budget while ensuring our proposed timeline still meets your launch goals. Please let me know your availability for a brief call.",Closed Lost,Support
+RND-0096,olsontrevor@example.org,rep@company.com,Negative,"Hi Sarah,
+
+I'm excited to show you how our new software features can help streamline your team's workflow. If we can agree on the budget by next Friday, we'll be on track to hit your mid-month launch date. Let me know what you think!",Closed Lost,Support
+RND-0097,dsavage@example.com,rep@company.com,Positive,"Hi [Prospect Name],
+
+Thanks for taking the time to review our proposal! We can customize the new analytics dashboard to meet your feature requirements and stay within your allocated budget. Let me know if you have any questions, or if you’d like to set up a quick call to discuss next steps.",Qualification,Timeline
+RND-0098,gary18@example.com,rep@company.com,Neutral,"Hey [Name],
+
+Thanks for your interest in our product. We’d love to explore how our new analytics feature could fit within your budget and discuss the timeline for integrating it into your current system. Are you available this week for a quick call to go over the details? Let me know what works best for you.",Closed Lost,Implementation
+RND-0099,zsmith@example.net,rep@company.com,Positive,"Hi Sarah, just checking in about our conversation around the new analytics feature. We can make sure it fits within your budget and still hit your August launch timeline. Let me know if you’d like to schedule another call to go over the details.",Unknown,Features
+RND-0100,melissanavarro@example.net,rep@company.com,Positive,We've introduced a new suite of features that could fit comfortably within your Q4 budget. Let me know if you'd like to chat this week about how our product could align with your goals.,Proposal,Support
+RND-0101,erin71@example.com,rep@company.com,Positive,"Hi [Name],
+
+I’m confident our software can meet your needs, including advanced reporting features, while staying under your proposed $15K budget. If we start next month, we should be able to finalize everything within a six-week timeline.",Proposal,Budget
+RND-0102,taylor06@example.org,rep@company.com,Negative,"Hi [Name],
+
+Thank you for your interest in our new software suite. I’d love to schedule a quick call to walk you through its updated features and discuss how we can align with your current budget to ensure a seamless rollout within your ideal timeline. Let me know when you have a moment to connect!",Unknown,Price
+RND-0103,ishepherd@example.com,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well! I wanted to check in about our conversation on the new module that streamlines data analysis. We can tailor the package to fit your budget, and our team can have everything ready in about two weeks if that aligns with your timeline.
+
+Best regards,
+[Your Name]",Negotiation,Price
+RND-0104,kenneth27@example.com,rep@company.com,Neutral,"Hi [Name],
+
+We’re excited to confirm your interest and make sure the project stays on track within the proposed budget. Let’s connect soon to refine the features and finalize our timeline for rollout.",Proposal,Features
+RND-0105,lynchrebecca@example.com,rep@company.com,Neutral,"Hi [Name],
+
+Thank you for considering our platform for your upcoming project. Given your end-of-quarter budget discussions, I’d love to walk you through our latest features and see if we can align our timeline to meet your goals. Let me know a good time to connect!",Qualification,Features
+RND-0106,evansgregory@example.net,rep@company.com,Neutral,"Hello [Name],
+
+Thanks for your interest in our platform! We’d love to help you integrate the new analytics feature and can easily adjust the rollout to fit within your Q2 budget. Let me know if that timeline aligns with your goals, and we can discuss next steps.",Proposal,Price
+RND-0107,christianhancock@example.net,rep@company.com,Negative,"Hi Sarah,
+
+I hope you're doing well. I wanted to follow up on the new software solution we discussed; with the streamlined design features, you’ll stay well within the $15K budget. Let me know if next month’s launch timeline aligns with your schedule, and we can finalize everything right away.",Closed Won,
+RND-0108,ikane@example.net,rep@company.com,Positive,"Hi Alex,
+
+Thank you for your interest in our new platform! I’d love to discuss how we can align the advanced analytics features with your budget constraints and meet your desired launch by mid-November. Let me know a few best times to connect for a brief call.",Unknown,Price
+RND-0109,rebeccaunderwood@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I’ve been reviewing our next quarter’s budget constraints, and it looks like we can comfortably accommodate the feature enhancements you requested. If everything aligns on your end, we could wrap up the initial deployment within three weeks.",Closed Won,Support
+RND-0110,heatherhoffman@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thank you for your interest in our solution! Our team can integrate the requested analytics features within four weeks, aligning with your desired timeline and staying within your estimated $10,000 budget. Let me know if you’d like to discuss any additional details or schedule a quick call.",Unknown,Budget
+RND-0111,lisadavis@example.org,rep@company.com,Neutral,"Hi [Name], I hope you’re doing well. I’d love to walk you through our new analytics platform—if you’re comfortable with a $5,000 budget, we can finalize the setup within two weeks and ensure all the key features align with your needs.",Qualification,Features
+RND-0112,timothystrong@example.net,rep@company.com,Positive,"Hi [Recipient Name],
+
+I’d love to walk you through our latest offering—it has advanced analytics features that can streamline your workflow. Let me know if your budget allows a quick implementation and if a two-week rollout timeline aligns with your schedule.
+
+Best regards,
+[Your Name]",Qualification,Budget
+RND-0113,anthonyvincent@example.com,rep@company.com,Negative,"Hi [Name],
+
+Thanks again for your interest in our latest solution. With a starting budget of $5,000 and a quick four-week implementation timeline, we can focus on the core features you mentioned—especially the real-time analytics and easy integration options. Let me know if you have a moment this week to discuss next steps.",Proposal,Implementation
+RND-0114,michael47@example.net,rep@company.com,Positive,"Hi [Name],
+
+I appreciate your interest in our new analytics solution. We can comfortably work within your current budget and still include the advanced reporting features you mentioned, all ready before your Q2 launch.
+
+Best,
+[Your Name]",Unknown,Timeline
+RND-0115,collinssean@example.org,rep@company.com,Positive,"Hi [Name],
+
+I’m excited to share that our new software includes advanced reporting features and can be fully implemented within a six-week timeline. Let me know if this aligns with your budget, and I’d be happy to arrange a demo next week.",Closed Won,Support
+RND-0116,msmith@example.net,rep@company.com,Neutral,"Hi [Name],
+
+Thanks for your interest in our platform! Our latest release includes advanced reporting features that can be implemented within the typical 4–6 week timeline, depending on your team’s budget and resource availability. Let me know if you’d like to hop on a quick call to discuss next steps.",Unknown,Support
+RND-0117,zritter@example.com,rep@company.com,Neutral,"Hi [Name],
+
+It was great connecting with you last week about integrating our software. We're especially excited about the new analytics feature, and I'd love to chat about aligning it with your Q4 budget and timeline to ensure a smooth rollout. Let me know your thoughts when you have a moment.",Unknown,Features
+RND-0118,stephaniehart@example.com,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well! I wanted to follow up on the new software we discussed—our team can tailor its advanced reporting features to fit your budget, and we typically see clients up and running in just three weeks. Let me know if you’d like to schedule a quick call to dive into the details.",Proposal,Budget
+RND-0119,gregorymoran@example.org,rep@company.com,Positive,"Hi [Name],
+
+I’m reaching out to share more about our upcoming software solution, which includes advanced reporting features and can be customized to meet your specific budget requirements. I’d love to schedule a brief call this week to discuss how we can align our timeline with your goals.",Closed Lost,
+RND-0120,gomeznicholas@example.com,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well! I’d love to connect to discuss how we can tailor our new feature set to fit your budget and timeline. Please let me know a few times that work for you to chat.
+
+Best regards,
+[Your Name]",Closed Won,Timeline
+RND-0121,jennifer92@example.com,rep@company.com,Neutral,"Hi [Name],
+
+Thank you for connecting! I’m excited to share how our software’s advanced tracking features can streamline your workflow. I also wanted to see if you have a budget range in mind, so we can tailor a solution that fits perfectly. Let’s discuss next steps when you have a moment.",Qualification,
+RND-0122,estradarebecca@example.org,rep@company.com,Negative,"Hi [Name], I really appreciate your interest in our solution and wanted to see if you had any more questions about the custom features we discussed. Let me know if you’d like to hop on a quick call to finalize the budget and go over the implementation timeline.",Proposal,Implementation
+RND-0123,sarajenkins@example.org,rep@company.com,Neutral,"Hi Sarah, I’m excited to follow up on your interest in our analytics platform. Our scheduled release can be tailored to fit your Q2 budget and timeline, and I’m confident these new features will streamline your reporting process. Let me know if you'd like to set up a quick call to discuss further.",Unknown,Features
+RND-0124,amandarobinson@example.net,rep@company.com,Negative,"Hi [Name],
+
+I’d love to show you how our platform’s new features can streamline your workflow. Currently, we’re estimating the project will stay within a $15k budget and be completed by Q2, so let me know if you’d like more details.",Qualification,Price
+RND-0125,tgalloway@example.net,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well. I’d love to connect next week to discuss how we can tailor our platform’s new features to fit your team’s needs and stay within your projected budget. Looking forward to hearing your thoughts and scheduling a quick call.
+
+Best regards,
+[Your Name]",Closed Lost,
+RND-0126,mejialisa@example.org,rep@company.com,Neutral,"Hi [Name],
+
+I wanted to check in to see if you’ve nailed down the budget for your upcoming rollout. If it fits your timeline, I’d love to walk you through a few key features that could give you a competitive edge in the market.
+
+Best regards,
+[Your Name]",Qualification,Support
+RND-0127,sawyersamuel@example.com,rep@company.com,Neutral,"Hi [Name],
+
+Thanks for taking the time to discuss our new platform. We believe the analytics dashboard will boost engagement significantly, and it fits your current $3,000 monthly budget. Let me know if you’d like to schedule a quick demo next week to go over the specifics.",Negotiation,Timeline
+RND-0128,amandasnyder@example.org,rep@company.com,Neutral,"Hi [Name],
+
+Thanks again for your interest in our solution! I’ve prepared a quick overview of the features that might fit within your current budget, and I’d love to hear more about your timeline so we can align our resources accordingly. Let me know if you have any questions or would like to set up a call to discuss further.",Negotiation,
+RND-0129,wheelergeorge@example.net,rep@company.com,Negative,"Hi Sarah,
+
+Thanks for showing interest in our collaboration tool. We’d love your feedback on the new scheduling feature, especially since we’re finalizing the budget next week to accommodate any updates you’d need before our Q2 timeline.",Proposal,Budget
+RND-0130,abigailandrews@example.net,rep@company.com,Negative,"Hi [Name],
+
+Our new integration tool can lighten your team’s workload by automating routine tasks. It easily fits most project budgets, and I’d love to schedule a quick chat to explore how it can best serve your needs.",Negotiation,Price
+RND-0131,hernandezmeghan@example.org,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’re doing well! Our new feature rollout has proven to reduce setup time by nearly 20%, which could fit comfortably within your current budget projections. Let me know if you’d like to hop on a quick call this week to explore options and finalize our next steps. 
+
+Best regards,
+[Your Name]",Unknown,Timeline
+RND-0132,diana83@example.net,rep@company.com,Neutral,"Hi Sarah,
+
+I hope you’re doing well! Based on our previous call, I wanted to share how our new platform can streamline your onboarding process while staying within your Q2 budget. I’m available next week if you’d like to schedule a quick chat to walk through the key features and finalize the timeline.",Unknown,Budget
+RND-0133,alexander65@example.org,rep@company.com,Negative,"Hello [Name],  
+Thanks again for your interest in our product! I’d love to schedule a quick chat to walk you through the new analytics feature set and how it fits your timeline goals. If everything aligns with your budget, we can kick off the implementation as early as next week. Looking forward to hearing your thoughts.",Unknown,
+RND-0134,sydney51@example.com,rep@company.com,Neutral,"I hope you’ve been doing well! I’d love to discuss how our new platform can help streamline your workflow, and I believe we can accommodate your budget while delivering the core features you mentioned by the end of this quarter. Looking forward to hearing your thoughts!",Closed Lost,
+RND-0135,michaelcummings@example.net,rep@company.com,Positive,"Hi [Prospect Name],
+
+Thank you for your interest in our platform! Our team can integrate the new analytics dashboard in under six weeks, aligning with your target timeline, and we’re confident that our preliminary budget estimate of $10,000 will cover all the key features you’re looking for. Please let me know if you’d like to discuss further details or schedule a quick call.",Proposal,Timeline
+RND-0136,osmith@example.com,rep@company.com,Positive,"Hi [Name],
+
+I’m excited to share our new product features that could significantly streamline your team’s workflow. Let me know if you'd like to discuss our preliminary budget estimates or any timeline adjustments—we're flexible and eager to help you get started.",Unknown,Price
+RND-0137,acarter@example.org,rep@company.com,Positive,"Hi [Name], I appreciate your interest in our new platform. Once I have a better sense of your budget and the must-have analytics features, we can work together to finalize the timeline and get things rolling quickly.",Qualification,Timeline
+RND-0138,pmedina@example.org,rep@company.com,Neutral,"Hello [Name], I’d love to connect about how our solution’s advanced analytics can streamline your team’s workflow, and we anticipate delivering it within three weeks to stay within your current budget. Let me know if you’d like to schedule a quick demo.",Unknown,Budget
+RND-0139,salinasdavid@example.com,rep@company.com,Positive,"Hi Alice,
+
+I wanted to follow up on the features we discussed, especially the integrated analytics suite you're interested in. As soon as we're aligned on your budget parameters, I'll map out a proposed timeline for the rollout. Let me know if you have any questions in the meantime!",Negotiation,Support
+RND-0140,jessicacurtis@example.org,rep@company.com,Positive,"Hi Sarah, I hope you’re doing well! I’d love to explore how our platform’s new analytics features can fit within your current budget while still meeting the tight three-week timeline you mentioned.",Unknown,Support
+RND-0141,glennralph@example.com,rep@company.com,Positive,"Hello [Name],
+
+Thanks for your interest in our new platform! Our timeline for implementation is about six weeks, and we can tailor the features to fit within your current budget. Let me know if you’d like to schedule a call to go over details and next steps.",Unknown,
+RND-0142,meganjohnson@example.com,rep@company.com,Negative,"Hi [Name], 
+
+I hope you’re doing well! I’m excited to share that our new platform update includes a streamlined project tracking feature, and I’d love to discuss how it fits within your desired Q1 timeline. Let me know if you have a moment this week to chat about budgeting and next steps.",Negotiation,Support
+RND-0143,gstone@example.com,rep@company.com,Positive,"Hi [Name],
+
+I hope you’ve been well! Our latest release includes the user feedback dashboard—perfect for tracking performance in real time. If you can share a rough idea of your budget, I’ll tailor a proposal to fit your timeline and goals. Let me know your thoughts!",Negotiation,Budget
+RND-0144,ericaperry@example.net,rep@company.com,Neutral,"Hi [Name],
+
+Thanks for taking the time to review the proposal. We believe we can finalize this within your budget, and if we expedite, the timeline is only four weeks. Let me know if you'd like to jump on a quick call to discuss the final details.",Negotiation,Price
+RND-0145,monroejames@example.com,rep@company.com,Positive,"Hey [Name],
+
+Thank you so much for your interest in our platform. I just want to confirm your budget range and see if we can align your preferred timeline with our newest feature rollouts. Let me know what works best for you, and I'll make sure we tailor the package to fit your needs.",Closed Lost,Price
+RND-0146,ashleylewis@example.org,rep@company.com,Neutral,"Hi [Name],
+
+I wanted to check in on the proposed timeline for deploying our new solution. If the budget is still flexible, we can consider including the premium analytics feature to give your team deeper insights and faster reporting. Let me know your thoughts!",Closed Won,Support
+RND-0147,cartermarcus@example.net,rep@company.com,Neutral,"Hi [Name], thanks for your interest! Our latest update includes advanced reporting features, and I’d love to explore how these can fit your budget. Would you be open to a quick call next week so we can discuss timeline and implementation steps?",Negotiation,Timeline
+RND-0148,laura29@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thanks for taking the time to discuss the advanced reporting features our software offers. Let me know if you’re comfortable with the tentative budget of $5,000 and the proposed six-week implementation timeline. Looking forward to hearing your thoughts!",Qualification,Support
+RND-0149,yhill@example.org,rep@company.com,Negative,"Hi [Name],
+We’re excited to introduce our upgraded platform that offers enhanced reporting features. Could you let me know your approximate budget and preferred timeline so we can configure a plan tailored to your needs?",Unknown,
+RND-0150,ymartin@example.org,rep@company.com,Negative,"Hey [Prospect Name],
+
+I hope you’ve had a chance to review the initial proposal. Let me know what you think about our suggested features and if the current timeline fits within your budget—happy to adjust any details to match your goals!",Qualification,Budget
+RND-0151,igill@example.net,rep@company.com,Positive,"Hi [Name],
+
+I’ve done an initial review of your requirements, and I’m confident our new analytics tool can reduce your operational costs by approximately 20%. Let me know your preferred budget range so we can finalize the feature set and timeline for the rollout.
+
+Best regards,
+[Your Name]",Proposal,Support
+RND-0152,sstephenson@example.com,rep@company.com,Positive,"Hi Maria,
+
+I appreciate your interest in our new software platform. We can roll it out within six weeks while staying comfortably under the proposed $10K budget, making sure we include the advanced analytics features you requested. Let me know if you have any questions or would like more details!",Qualification,Features
+RND-0153,schneideralicia@example.org,rep@company.com,Positive,"Hi [Name],
+
+I’d love to chat about how our new software’s automated reporting features can fit perfectly within your current budget parameters. Let me know a good time to connect and discuss a timeline that suits your goals.",Closed Lost,Support
+RND-0154,ktucker@example.net,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’re doing well. I’d love to discuss how our new platform can streamline your workflow, and I believe we can stay within a $10K budget if we finalize details by mid-month. Let me know if you’d like more information on specific features or a quick call to outline next steps.",Negotiation,Budget
+RND-0155,fernandezeric@example.org,rep@company.com,Neutral,"Hi [Name],
+
+I'm excited to share details about our upcoming release, including a new AI-powered analytics feature we think you'll find valuable. If your budget allows, we’d love to finalize the timeline this week to ensure a smooth rollout.",Qualification,Timeline
+RND-0156,anthony12@example.net,rep@company.com,Neutral,"Hi [Name],
+
+I’d love to connect about our upcoming release that’s packed with the advanced reporting features you mentioned. We can also discuss how to align with your proposed budget to ensure everything stays on track.",Closed Won,Budget
+RND-0157,amyscott@example.com,rep@company.com,Neutral,"Hi [Name], thanks for your interest in our software suite. We can get you up and running on a three-week timeline, and the budget can be adjusted to fit your exact requirements—looking forward to hearing your thoughts!",Negotiation,Budget
+RND-0158,bradleyrobinson@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I wanted to touch base regarding the new dashboard features we discussed last week. With the target launch date only six weeks away, let me know if we should adjust the budget allocation to accommodate any last-minute enhancements. Looking forward to hearing your thoughts!",Closed Lost,Timeline
+RND-0159,kimberly03@example.net,rep@company.com,Negative,"Hi [Name],
+
+Thanks for expressing interest in our latest product suite. We can incorporate the advanced analytics features and still stay within your $7k budget, delivering everything by the end of next month. Let me know if you’d like to hop on a quick call to finalize the details.",Negotiation,Timeline
+RND-0160,james14@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I really appreciate your interest in our product! We’ve made some exciting updates to our features that I think you'll find valuable, plus we can meet the two-week timeline you mentioned. Let me know if that aligns with your budget, and I'd be happy to send over more information.",Unknown,Features
+RND-0161,mariah04@example.net,rep@company.com,Positive,"Hi [Name],
+
+I’d love to schedule a quick call next week to discuss how our new analytics suite can fit within your Q4 timeline and stay comfortably within your budget. It includes streamlined reporting features that can help your team save time on daily tasks.
+
+Best regards,
+[Your Name]",Qualification,Support
+RND-0162,howardjames@example.com,rep@company.com,Negative,"Hi [Name],
+
+I appreciate your interest in our platform. We’re targeting a mid-October release to accommodate your budget constraints, while still integrating the advanced analytics feature you mentioned for streamlined reporting.
+
+Best regards,
+[Your Name]",Closed Won,Support
+RND-0163,johnrivas@example.org,rep@company.com,Negative,"Hi [Name], I’d love to explore how our real-time reporting feature can streamline your workflow without pushing you over budget. Let me know if our estimated $8K monthly proposal aligns with your plans so we can finalize the next steps this quarter.",Negotiation,Features
+RND-0164,qmartinez@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thank you for considering our solution. Based on our call, we can comfortably stay within the $10K budget you mentioned and still include the reporting feature you need—plus we can meet your six-week launch timeline. Let me know if you’d like to jump on a quick call to go over next steps or adjust any details.",Proposal,Support
+RND-0165,tarareed@example.com,rep@company.com,Positive,"Hi Rachel,
+
+Thank you for your interest in our solution. If you’re comfortable with the proposed budget, we can finalize the timeline by early next week. Let me know which specific features you’d like to prioritize, and I’ll adjust our proposal accordingly.",Unknown,Budget
+RND-0166,wileyelizabeth@example.net,rep@company.com,Negative,"Hey [Name],
+
+We’ve recently added an automated dashboard feature for real-time data tracking, and we can align with your budget by streamlining the rollout within a four-week timeline. Let me know if you’re open to a quick call to discuss next steps.",Proposal,Support
+RND-0167,qcohen@example.net,rep@company.com,Positive,"Hi [Name], I hope you’re doing well! I wanted to follow up on the new platform we discussed—our flexible pricing makes it easy to accommodate your budget, and we can tailor key features to your project needs.",Negotiation,Budget
+RND-0168,williamdoyle@example.org,rep@company.com,Negative,"Hi [Recipient Name],
+
+I hope you’re doing well! I wanted to follow up regarding the new software features we discussed—if you could confirm a preferred timeline and a general sense of your budget, we can expedite our planning and move forward swiftly. Let me know what you think!",Closed Won,
+RND-0169,wcraig@example.org,rep@company.com,Negative,"Hi [Name], 
+I’d love to chat about how our platform’s latest features can align with your upcoming project timeline while staying within your current budget. Would you have time next week to discuss and get things rolling? 
+
+Best, 
+[Your Name]",Unknown,
+RND-0170,laurenmitchell@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thank you for your interest in our software suite! Based on your budget of $50K, we can include the new analytics dashboard without affecting the proposed six-week project timeline. Let's connect next week to discuss any additional features you might need. 
+
+Best regards,
+[Your Name]",Proposal,Implementation
+RND-0171,gordon43@example.net,rep@company.com,Positive,"Hi [Name], I hope you’re doing well. I’d love to discuss how our software can streamline your workflow and boost productivity, all while staying within your allocated budget. Let me know if you have a few minutes to connect this week.",Proposal,Price
+RND-0172,chrisowen@example.com,rep@company.com,Negative,"Hi Alex,
+
+I hope you’re doing well! I wanted to circle back about implementing our new features into your current workflow. Our team can work within your existing budget, and I'd love to coordinate a timeline that aligns perfectly with your upcoming project milestones. Let me know what works best for you!",Qualification,
+RND-0173,uadams@example.org,rep@company.com,Negative,"Good morning, Sarah! I’m excited to show you our new analytics platform that includes real-time reporting features and fits comfortably within your projected budget. We can have everything up and running by the end of next month, ensuring your team meets its internal timeline.",Closed Lost,Timeline
+RND-0174,stevenburton@example.net,rep@company.com,Neutral,"Hi [Name],
+
+I hope you're doing well! I'd love to get your thoughts on aligning the budget for the updated app features, as it will help us finalize a timeline for the rollout. Let me know your availability for a quick call this week to discuss next steps.",Closed Won,Support
+RND-0175,bryancannon@example.com,rep@company.com,Positive,"Hi [Name],
+
+I wanted to follow up on the advanced features we discussed. If we can confirm your budget early next week, we can stay on track for our planned May 25 launch. Let me know if you have any questions or want to review anything further.  
+
+Best regards,
+[Your Name]",Proposal,Support
+RND-0176,nflores@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I’d love to walk you through our updated product features and how they can fit within your current budget range. With our anticipated launch timeline in mind, I believe this aligns perfectly with your project schedule. 
+
+Best regards,
+[Your Name / Company]",Proposal,Price
+RND-0177,cthomas@example.com,rep@company.com,Positive,"Hi [Name],
+
+I hope you’ve been well! I’ve updated the proposal to include the automated reporting feature you mentioned last time—it fits within the budget goals we set and can be rolled out by early next quarter. Let me know if this works for you or if you’d like to schedule a quick call.",Negotiation,Budget
+RND-0178,fordgregory@example.org,rep@company.com,Neutral,"Hi [Name],
+
+We recently added advanced reporting features that streamline your team's workflow, and we can work within a mid-five-figure budget to make it happen. If we kick things off by early next month, we can have the initial rollout ready before your Q4 deadline.",Closed Lost,Features
+RND-0179,ohall@example.org,rep@company.com,Neutral,"Hi [Name],
+
+I'm excited to share more details about our new feature set, which can be tailored to fit your current budget range. Let me know your timeline for implementation, and I'll work with you to create the perfect plan.",Qualification,Price
+RND-0180,lmcmahon@example.com,rep@company.com,Positive,"Hi [Name],
+
+I look forward to discussing how our advanced analytics feature set can streamline your team's workflow within your current budget. Let me know when you’re free this week, and I can set up a brief call to go over the details and iron out the timeline.
+
+Best regards,
+[Your Name]",Proposal,Budget
+RND-0181,knightrichard@example.net,rep@company.com,Positive,"Hi [Name],
+
+We've introduced a handful of new features that I believe fit seamlessly within your budget, and I’m confident we can meet your desired launch timeline. Let’s schedule a quick call to go over the details and lock in next steps. 
+
+Best, 
+[Your Name]",Closed Lost,
+RND-0182,omills@example.org,rep@company.com,Negative,"Hi [Recipient],
+
+Thanks for considering our solution! We’ve added new analytics features that streamline reporting, and we can accommodate your preferred timeline without pushing beyond your current budget limits. Let me know if you’d like to schedule a quick call to discuss next steps.",Closed Lost,Timeline
+RND-0183,deniserodriguez@example.org,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’ve been well! We’re putting together a custom proposal that aligns with your preferred budget and includes all the new collaboration features you’ve requested. Let me know if you’d like to connect this week to review the details and finalize our timeline.",Closed Won,Price
+RND-0184,kennethwashington@example.org,rep@company.com,Negative,"Hi [Name],
+We’re excited to move forward with the proposal and have built in a flexible six-week timeline to accommodate new analytics features. Let us know if the budget aligns with your expectations, and we’ll get started right away.",Negotiation,Support
+RND-0185,mwaters@example.net,rep@company.com,Positive,"Hey Jamie, thanks for your interest in our latest software solution. We can include the extra analytics features you requested and still stay within the $25K budget, while wrapping up development in six weeks. Let me know if you'd like to schedule a quick call to go over any additional details.",Proposal,Features
+RND-0186,teresawhite@example.net,rep@company.com,Positive,"Hi [Name],
+
+Just a quick note to follow up on your interest in our platform. Our updated timeline for the new feature rollout is set for early Q2, and we can make sure it aligns with your current budget requirements if we proceed soon. Let me know if you’d like more details!",Negotiation,
+RND-0187,cookcurtis@example.com,rep@company.com,Negative,"Hi [Name],
+
+Thanks for reaching out! We recently implemented advanced analytics features for a similar project and were able to roll out everything within a six-week timeline under a flexible budget framework. Let me know if you’d like to explore options for your team.",Closed Lost,
+RND-0188,curtismcgee@example.net,rep@company.com,Positive,"Hi [Recipient Name], I’m excited to show you how our updated feature set can meet your goals without exceeding the proposed $25,000 budget. Please let me know your availability this week so we can finalize the timeline and get started as soon as possible.",Unknown,Timeline
+RND-0189,fitzgeraldtim@example.net,rep@company.com,Neutral,"Hi [Name], thanks for chatting earlier. Based on your timeline, I believe our latest features can help streamline your process and keep costs under your projected budget. Let me know if you’d like to schedule a quick follow-up.",Closed Won,Price
+RND-0190,nmitchell@example.org,rep@company.com,Neutral,"I'm excited to share that our new customization features are now live, and I'm eager to see how they align with your proposed budget and timeline. Let me know when you’re free for a quick chat to walk through our options and ensure we’re meeting your needs.",Unknown,Timeline
+RND-0191,blakebuckley@example.com,rep@company.com,Negative,"Hi [Name],
+
+Thanks for taking the time to speak with me. We’re confident our software can be tailored to fit within your current budget, and our development team is ready to meet your proposed Q2 launch timeline. Let me know if you’d like to review the feature set in more detail!",Negotiation,Budget
+RND-0192,jeffrey95@example.com,rep@company.com,Neutral,"Hi Sarah,  
+I’m excited to share how our software can help you meet the new project timeline, and I noticed your budget constraints should still allow for the premium analytics features. When would be a good time to connect for a quick demo?",Proposal,Support
+RND-0193,prattshannon@example.org,rep@company.com,Positive,"Hi Alex, thanks for your interest in our solution. We typically see budgets range from $8,000 to $12,000 depending on the custom features you choose, and we anticipate a 4-week timeline for full integration.",Unknown,Price
+RND-0194,powersscott@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thanks for your interest in our solution! We can structure the advanced reporting features to fit your current budget of $10,000, and our team can provide an initial draft within three weeks. Let me know your availability so we can finalize the next steps.
+
+Best regards,
+[Your Name]",Unknown,Support
+RND-0195,vanessa54@example.com,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well. Based on your requested timeline, we can easily integrate the new features without stretching your budget. Would you be available later this week to discuss the next steps?",Proposal,Implementation
+RND-0196,coopermanuel@example.org,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re well! We’re excited to show you how the upgraded feature set can streamline your team’s workflow. Our current target is to finalize the budget in the next two weeks so we can stay on schedule for a mid-summer launch.
+
+Best regards,
+[Your Name]",Closed Won,Features
+RND-0197,jessica56@example.org,rep@company.com,Positive,"Hi [Name],
+
+I’d love to finalize the details of our partnership, especially around the advanced analytics features we discussed. Once we align on your budget parameters, we can set a realistic timeline to get everything up and running.",Negotiation,Price
+RND-0198,longcourtney@example.net,rep@company.com,Negative,"Hi [Name], I hope you’ve been doing well. I’d love to discuss how our new software suite can streamline your reporting features within your budget, as well as walk you through the implementation timeline. Let me know your availability and we can set up a quick call to explore next steps.",Unknown,Implementation
+RND-0199,richard90@example.net,rep@company.com,Positive,"Hi [Name],
+
+I wanted to follow up on our conversation and let you know we can have the new reporting feature fully integrated within four weeks, all while staying well under your projected budget. Let me know if you’d like to schedule a quick call to go over the details.",Unknown,Timeline
+RND-0200,edwardsryan@example.org,rep@company.com,Neutral,"Hi Sarah,
+
+I’d love to learn more about your timeline and approximate budget so we can tailor our offering to your needs. Let me know a convenient time this week, and I'll have a few feature details ready to share.",Closed Won,
+RND-0201,brentmcintyre@example.com,rep@company.com,Negative,"Hi Sarah, 
+I wanted to check in on your budget for next quarter so we can finalize the project timeline and highlight our new interactive features, which promise a significant ROI. Looking forward to your feedback so we can move ahead promptly.",Qualification,Price
+RND-0202,karenward@example.net,rep@company.com,Negative,"Hi Alex,
+
+It’s great to hear you’re interested in our advanced analytics features—those typically fall into our mid-level budget package and can be implemented within a four-week timeline. Let me know if that aligns with your needs, and I’ll send you a detailed proposal right away.",Closed Lost,Budget
+RND-0203,gallagherelizabeth@example.com,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well. Based on our last conversation, I believe our Premium Package—complete with real-time analytics—would comfortably fit within your proposed budget, and we can have everything up and running within six weeks. Let me know when you’re free to discuss next steps!",Proposal,Price
+RND-0204,andrew74@example.net,rep@company.com,Positive,"Hi [Name], I’d love to discuss your ideal budget and timeline so we can customize our solution to best meet your needs. Please let me know if you’d like further details on our newest features or if you’d prefer to schedule a quick call soon.",Closed Lost,Support
+RND-0205,ulewis@example.com,rep@company.com,Neutral,"Hi [Name], I’d love to show you how our new upgrades can fit seamlessly into your Q4 budget while meeting your mid-November launch timeline. Let me know if you’d like to connect for a quick chat next week so we can finalize the key features together.",Unknown,Features
+RND-0206,mooreaaron@example.net,rep@company.com,Negative,"Hi [Name],
+
+We’re excited to share our upgraded scheduling tool with new real-time collaboration features, and I’d love to see if we can align this with your budget. Let me know if we can hop on a quick call to discuss next steps.",Proposal,Budget
+RND-0207,daviskatrina@example.net,rep@company.com,Neutral,"Hi [Name], I’d love to walk you through our flexible pricing tiers and the advanced reporting features we can introduce for your team. With a budget starting around $15,000, we can have everything up and running by mid-September.",Negotiation,Budget
+RND-0208,michellecrawford@example.com,rep@company.com,Neutral,"Hi [Name],
+
+Thanks for showing interest in our new platform! We’ve got three core features ready to demo this week, and our projected budget for implementation should stay under $10,000, depending on your preferred timeline for rollout.
+
+Best regards,
+[Your Name]",Closed Won,Support
+RND-0209,jill85@example.net,rep@company.com,Negative,"Hi [Name],
+
+Thanks for checking in about our marketing software. If we get started this month, our standard timeline for implementation is around four weeks, and the projected budget typically falls in the $8,000 range depending on the analytics features you choose. Let me know if you’d like to set up a quick call to discuss further.",Closed Won,Timeline
+RND-0210,narcher@example.net,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’re doing well! We’ve got a few new features that can streamline your workflow, and I’d love to discuss how we can align these solutions within your budget and timeline. Let me know a good time to connect, and I’ll be happy to share more details.",Qualification,Implementation
+RND-0211,sanchezjoyce@example.org,rep@company.com,Negative,Thanks for reaching out about our upcoming release! I’d love to chat about how the new advanced analytics features can fit within your budget and timeline to ensure a successful rollout.,Qualification,Price
+RND-0212,taylorbob@example.net,rep@company.com,Neutral,"Hey [Name], I hope you’ve been well since our last chat! I’d love to walk you through some of the advanced analytics features that can help optimize your team’s workflow, and we can easily work within your current budget goal.",Negotiation,Support
+RND-0213,lawrencejessica@example.net,rep@company.com,Neutral,"Hi Sandra,
+
+Thanks for your interest in our software solution. I’d love to schedule a quick call to discuss how our new features align with your team’s needs and whether our current timeline can fit into your budget plan. Let me know a few times that work for you, and I’ll be happy to set something up.",Unknown,Support
+RND-0214,cchavez@example.com,rep@company.com,Neutral,"Hi [Name], I hope you’re doing well. I wanted to follow up on our last conversation to see if we can finalize a timeline for the advanced analytics features, especially since your budget allocation for Q4 might help expedite the process. Let me know if you’d like to set up a quick call to discuss next steps.",Closed Won,Implementation
+RND-0215,fitzgeraldkathryn@example.net,rep@company.com,Neutral,"Hi [Name],
+
+It was great talking to you about the new software features this morning. Let me know if our proposed timeline still fits your schedule and if the updated budget is within your comfort zone, so we can finalize the details.",Closed Won,
+RND-0216,jacqueline32@example.net,rep@company.com,Negative,"Hello [Name], I’m excited to share our updated proposal that includes a new analytics feature for deeper insights. Please let me know your budget for next quarter, so we can finalize the timeline and move forward as soon as possible.",Negotiation,Price
+RND-0217,angela69@example.net,rep@company.com,Positive,"Hi [Name],
+
+I heard your budget has a bit of flexibility this quarter, so I’d love to explore how we can integrate the advanced reporting features into your platform by mid-November. Let me know if you’d like more details on the process and timeline.",Qualification,Price
+RND-0218,ellisashley@example.com,rep@company.com,Positive,"Hi [Name], 
+Thanks for the opportunity to discuss our new analytics platform. We can easily tailor a plan to fit within your Q4 marketing budget while delivering our robust ROI tracking feature to keep you on schedule.",Qualification,Budget
+RND-0219,angela41@example.com,rep@company.com,Positive,"Hi [Name],
+
+I’d love to explore how our solution can support your team’s goals. If we can confirm the budget by mid-next week, we’ll align on a clear timeline and walk you through our core features to get things moving quickly.",Negotiation,Timeline
+RND-0220,sydney84@example.com,rep@company.com,Positive,"Hi [Name],
+
+Thanks for chatting with me earlier! I’d love to show you how our new software features can help you meet your Q4 timeline without stretching your current budget. Let me know if you’d like to jump on a call and go over the details—looking forward to your thoughts!",Unknown,
+RND-0221,lgarcia@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’re doing well. I’m excited to share some updated details on the service’s advanced reporting features, and we can easily tailor the implementation to fit within your budget. Let me know if you’d like to schedule a quick call to discuss timelines and next steps.",Negotiation,Timeline
+RND-0222,hailey65@example.net,rep@company.com,Neutral,"Thanks for your time on our call. We can tailor the solution to fit your current budget and ensure the new reporting features are ready within a six-week timeline. Let me know your thoughts, and I'll send over a more detailed proposal.",Proposal,Implementation
+RND-0223,pachecomaureen@example.net,rep@company.com,Neutral,"Hi [Name], I wanted to follow up and see if you had any thoughts on our advanced analytics feature that could streamline your team's reporting process. Also, please let me know if you have a rough budget in mind, so I can tailor our proposal to fit your needs.",Qualification,Features
+RND-0224,marissa18@example.org,rep@company.com,Positive,"Hi [Name], I hope you're doing well. I wanted to follow up on the proposal we discussed—especially the new software features we plan to roll out by Q2—which should align well with your current budget directive. Let me know if you’d like to jump on a quick call this week.",Closed Won,Timeline
+RND-0225,gilesandrew@example.com,rep@company.com,Negative,"Hi [Name],
+
+I'd love to explore how our solution can satisfy your current requirements, especially since we can adjust the package to suit your budget and finalize deployment within four weeks. Let me know if we can schedule a brief call to discuss the features in more detail.",Unknown,Price
+RND-0226,qrodriguez@example.org,rep@company.com,Positive,"Hi [Name],
+
+Thanks again for exploring our solution. We’d love to align our features with your immediate goals, especially since your preliminary budget of $5,000 seems workable within our standard six-week timeline. Let me know if you’d like to jump on a quick call to discuss next steps!",Proposal,Implementation
+RND-0227,ryang@example.net,rep@company.com,Neutral,"Hi Sarah, I hope you’re doing well. We recently introduced new AI-assisted workflow features that could streamline your team’s processes, and if that fits within your budget, I’d love to schedule a quick call to explore the implementation timeline. Let me know if you’re available next week!",Closed Lost,
+RND-0228,kristen43@example.net,rep@company.com,Negative,"I wanted to let you know we can easily integrate our new analytics feature into your existing system, and if we finalize the budget by next week, we can comfortably meet your July rollout timeline. Let me know if this aligns with your goals, and we can schedule a quick chat to iron out the details.",Closed Lost,Timeline
+RND-0229,emorrison@example.com,rep@company.com,Positive,"Hi [Name],
+
+The new layout will streamline user onboarding and is well within your Q4 budget. Let me know if you'd like to finalize the timeline next week.",Negotiation,Implementation
+RND-0230,alexis99@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thanks for exploring our solution. The advanced analytics feature you asked about stays well within your budget of $3,500 a month, and we can have a pilot version ready by mid-July. Let me know if you’d like to set up a quick call to go over next steps.",Proposal,Implementation
+RND-0231,daniel12@example.com,rep@company.com,Neutral,"Hi [Name], I’m reaching out to share some exciting new features that could really streamline your team’s workflow and fit well within your current Q4 budget. Let me know if you have a few minutes this week to chat about aligning these updates with your project timeline.",Unknown,Features
+RND-0232,wbaker@example.com,rep@company.com,Positive,"Hi Alex,
+
+Thanks for your interest in our software solution! I’d love to learn more about your budget range and timeline goals so we can customize the platform’s features accordingly. Let me know when you’d like to connect for a quick chat.",Negotiation,Implementation
+RND-0233,jennaarnold@example.com,rep@company.com,Negative,"Hi Sam, I’d love to connect and share more details about our new analytics features and how they fit within your budget. Let me know if you’re available for a quick call this week to discuss next steps.",Unknown,Implementation
+RND-0234,ggreen@example.org,rep@company.com,Negative,"Hi [Client Name],
+
+I hope you’re doing well! I’ve reviewed your initial requirements and would love to discuss the new features we can incorporate within your existing budget range. Let me know your availability, and we can schedule a quick call to finalize the timeline.
+
+Best regards,
+[Your Name]",Qualification,Features
+RND-0235,angelarowe@example.com,rep@company.com,Negative,"Hi [Name], I hope you’re doing well! We’d love to walk you through our latest proposal, and we can definitely adjust the project timeline if your budget requires a more flexible approach. Let me know what you think, and I’ll be happy to schedule a quick call.",Closed Won,Features
+RND-0236,michael65@example.org,rep@company.com,Neutral,"Hi Sarah, I hope you're doing well! I'm reaching out to see if you'd like to explore our new CRM platform—its customization features can fit your team's specific workflow, and we can also discuss a flexible budget to meet your Q1 timeline. Let me know if you're interested in chatting further.",Proposal,Features
+RND-0237,nicole08@example.net,rep@company.com,Neutral,"Hi [Name],
+
+I’d love to show you how our latest features can help streamline your process while staying within your budget. Let me know if you have a timeline in mind, and I’ll prepare a customized proposal to fit your needs.  
+
+Thanks,
+[Your Name]",Closed Lost,Features
+RND-0238,luis49@example.net,rep@company.com,Neutral,"Hello [Name],
+
+I’d love to chat about how these new features can fit within your current budget, especially given your timeline. Let me know what you think, and we can set up a call to walk through the details.",Unknown,Support
+RND-0239,charles50@example.com,rep@company.com,Neutral,"Hello [Name],
+
+I hope you’ve been well since our last chat. I’ve thoroughly reviewed the features you’re looking for, and with your allocated budget of $5,000, we can comfortably have everything ready by the end of next month. Let me know if you have any last-minute changes or questions before we move forward.
+
+Best regards,
+[Your Name]",Unknown,Support
+RND-0240,michaelgilbert@example.net,rep@company.com,Positive,"Hi [Name],
+
+I hope you're doing well! I’d love to chat about our new solution that features real-time analytics and fits within your current budget allocation. Let me know if you’d like to schedule a quick call to discuss the details.",Closed Won,Budget
+RND-0241,travis72@example.org,rep@company.com,Positive,"Hi [Name],
+
+Thanks for taking the time to discuss your marketing goals earlier. Our updated platform maps out campaign performance in real time while keeping you comfortably within your planned budget. Let me know when you’d like to schedule a quick demo!",Closed Lost,Implementation
+RND-0242,tammy10@example.com,rep@company.com,Positive,"Hi [Name],
+
+I’m excited to share some highlights of our new product features, including real-time analytics and personalized recommendations. When you have a moment, let me know your rough budget range so we can tailor our offer to your needs and confirm a realistic timeline.",Proposal,Price
+RND-0243,pconner@example.net,rep@company.com,Neutral,"Hi [Name],
+
+Thanks again for your interest in our platform. I’d love to find a time next week to chat more about how our new reporting features can align with your team’s current budget and timeline. Let me know your availability, and we’ll get something on the calendar!",Negotiation,Timeline
+RND-0244,nguyenerika@example.com,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well! I’d love to schedule a quick call to walk you through our latest features and see how they align with your budget for Q1. Let me know what your timeline looks like so we can make sure everything is in place before your launch date.",Closed Won,Features
+RND-0245,jason27@example.org,rep@company.com,Negative,I’ll keep this short: I’d love to connect soon to discuss how our platform can help you streamline your workflow while staying within your current budget. Let me know if you’d prefer a quick walkthrough or a brief call to talk features and align on the timeline.,Unknown,
+RND-0246,qhoffman@example.org,rep@company.com,Negative,"Hi [Recipient Name],
+
+I appreciate your interest in our new software platform. I’d love to discuss how we can align the advanced reporting features with your budget and ensure everything is set up by the end of Q2. Let me know your availability to chat further.
+
+Best regards,
+[Your Name]",Closed Won,Features
+RND-0247,brianscott@example.net,rep@company.com,Positive,"Hi [Name],
+
+I hope you’re doing well. We’ve just updated our premium features, which can be implemented within a four-week timeline and still fit comfortably within your projected budget. Let me know if you’d like to schedule a quick call to discuss the next steps.",Qualification,
+RND-0248,laurie57@example.net,rep@company.com,Positive,"Hi [Name],
+
+I appreciate you considering our new platform and would love to chat further. We’re prepared to align with your three-month rollout timeline and adapt the feature set to match your immediate goals—let me know your availability for a quick call this week.",Proposal,Budget
+RND-0249,joseph30@example.net,rep@company.com,Negative,"Hi [Name],
+
+Thanks for reaching out! Our latest version includes advanced reporting features that could streamline your team's workflow, and we can easily tailor the implementation to fit both your budget and timeline. Let me know when you're free to chat further about how we can get started.",Closed Lost,Features
+RND-0250,scottzimmerman@example.net,rep@company.com,Negative,"Hello [Name], I’m reaching out to see if our latest feature updates align with your team’s needs and to confirm if the proposed budget still works within your timeline. Let me know if you’d like to set up a quick call so we can go over the details and ensure a smooth rollout next quarter.",Closed Won,Implementation
+RND-0251,hflores@example.org,rep@company.com,Neutral,"Hello [Name],  
+I’m reaching out to see how we can help streamline your process while staying within your $15,000 budget. I’d love to walk you through a few standout features and discuss a realistic timeline for launch.",Negotiation,Budget
+RND-0252,hoffmananthony@example.net,rep@company.com,Positive,"Hi [Name],
+
+Thanks for your interest in our solution! I’d love to walk you through our new personalization features, which can help boost engagement and ROI. Are you looking to finalize the budget this quarter, or do you have a more immediate timeline in mind? Let me know, and we can set up a quick call.",Qualification,Price
+RND-0253,edward39@example.com,rep@company.com,Negative,"Hi [Name],
+
+Thanks for your interest in our software solution! We can customize the features to meet your goals, and with a preliminary budget of around $5,000, you’ll be well within your target timeline. Let me know if you have any questions or want to schedule a quick call to discuss next steps.",Proposal,Budget
+RND-0254,chamilton@example.com,rep@company.com,Neutral,"Hi [Name], I hope all is well. I’d love to schedule a quick call to walk you through our latest features, and once we align on your timeline, we can discuss the best way to stay within your budget. Let me know your availability, and I’ll set everything up!",Negotiation,Features
+RND-0255,benjaminmckay@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I’d love to hop on a quick call to discuss how we can fit our new analytics solution into your budget and outline a realistic implementation timeline. We’ll also explore advanced reporting features to ensure you’re getting the most from our platform right from the start.",Closed Won,Support
+RND-0256,connie36@example.org,rep@company.com,Positive,"Hi [Name],
+
+Thanks for your interest in our new product. Our team can have a prototype ready within your two-week timeline, and the preliminary budget we’re exploring falls well within the range you mentioned. Let me know if you’d like to schedule a quick call to discuss next steps.",Closed Won,
+RND-0257,garrisonkatie@example.org,rep@company.com,Negative,"Hello [Name], I’d love to show you how our new platform addresses your biggest challenges while staying comfortably within your allocated budget. If you have a few minutes to chat this week, let’s explore the features and see how quickly we can get you up and running.",Qualification,Price
+RND-0258,wendygeorge@example.net,rep@company.com,Negative,"Hi [Name],
+
+I hope you're doing well! I’d love to chat about how our new software features can align with your project’s timeline, especially since we’ve found a way to stay within most clients’ budgets. Let me know if you’d be open to discussing the details in a quick call.
+
+Best regards,
+[Your Name]",Negotiation,Support
+RND-0259,andrewbauer@example.org,rep@company.com,Positive,"Hi [Recipient Name],
+
+Thanks for your time last week. I’d love to schedule a quick chat to go over some of our standout features and ensure everything fits your Q4 budget. Let me know what works best for your timeline!",Proposal,Timeline
+RND-0260,christianhernandez@example.org,rep@company.com,Negative,"Hi [Name],
+
+Thanks for considering our platform––we can easily fit within your proposed budget by adjusting a few features, and we’re projecting a two-week turnaround for deployment. Let me know if you’d like to jump on a quick call to discuss the details and finalize our approach.",Negotiation,Support
+RND-0261,xprice@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I'm excited to go over the new analytics features we discussed, especially since they're right in line with your $20,000 budget. Let me know if we should adjust the timeline before we finalize everything.",Qualification,
+RND-0262,kimberly03@example.net,rep@company.com,Negative,"Hi [Name],
+
+I hope you’ve been well. Based on our last conversation, it sounds like our Premium Package aligns perfectly with your budget of $5,000, and we can easily meet your one-month timeline. Let me know if you’d like to review our additional features before we move forward. 
+
+Best regards,
+[Your Name]",Closed Lost,
+RND-0263,richardsonkayla@example.com,rep@company.com,Neutral,"Hi [Name],
+
+I'm excited you’re considering our tool for your project. We can easily stay within your budget target of $10,000 by focusing on the essential features first. Let me know if you’d like to discuss next steps!",Closed Lost,Support
+RND-0264,downserica@example.com,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well! I’d love to discuss how our new software can streamline your team’s workflow, and we have a flexible budget range to ensure it fits your needs. Let me know when you’re available this week, and we can set up a quick call to discuss next steps.",Unknown,
+RND-0265,calvin35@example.net,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’re doing well! With your current budget in mind, I wanted to share how our latest software update’s integrated reporting features can simplify your workflow and maximize ROI. Let me know if you’d like to discuss a potential rollout timeline or have any specific requirements in mind.",Closed Lost,Features
+RND-0266,lauren38@example.org,rep@company.com,Positive,"Hi John, thanks for exploring our solution. Our advanced features can be expanded or trimmed to align with your $10,000 budget, and we’re confident in hitting your three-week timeline. Let me know if you’d like more details before our call next Tuesday.",Negotiation,Features
+RND-0267,sheilawagner@example.org,rep@company.com,Positive,"Hi [Client Name],
+
+I hope you’ve been well! I just wanted to see if you had a chance to review the new analytics tools we discussed—it fits neatly within the budget range you mentioned last week. Let me know if you’d like any additional information or a quick call to walk through the features in detail.
+
+Best regards,
+[Your Name]",Qualification,Support
+RND-0268,bonnie89@example.org,rep@company.com,Negative,"Hey Mark, my team is excited to show you how our new analytics feature can streamline your reporting. We can have everything up and running in about four weeks, well within your current budget targets. Let me know when you’d like to discuss the next steps.",Unknown,
+RND-0269,michaelmcdonald@example.com,rep@company.com,Positive,"Hi Sarah,
+
+I hope all is going well. Our upgraded reporting features can help you meet your team’s goals within your budget for Q4. Let me know if we can schedule a brief call to go over the details.",Negotiation,Price
+RND-0270,randallward@example.com,rep@company.com,Positive,"Hi [Name],
+
+I appreciate your interest and would love to discuss how our solution can fit your budget. If we can agree on the core features by next week, we can finalize the timeline before the month ends.",Qualification,Support
+RND-0271,jordangibbs@example.com,rep@company.com,Positive,"Hi [Name],
+
+I hope you’re doing well! We can absolutely work within your budget and still meet your target launch date. I’m excited to show you some of our advanced reporting features on our demo call this week.
+
+Best regards,
+[Your Name]",Closed Won,Implementation
+RND-0272,xtownsend@example.com,rep@company.com,Negative,"Hi [Name],
+
+Thanks for reaching out! Our new software’s advanced analytics feature can be set up within four weeks, and it falls comfortably under the $15K budget you mentioned. Let me know if you’d like to schedule a quick chat to discuss the details. 
+
+Best regards,
+[Your Name]",Closed Lost,Price
+RND-0273,molly52@example.com,rep@company.com,Positive,"Hi [Name],
+
+Thanks for reaching out! We can develop the custom features you’re looking for within a six-week timeline, and our initial budget estimate suggests we can stay under $15,000. Let me know your thoughts, and I’ll be happy to walk you through the next steps.",Unknown,Implementation
+RND-0274,jamesperkins@example.net,rep@company.com,Negative,"Hi [Name],
+
+I hope you’re doing well! I’d love to chat about our new reporting features and how they can fit into your allocated budget for this quarter. We’ve also streamlined the rollout timeline to ensure you can start seeing results as soon as possible. Let me know when you’re free for a quick call!",Unknown,
+RND-0275,lhopkins@example.net,rep@company.com,Negative,"Hi [Name],
+
+I'm excited to share how our updated platform can help streamline your workflow, significantly reducing your operational costs. Let me know if we can discuss the budget allocation and project timeline further to ensure everything fits your goals.",Closed Won,Timeline
+RND-0276,kathydiaz@example.org,rep@company.com,Positive,"Hi [Name],  
+I’m excited to share our new platform upgrade that aligns perfectly with your proposed budget, and we’re confident it can be implemented within your current quarter’s timeline. Let me know when you’re free so we can discuss next steps.",Negotiation,Timeline
+RND-0277,kortiz@example.org,rep@company.com,Neutral,"Hi [Name],
+
+I hope you’re doing well! I’d love to connect about how our new features can boost efficiency for your team, and I’m also eager to explore your timeline and budget to ensure we’re a perfect fit. Let me know if you have a few minutes to chat this week.",Negotiation,Price
+RND-0278,ferrellkeith@example.net,rep@company.com,Neutral,"Hi [Name],
+
+Great speaking with you earlier. As requested, I’ve outlined our top features that align best with your budget, and we can finalize the timeline once we’ve addressed any remaining concerns. Let me know if you have any questions or need clarification on next steps.
+
+Best regards,
+[Your Name]",Closed Won,Price
+RND-0279,ryanpitts@example.net,rep@company.com,Positive,"Hi John, thanks for your interest in our new software platform. With your proposed budget of $15K, we can incorporate advanced analytics and user-friendly dashboards that align with your six-week launch timeline. Let me know if you’d like a quick walkthrough to explore more features.",Unknown,Implementation
+RND-0280,richardharding@example.com,rep@company.com,Negative,"Hi [Name], I’m excited to connect about your upcoming project and show you how our new analytics feature can streamline your reporting process. Let me know if you have a specific timeline or budget in mind, and I'll tailor our proposal to meet your goals.",Negotiation,Features
+RND-0281,zmcgrath@example.org,rep@company.com,Neutral,"Hi [Name], our advanced software features can be tailored to your team’s needs within the six-week timeline you mentioned, keeping costs aligned with your existing budget. Let me know if you'd like to schedule a quick call to discuss next steps!",Proposal,Implementation
+RND-0282,gregory51@example.net,rep@company.com,Neutral,"Hi [Name],
+
+We have a new marketing suite that includes real-time data analytics and personalized reporting features, all well within your current budget. Let me know if you’d like to explore how it could streamline your upcoming campaign.",Negotiation,Implementation
+RND-0283,ymoore@example.org,rep@company.com,Negative,"Hi Alex,
+
+Thanks for your interest in our platform! We’ve mapped out a feature set that fits neatly within your projected budget, and our team can accommodate a shorter timeline if needed. Let me know when you’re available to discuss the details further.",Proposal,Support
+RND-0284,jonathanfinley@example.com,rep@company.com,Negative,"Hi [Name],
+
+I'd love to schedule a quick call to show you how our platform’s advanced reporting features can help you stay on budget while still hitting your Q4 deployment timeline. Let me know if you have a few minutes this week to discuss next steps.",Closed Lost,Features
+RND-0285,timothy58@example.org,rep@company.com,Neutral,"Hi [Name], 
+
+I just wanted to check in on your plans for Q4—our new analytics feature can easily fit into your proposed budget while delivering quicker insights. Let me know if we can jump on a quick call to discuss the details!",Negotiation,Implementation
+RND-0286,ashley07@example.net,rep@company.com,Neutral,"Hi Sarah,  
+I’m excited to share our latest features, which I believe will align well with your proposed budget. Let me know if you’d like to discuss timelines further or schedule a quick demo.",Proposal,Budget
+RND-0287,josephbrooks@example.com,rep@company.com,Neutral,"Hi [Name],
+
+We’re excited about the opportunity to work with you and wanted to check in on your project timeline. Our latest release includes the redesigned analytics feature and fits comfortably within the budget range you mentioned, so let us know if you’d like to schedule a quick call to go over details.",Proposal,Budget
+RND-0288,ochung@example.org,rep@company.com,Negative,"Hi [Name],
+
+I’m reaching out to see how our latest analytics feature could streamline your team’s reporting process, especially as you finalize your Q1 budget. I’d love to schedule a quick call next week to walk you through how it can save time and reduce overhead.",Closed Lost,Features
+RND-0289,melissalynch@example.org,rep@company.com,Negative,"Hi Sarah, I’m excited to share a quick overview of the new features we’ve added—they’ll save your team at least 20% in project time. Let me know if you’d like to review your budget parameters together before finalizing the rollout timeline.",Closed Lost,Price
+RND-0290,jennifer98@example.org,rep@company.com,Positive,"Hi [Name], I hope you’re doing well. I’d love to walk you through how our latest software features can help streamline your workflow and hit your timeline targets. Let me know when you’re free to chat, and we can explore the next steps in detail.",Qualification,Features
+RND-0291,rachelprice@example.net,rep@company.com,Negative,"Hi [Prospect Name],
+
+I hope you're doing well! Based on our initial discussion, we can seamlessly integrate the new scheduling feature you requested into our existing platform within your budget, and we anticipate final delivery by the end of next quarter. Let me know if you'd like to walk through the details or set up a call for next steps.",Negotiation,Features
+RND-0292,rward@example.com,rep@company.com,Positive,"Hello [Name],
+
+Great speaking with you yesterday about how our platform can address your current needs. Let me know if you have any specific budget range in mind so we can make sure the proposal aligns with your timeline and the key features you’re looking for.",Closed Lost,Price
+RND-0293,anthonygreene@example.net,rep@company.com,Neutral,"Hi [Name], I’m excited to share how our advanced AI features can streamline your workflow. Let me know if our proposed timeline aligns with your goals, and I’d be happy to discuss the budget details in more depth.",Closed Won,Price
+RND-0294,zcooper@example.org,rep@company.com,Positive,"Hi Sarah,
+
+I hope you’re doing well! I’d love to connect and show you how our new features can streamline your workflow. Also, let me know if you have a specific budget range in mind so we can tailor our approach accordingly. I look forward to hearing your thoughts!",Proposal,Implementation
+RND-0295,susan46@example.net,rep@company.com,Neutral,"Hi [Name],
+
+I'm excited to share that we can customize the analytics features to align with your current budget and deliver the implementation within four weeks. Let’s chat soon to finalize the best approach for your team.",Closed Lost,Budget
+RND-0296,lauramurray@example.org,rep@company.com,Positive,"Hi Jordan,
+
+Thank you for your interest in our new solution! I’d love to set up a quick call this week to walk you through the core features and discuss how we can tailor everything to fit the budget you’ve outlined. Let me know what your availability looks like, and I’ll send over a calendar invite.",Unknown,Budget
+RND-0297,tylerdavid@example.org,rep@company.com,Positive,"Hi [Name], I hope all is well. I wanted to check in regarding the budget allocation we discussed so we can finalize the integration of the new analytics feature on schedule. Let me know if you have any questions or would like to connect further.",Unknown,
+RND-0298,sharris@example.net,rep@company.com,Neutral,"Hi John, thanks for your interest in our new marketing software. Our standard solution offers advanced analytics and automated scheduling to streamline your campaigns, and I'm confident we can tailor it to fit within your budget. Let me know if you're available this week to discuss the final details.",Unknown,Support
+RND-0299,rgarcia@example.org,rep@company.com,Neutral,"Hey Sarah,
+
+Thanks for hopping on the call earlier! After reviewing your requirements, we can tailor our new dashboard features to fit neatly within your existing budget, and we can have everything ready for you by mid-November. Let me know if you have any questions or adjustments before we finalize everything.",Closed Won,Implementation

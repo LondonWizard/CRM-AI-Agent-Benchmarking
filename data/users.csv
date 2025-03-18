@@ -1,9 +1,0 @@
-Id,Name,Email,Title,Department,IsActive
-0059000001abcAAA,Margaret Carter,mcarter@acmecorp.com,Director of Sales,Sales,TRUE
-0059000001abcAAB,John Roberts,jroberts@acmecorp.com,Account Executive,Sales,TRUE
-0059000001abcAAC,Patricia Nguyen,pnguyen@acmecorp.com,Marketing Specialist,Marketing,TRUE
-0059000001abcAAD,Michael Brown,mbrown@acmecorp.com,Sales Rep,Sales,TRUE
-0059000001abcAAE,Susan Davis,sdavis@acmecorp.com,Support Engineer,Support,TRUE
-0059000001abcAAF,James Wilson,jwilson@acmecorp.com,Account Manager,Sales,FALSE
-0059000001abcAAG,Rachel Adams,radams@acmecorp.com,Operations Manager,Operations,TRUE
-0059000001abcAAH,Kevin Lee,klee@acmecorp.com,Project Coordinator,Operations,TRUE

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="animate__animated animate__fadeInUp">User Profile</h2>
+<div class="profile-info slide-up">
+    <p><strong>Username:</strong> <span class="accent-text">{{ username }}</span></p>
+    
+    <p><strong>API Key:</strong></p>
+    <div class="key-display scale-in">{{ api_key }}</div>
+    
+    <div class="profile-section">
+        <h3>Submit a Benchmark Score</h3>
+        <div class="github-note">
+            <p>To submit benchmark scores, please use the official CRM-AI-Agent-Benchmarking library.</p>
+            <p>Visit our <a href="https://github.com/LondonWizard/CRM-AI-Agent-Benchmarking" target="_blank" rel="noopener noreferrer">GitHub repository</a> for detailed instructions on how to:</p>
+            <ul class="github-instructions">
+                <li>Install the benchmark library</li>
+                <li>Run benchmark tests</li>
+                <li>Submit your scores using your API key</li>
+                <li>View detailed performance metrics</li>
+            </ul>
+            <p class="form-help">The API key shown above is required when submitting scores via the library.</p>
+        </div>
+    </div>
+    
+    <div class="profile-actions animate__animated animate__fadeIn animate__delay-1s">
+        <a href="{{ url_for('leaderboard') }}" class="btn btn-primary">View Leaderboard</a>
+        <a href="https://github.com/LondonWizard/CRM-AI-Agent-Benchmarking" class="btn btn-accent" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
+    </div>
+</div>
+{% endblock %}

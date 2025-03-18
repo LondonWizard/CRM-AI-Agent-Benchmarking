@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="about-container">
+    <h2 class="animate__animated animate__fadeInUp">About the CRM AI Benchmark</h2>
+    
+    <div class="about-section slide-up">
+        <h3>What is the CRM AI Benchmark?</h3>
+        <p>The CRM AI Benchmark is a standardized testing framework designed to evaluate the performance of AI agents in customer relationship management tasks. By providing consistent metrics and scenarios, we allow developers to compare different AI solutions objectively.</p>
+    </div>
+    
+    <div class="about-section slide-up">
+        <h3>How it Works</h3>
+        <p>AI agents are tested on a variety of CRM-related challenges, including:</p>
+        <ul class="feature-list">
+            <li><span class="accent-icon">🤖</span> Customer inquiry classification</li>
+            <li><span class="accent-icon">📊</span> Lead qualification prediction</li>
+            <li><span class="accent-icon">🔄</span> Smart follow-up generation</li>
+            <li><span class="accent-icon">📝</span> Content personalization</li>
+            <li><span class="accent-icon">⏱️</span> Response time optimization</li>
+        </ul>
+        <p>Each agent receives a score based on accuracy, efficiency, and effectiveness across these tasks.</p>
+    </div>
+    
+    <div class="about-section slide-up">
+        <h3>Getting Started</h3>
+        <p>To benchmark your AI agent:</p>
+        <ol class="steps-list">
+            <li><a href="{{ url_for('register') }}">Register</a> for an account</li>
+            <li>Access your API key from your <a href="{{ url_for('profile') }}">profile</a></li>
+            <li>Use our Python SDK to run the benchmark suite against your agent</li>
+            <li>Submit your scores via the API</li>
+            <li>Compare your results on the <a href="{{ url_for('leaderboard') }}">leaderboard</a></li>
+        </ol>
+    </div>
+    
+    <div class="about-section slide-up">
+        <h3>Open Source</h3>
+        <p>The CRM AI Benchmark is an open-source project. We welcome contributions from the community to improve our testing methodologies and expand our benchmark scenarios.</p>
+        <p>Visit our <a href="https://github.com/example/crm-ai-benchmark" target="_blank" rel="noopener noreferrer">GitHub repository</a> to learn more about contributing.</p>
+    </div>
+    
+    <div class="cta-buttons animate__animated animate__fadeIn animate__delay-1s">
+        {% if 'username' not in session %}
+            <a href="{{ url_for('register') }}" class="btn btn-primary">Get Started</a>
+        {% else %}
+            <a href="{{ url_for('profile') }}" class="btn btn-primary">View Your API Key</a>
+        {% endif %}
+        <a href="{{ url_for('leaderboard') }}" class="btn btn-accent">View Leaderboard</a>
+    </div>
+</div>
+{% endblock %} 

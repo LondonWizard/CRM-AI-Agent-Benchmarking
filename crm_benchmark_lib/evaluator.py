@@ -83,7 +83,7 @@ Return only the numeric score in the format: XX.XX (two decimals, e.g., 0.75).
 
     try:
         response = client.chat.completions.create(
-            model="o3-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a strict evaluator."},
                 {"role": "user", "content": prompt.strip()},

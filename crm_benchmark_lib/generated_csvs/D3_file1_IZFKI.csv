@@ -1,0 +1,218 @@
+record_type,name,stage,amount,probability,last_activity_days,notes
+Opportunity,XYZ Opportunity,Proposal,50000.0,60.0,5,Ready to close soon
+Opportunity,Northbound,Qualification,150000.0,80.0,10,High confidence
+Opportunity,DeltaOne,Negotiation,150000.0,75.0,8,Also high confidence
+Opportunity,Optima,Proposal,80000.0,50.0,91,No updates in over 90 days
+Opportunity,RoverTech,Qualification,70000.0,40.0,95,No updates in over 90 days
+Lead,TechAlpha,,0.0,0.0,11,2 success markers
+Lead,BizSolutions,,0.0,0.0,30,2 success markers
+Lead,StartupX,,0.0,0.0,9,2 success markers
+Lead,EnterpriseY,,0.0,0.0,11,1 success markers
+Lead,RetailZ,,0.0,0.0,23,4 success markers
+Lead,AutoMates,,0.0,0.0,21,1 success markers
+Lead,FoodServ,,0.0,0.0,24,1 success markers
+Lead,LogiTech,,0.0,0.0,7,3 success markers
+Lead,EduServe,,0.0,0.0,30,2 success markers
+Lead,FinGroup,,0.0,0.0,21,2 success markers
+Meeting,Sales Team Sync,,0.0,0.0,0,"Discussed synergy, timeline extended 2 weeks, rep A clarifies features, rep B confirms budget"
+Opportunity,MavTech,Closed Lost,120000.0,0.0,0,Lost in final stage to competitor
+Lead,Kemp-Bridges,,0.0,0.0,60,Additional record from random generation
+Lead,Adams-Manning,,0.0,0.0,62,Additional record from random generation
+Meeting,"Miller, Winters and Luna",,0.0,0.0,20,Additional record from random generation
+Meeting,"Lee, Costa and Hernandez",,0.0,0.0,83,Additional record from random generation
+Opportunity,Novak-Tucker,Closed Lost,42141.4,25.0,63,Additional record from random generation
+Opportunity,"Howard, Gibson and King",Qualification,86446.97,45.0,82,Additional record from random generation
+Lead,Frey LLC,,0.0,0.0,72,Additional record from random generation
+Meeting,Mercado-Sanchez,,0.0,0.0,75,Additional record from random generation
+Opportunity,Reid and Sons,Negotiation,26391.76,14.0,69,Additional record from random generation
+Meeting,Bell and Sons,,0.0,0.0,8,Additional record from random generation
+Lead,"Lee, Price and Nguyen",,0.0,0.0,112,Additional record from random generation
+Meeting,"Reed, Brock and Baxter",,0.0,0.0,109,Additional record from random generation
+Meeting,"Stein, Summers and Smith",,0.0,0.0,14,Additional record from random generation
+Meeting,"Cameron, Hernandez and Melton",,0.0,0.0,110,Additional record from random generation
+Lead,Harrison and Sons,,0.0,0.0,25,Additional record from random generation
+Meeting,"Pope, Fletcher and Gilmore",,0.0,0.0,18,Additional record from random generation
+Opportunity,Lowery-Hensley,Proposal,22129.29,17.0,27,Additional record from random generation
+Lead,Hamilton-Vincent,,0.0,0.0,32,Additional record from random generation
+Meeting,Moody-Schroeder,,0.0,0.0,74,Additional record from random generation
+Meeting,Campbell Ltd,,0.0,0.0,89,Additional record from random generation
+Lead,Smith LLC,,0.0,0.0,3,Additional record from random generation
+Meeting,Nunez-Taylor,,0.0,0.0,77,Additional record from random generation
+Opportunity,Blackwell Ltd,Closed Lost,59272.3,87.0,9,Additional record from random generation
+Lead,"Page, Fuentes and Pollard",,0.0,0.0,23,Additional record from random generation
+Opportunity,Moore Group,Closed Won,136101.91,15.0,71,Additional record from random generation
+Opportunity,Williams-Bates,Qualification,106669.92,50.0,109,Additional record from random generation
+Lead,"Evans, Rodriguez and Harris",,0.0,0.0,72,Additional record from random generation
+Meeting,"Gomez, Gilbert and May",,0.0,0.0,111,Additional record from random generation
+Lead,"Black, Trujillo and Mitchell",,0.0,0.0,24,Additional record from random generation
+Meeting,"Mckenzie, Barnes and Hodges",,0.0,0.0,12,Additional record from random generation
+Meeting,Green-Glover,,0.0,0.0,27,Additional record from random generation
+Opportunity,"Cunningham, Ortiz and Mitchell",Qualification,52226.8,74.0,86,Additional record from random generation
+Opportunity,Norris-Hendricks,,125443.96,62.0,114,Additional record from random generation
+Meeting,Anderson Inc,,0.0,0.0,25,Additional record from random generation
+Lead,"Sanchez, Lang and Anderson",,0.0,0.0,49,Additional record from random generation
+Meeting,Cunningham-Mcclain,,0.0,0.0,29,Additional record from random generation
+Opportunity,Stevenson-Lopez,Qualification,117864.88,60.0,17,Additional record from random generation
+Opportunity,Clark-Perez,,30413.69,25.0,45,Additional record from random generation
+Lead,Santos-Young,,0.0,0.0,108,Additional record from random generation
+Opportunity,"Mendez, Collins and Vasquez",Closed Lost,121151.35,44.0,79,Additional record from random generation
+Meeting,Pierce-Vaughan,,0.0,0.0,25,Additional record from random generation
+Lead,Martinez-Harmon,,0.0,0.0,34,Additional record from random generation
+Meeting,Trujillo-Ortega,,0.0,0.0,75,Additional record from random generation
+Meeting,Robinson Ltd,,0.0,0.0,112,Additional record from random generation
+Lead,Larson-Johnson,,0.0,0.0,28,Additional record from random generation
+Opportunity,Waller-Oconnor,,51325.46,47.0,7,Additional record from random generation
+Meeting,Ellis LLC,,0.0,0.0,49,Additional record from random generation
+Lead,Cook Group,,0.0,0.0,114,Additional record from random generation
+Lead,Smith-Diaz,,0.0,0.0,14,Additional record from random generation
+Lead,Herman LLC,,0.0,0.0,92,Additional record from random generation
+Meeting,"Roberts, Williamson and Gonzalez",,0.0,0.0,52,Additional record from random generation
+Lead,Waller Inc,,0.0,0.0,38,Additional record from random generation
+Meeting,Rogers Inc,,0.0,0.0,28,Additional record from random generation
+Lead,Wells Group,,0.0,0.0,58,Additional record from random generation
+Meeting,Mills-Taylor,,0.0,0.0,63,Additional record from random generation
+Opportunity,Spence Ltd,Negotiation,21166.22,25.0,115,Additional record from random generation
+Meeting,"Benson, King and Gonzalez",,0.0,0.0,30,Additional record from random generation
+Lead,Nguyen-Miller,,0.0,0.0,20,Additional record from random generation
+Opportunity,"Miller, Hood and Russell",Closed Won,29580.93,38.0,28,Additional record from random generation
+Meeting,Martin-Young,,0.0,0.0,111,Additional record from random generation
+Meeting,Hall LLC,,0.0,0.0,66,Additional record from random generation
+Meeting,Hoffman Group,,0.0,0.0,33,Additional record from random generation
+Meeting,Austin-Cobb,,0.0,0.0,28,Additional record from random generation
+Lead,Jones Ltd,,0.0,0.0,83,Additional record from random generation
+Meeting,Roach and Sons,,0.0,0.0,15,Additional record from random generation
+Meeting,"Smith, Webb and Walker",,0.0,0.0,13,Additional record from random generation
+Meeting,Henderson-Harper,,0.0,0.0,103,Additional record from random generation
+Opportunity,Mercer-Tucker,Closed Lost,33705.99,29.0,89,Additional record from random generation
+Lead,Campbell Inc,,0.0,0.0,32,Additional record from random generation
+Opportunity,Gonzales-Browning,,56425.53,55.0,51,Additional record from random generation
+Meeting,Shaffer-Chen,,0.0,0.0,100,Additional record from random generation
+Meeting,"Nguyen, Young and King",,0.0,0.0,75,Additional record from random generation
+Lead,Serrano-Smith,,0.0,0.0,15,Additional record from random generation
+Meeting,Garcia-Mckinney,,0.0,0.0,68,Additional record from random generation
+Lead,Perez Inc,,0.0,0.0,92,Additional record from random generation
+Meeting,Wells-Douglas,,0.0,0.0,91,Additional record from random generation
+Meeting,"Wood, Gordon and Richards",,0.0,0.0,81,Additional record from random generation
+Lead,"Frazier, Waters and Newman",,0.0,0.0,82,Additional record from random generation
+Meeting,Singh PLC,,0.0,0.0,8,Additional record from random generation
+Meeting,"Rivera, Hodge and Martin",,0.0,0.0,107,Additional record from random generation
+Lead,Taylor-Nichols,,0.0,0.0,53,Additional record from random generation
+Meeting,Cortez-Estrada,,0.0,0.0,39,Additional record from random generation
+Lead,"Martinez, Thomas and Mcintosh",,0.0,0.0,61,Additional record from random generation
+Meeting,Ramirez-Williams,,0.0,0.0,45,Additional record from random generation
+Lead,"Murphy, Perry and Levine",,0.0,0.0,40,Additional record from random generation
+Lead,Wang-Hudson,,0.0,0.0,21,Additional record from random generation
+Opportunity,"Yates, Wilcox and Ball",Closed Won,64229.78,59.0,31,Additional record from random generation
+Meeting,"Smith, Taylor and Bond",,0.0,0.0,61,Additional record from random generation
+Meeting,"Thomas, Strong and West",,0.0,0.0,79,Additional record from random generation
+Lead,"Crawford, Smith and Martinez",,0.0,0.0,114,Additional record from random generation
+Meeting,Wilson and Sons,,0.0,0.0,107,Additional record from random generation
+Opportunity,Johnson-Gray,Negotiation,67695.88,39.0,69,Additional record from random generation
+Opportunity,Jones and Sons,Closed Won,86410.57,47.0,59,Additional record from random generation
+Meeting,Madden-Robertson,,0.0,0.0,113,Additional record from random generation
+Lead,"Buchanan, Gilbert and Sullivan",,0.0,0.0,96,Additional record from random generation
+Lead,"Thomas, Fitzgerald and Miller",,0.0,0.0,7,Additional record from random generation
+Lead,Knapp Group,,0.0,0.0,8,Additional record from random generation
+Lead,"Allen, Collins and Smith",,0.0,0.0,78,Additional record from random generation
+Lead,Byrd-Simpson,,0.0,0.0,102,Additional record from random generation
+Opportunity,"Jenkins, Williams and Romero",Closed Won,131355.44,62.0,55,Additional record from random generation
+Opportunity,"Williams, Hernandez and Morgan",,52030.14,81.0,68,Additional record from random generation
+Lead,Bray and Sons,,0.0,0.0,34,Additional record from random generation
+Lead,Thomas-Garcia,,0.0,0.0,93,Additional record from random generation
+Lead,Wilson-Li,,0.0,0.0,45,Additional record from random generation
+Meeting,Grimes Ltd,,0.0,0.0,118,Additional record from random generation
+Opportunity,"Miller, Mclaughlin and Nelson",Proposal,90593.0,47.0,7,Additional record from random generation
+Meeting,"Russo, Edwards and Brooks",,0.0,0.0,103,Additional record from random generation
+Opportunity,"Robertson, Clark and Fields",Proposal,19169.46,73.0,41,Additional record from random generation
+Meeting,Lara PLC,,0.0,0.0,101,Additional record from random generation
+Lead,"Barron, Carter and Hernandez",,0.0,0.0,73,Additional record from random generation
+Lead,"Gilbert, Lee and Lewis",,0.0,0.0,78,Additional record from random generation
+Meeting,James Ltd,,0.0,0.0,65,Additional record from random generation
+Meeting,Phillips-Robinson,,0.0,0.0,53,Additional record from random generation
+Lead,Anderson and Sons,,0.0,0.0,89,Additional record from random generation
+Lead,"Gray, Lane and Ellis",,0.0,0.0,90,Additional record from random generation
+Meeting,Rodriguez-Mccarthy,,0.0,0.0,45,Additional record from random generation
+Opportunity,"Walters, Wood and Sanford",,116886.23,26.0,91,Additional record from random generation
+Opportunity,Davis Group,Qualification,91155.33,60.0,42,Additional record from random generation
+Opportunity,Hernandez Group,Qualification,59109.75,26.0,100,Additional record from random generation
+Lead,Oconnor-Castro,,0.0,0.0,118,Additional record from random generation
+Opportunity,Wilkinson LLC,Qualification,60931.83,63.0,96,Additional record from random generation
+Lead,Larson-Lopez,,0.0,0.0,3,Additional record from random generation
+Meeting,Stephens-Kennedy,,0.0,0.0,24,Additional record from random generation
+Lead,Solis-Valdez,,0.0,0.0,75,Additional record from random generation
+Opportunity,"Ross, Lopez and Foster",Closed Won,24791.0,21.0,55,Additional record from random generation
+Opportunity,Gonzalez Inc,Closed Won,116549.51,36.0,107,Additional record from random generation
+Lead,Patterson PLC,,0.0,0.0,99,Additional record from random generation
+Meeting,Garcia-Peterson,,0.0,0.0,77,Additional record from random generation
+Lead,Fowler PLC,,0.0,0.0,93,Additional record from random generation
+Lead,Lopez and Sons,,0.0,0.0,3,Additional record from random generation
+Meeting,Curtis Ltd,,0.0,0.0,108,Additional record from random generation
+Meeting,"Orr, Ingram and Jones",,0.0,0.0,3,Additional record from random generation
+Lead,Taylor Group,,0.0,0.0,107,Additional record from random generation
+Lead,"Garcia, Hall and Roth",,0.0,0.0,114,Additional record from random generation
+Opportunity,Pope PLC,Negotiation,131658.25,68.0,26,Additional record from random generation
+Lead,"Gregory, Turner and Aguilar",,0.0,0.0,53,Additional record from random generation
+Meeting,"Lopez, Young and Benitez",,0.0,0.0,57,Additional record from random generation
+Lead,"Brooks, Downs and Wilson",,0.0,0.0,100,Additional record from random generation
+Opportunity,"Day, Murphy and Delacruz",Closed Lost,46032.72,50.0,38,Additional record from random generation
+Lead,Porter-Price,,0.0,0.0,0,Additional record from random generation
+Opportunity,Greer-Gonzalez,Negotiation,114082.95,89.0,61,Additional record from random generation
+Opportunity,"Smith, Taylor and Long",Closed Lost,35037.35,46.0,84,Additional record from random generation
+Opportunity,Huffman-Hancock,,71080.28,57.0,67,Additional record from random generation
+Meeting,Rose-Ramirez,,0.0,0.0,58,Additional record from random generation
+Opportunity,"Bishop, Cruz and Mcmahon",Proposal,23562.12,68.0,59,Additional record from random generation
+Lead,"Jones, Matthews and Mooney",,0.0,0.0,44,Additional record from random generation
+Opportunity,"Summers, Kennedy and Robinson",,80001.41,53.0,56,Additional record from random generation
+Lead,Gardner-Mcdaniel,,0.0,0.0,65,Additional record from random generation
+Opportunity,"Thomas, Montes and Bailey",Qualification,60911.07,19.0,53,Additional record from random generation
+Opportunity,Johnson-Castillo,Negotiation,132071.61,83.0,92,Additional record from random generation
+Meeting,Reid PLC,,0.0,0.0,76,Additional record from random generation
+Lead,Sexton Group,,0.0,0.0,108,Additional record from random generation
+Lead,"Hale, Charles and Johnson",,0.0,0.0,22,Additional record from random generation
+Lead,Arroyo-Lewis,,0.0,0.0,112,Additional record from random generation
+Meeting,"Fox, Leon and Brown",,0.0,0.0,11,Additional record from random generation
+Meeting,"Johnson, Romero and Torres",,0.0,0.0,39,Additional record from random generation
+Meeting,"Kelley, Wilson and Aguilar",,0.0,0.0,66,Additional record from random generation
+Opportunity,Gonzalez LLC,Closed Won,40026.41,14.0,28,Additional record from random generation
+Lead,White PLC,,0.0,0.0,84,Additional record from random generation
+Meeting,"Barnett, Larsen and Harper",,0.0,0.0,75,Additional record from random generation
+Lead,"Meyer, Flores and Mason",,0.0,0.0,66,Additional record from random generation
+Lead,"Howard, Hess and Nelson",,0.0,0.0,112,Additional record from random generation
+Meeting,Alexander-Grant,,0.0,0.0,14,Additional record from random generation
+Meeting,"Graham, Cook and Stanley",,0.0,0.0,39,Additional record from random generation
+Meeting,Delgado Ltd,,0.0,0.0,72,Additional record from random generation
+Meeting,"Cameron, Benitez and Cortez",,0.0,0.0,4,Additional record from random generation
+Meeting,Davidson PLC,,0.0,0.0,5,Additional record from random generation
+Meeting,"Barr, Turner and Hart",,0.0,0.0,36,Additional record from random generation
+Lead,"Thompson, Johnson and Hall",,0.0,0.0,115,Additional record from random generation
+Lead,Klein-Rogers,,0.0,0.0,17,Additional record from random generation
+Opportunity,Taylor-Patterson,Qualification,42801.47,42.0,81,Additional record from random generation
+Meeting,"Davis, Lee and Mccarty",,0.0,0.0,35,Additional record from random generation
+Lead,Velasquez LLC,,0.0,0.0,98,Additional record from random generation
+Meeting,Mack-Clark,,0.0,0.0,62,Additional record from random generation
+Meeting,"Miller, Tyler and Powers",,0.0,0.0,107,Additional record from random generation
+Opportunity,"Hampton, Moore and Anderson",Closed Lost,121465.05,66.0,17,Additional record from random generation
+Meeting,Lopez and Sons,,0.0,0.0,117,Additional record from random generation
+Meeting,Berry PLC,,0.0,0.0,52,Additional record from random generation
+Lead,Harper LLC,,0.0,0.0,56,Additional record from random generation
+Meeting,Gutierrez-Harrell,,0.0,0.0,23,Additional record from random generation
+Meeting,"Chandler, Black and Fischer",,0.0,0.0,94,Additional record from random generation
+Meeting,"Bradley, Holmes and Carter",,0.0,0.0,8,Additional record from random generation
+Opportunity,Myers Group,,134782.56,21.0,47,Additional record from random generation
+Opportunity,Rowland LLC,Negotiation,141135.31,79.0,115,Additional record from random generation
+Opportunity,Newton Ltd,,114943.54,52.0,4,Additional record from random generation
+Lead,Conrad-Torres,,0.0,0.0,31,Additional record from random generation
+Lead,Cole Ltd,,0.0,0.0,85,Additional record from random generation
+Lead,"Smith, Lopez and Holland",,0.0,0.0,85,Additional record from random generation
+Lead,"Compton, Bell and Beasley",,0.0,0.0,108,Additional record from random generation
+Opportunity,Davis-Jackson,Closed Lost,149205.45,36.0,49,Additional record from random generation
+Opportunity,"Schneider, Watkins and Davis",,125482.61,15.0,32,Additional record from random generation
+Opportunity,"Lucas, Hogan and Jones",Qualification,11702.17,88.0,62,Additional record from random generation
+Lead,"Lewis, Davila and Kelley",,0.0,0.0,90,Additional record from random generation
+Opportunity,"Garcia, Gilbert and Robertson",Negotiation,94907.96,66.0,57,Additional record from random generation
+Meeting,Weaver-Carlson,,0.0,0.0,7,Additional record from random generation
+Opportunity,"Hughes, Owens and Jones",,29546.91,86.0,105,Additional record from random generation
+Lead,"Pitts, Johnson and Mathis",,0.0,0.0,58,Additional record from random generation
+Meeting,"Cooper, Patrick and Martinez",,0.0,0.0,15,Additional record from random generation
+Lead,Wilson-Norton,,0.0,0.0,73,Additional record from random generation
+Meeting,Thomas and Sons,,0.0,0.0,47,Additional record from random generation

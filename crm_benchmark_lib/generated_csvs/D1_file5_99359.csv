@@ -1,0 +1,208 @@
+deal_name,stage,amount,owner_id,lead_source,close_date,next_step
+Acme Corp renewal,Proposal,500000.0,EMP476bbd,Webinar,2025-12-31,Phone follow-up
+Northstar,Negotiation,60000.0,EMP111111,Webinar,,Needs next step
+Redline,Negotiation,40000.0,EMP222222,Trade Show,2025-09-10,
+Stafford Ltd,Negotiation,50000.0,EMP333333,Referral,2025-10-01,Follow-up call
+"King, Tucker & Rowe",Negotiation,100000.0,EMP444444,Webinar,2025-07-15,Send revised proposal
+Global Industries,Qualification,150000.0,EMP555555,Webinar,2025-06-30,Confirm details
+Global Ind.,Qualification,150000.0,EMP666666,Webinar,2025-06-29,Review next steps
+Thompson Inc,Closed Lost,56267.0,EMP353535,Webinar,2025-07-30,
+"Kerr, Davis and Phelps",Qualification,25005.0,EMP491468,Trade Show,2026-04-03,Call next week
+"Berg, Herman and Thomas",Qualification,110408.0,EMP601941,Referral,2025-05-16,Email follow-up
+Kemp-Herrera,Proposal,56827.0,EMP793997,Referral,2026-02-23,Schedule demo
+Stevenson LLC,Proposal,34367.0,EMP435768,Referral,2025-10-16,Schedule demo
+Mccann-Bennett,Prospecting,65728.0,EMP334520,Trade Show,2025-08-02,Email follow-up
+Cooper Group,Closed Lost,50565.0,EMP551319,Partner,2025-05-04,
+"Bowen, Dunn and Barton",Prospecting,193226.0,EMP297689,Cold Call,2025-07-23,Schedule demo
+"Weaver, Hernandez and Johnson",Prospecting,143656.0,EMP673638,Webinar,2025-06-26,Arrange site visit
+"Wallace, Juarez and Hinton",Closed Won,126375.0,EMP642158,Partner,2025-06-13,Call next week
+Harrison Group,Closed Lost,47277.0,EMP575873,Trade Show,2026-01-28,Call next week
+Davis Group,Prospecting,167041.0,EMP762375,Referral,2025-11-14,
+Hunter Group,Negotiation,50359.0,EMP340358,Partner,2026-03-04,Call next week
+"Valdez, Johnson and Hall",Qualification,97956.0,EMP719580,Trade Show,2026-01-12,
+George Group,Proposal,127894.0,EMP667724,Partner,2026-01-23,Call next week
+Clay PLC,Closed Won,51608.0,EMP406315,Cold Call,2026-02-28,Email follow-up
+Fox and Sons,Proposal,102938.0,EMP408684,Partner,2025-12-01,Schedule demo
+Davis-Middleton,Negotiation,36170.0,EMP912672,Webinar,2026-04-10,
+Palmer PLC,Negotiation,29467.0,EMP983486,Trade Show,2025-07-22,Call next week
+Pierce PLC,Negotiation,155897.0,EMP777036,Webinar,2026-04-09,Email follow-up
+"Oliver, Burke and Hancock",Qualification,188929.0,EMP456632,Webinar,2026-04-02,Schedule demo
+Chambers-Ruiz,Negotiation,145720.0,EMP633780,Webinar,2025-05-24,
+"Morrison, Johnson and Reed",Prospecting,99081.0,EMP564891,Webinar,2025-07-29,
+Park Inc,Qualification,135312.0,EMP237776,Trade Show,2025-10-02,Arrange site visit
+Alexander PLC,Closed Lost,67553.0,EMP486783,Partner,2025-07-03,Arrange site visit
+"Lewis, Smith and Young",Prospecting,177544.0,EMP737140,Cold Call,2025-04-08,Call next week
+Davis-Hill,Prospecting,167783.0,EMP193225,Cold Call,2026-03-13,Email follow-up
+"Roberts, Murphy and Le",Closed Lost,133368.0,EMP556263,Trade Show,2025-12-25,Arrange site visit
+"Merritt, Evans and Lambert",Qualification,41150.0,EMP419111,Referral,2026-03-10,Arrange site visit
+"Martinez, Crawford and Salazar",Prospecting,35879.0,EMP583021,Cold Call,2025-06-10,Call next week
+"Davis, Callahan and Ortiz",Proposal,51483.0,EMP597963,Partner,2025-11-11,Call next week
+Vincent Group,Qualification,57201.0,EMP490729,Referral,2025-07-21,
+Thomas-Richard,Closed Lost,118141.0,EMP110046,Cold Call,2025-10-10,
+Stevenson-Thomas,Closed Lost,98512.0,EMP700797,Referral,2026-01-22,Schedule demo
+"Morris, Vega and Jones",Negotiation,27793.0,EMP109954,Webinar,2026-04-10,Call next week
+Gonzalez LLC,Closed Lost,155929.0,EMP164316,Cold Call,2026-02-21,Call next week
+"Terry, Curtis and Rojas",Qualification,41885.0,EMP654175,Referral,2025-04-25,Schedule demo
+Johnson-Alexander,Qualification,198216.0,EMP508593,Webinar,2025-11-26,Call next week
+Soto-Moore,Qualification,169553.0,EMP190177,Trade Show,2025-09-25,Email follow-up
+Greer Group,Prospecting,192153.0,EMP884691,Cold Call,2025-11-21,Arrange site visit
+Moore-Hernandez,Proposal,128256.0,EMP233889,Partner,2026-02-21,Schedule demo
+"Jordan, Figueroa and Wilson",Closed Won,168164.0,EMP129611,Trade Show,2026-01-24,Schedule demo
+Taylor PLC,Closed Won,108644.0,EMP667745,Webinar,2026-01-03,Call next week
+Giles-Combs,Closed Won,155105.0,EMP402140,Partner,2026-04-07,Schedule demo
+Brady-Berry,Closed Won,34159.0,EMP869151,Partner,2025-09-14,Schedule demo
+"Richardson, Mcintosh and Garcia",Qualification,104506.0,EMP813930,Trade Show,2026-02-05,Call next week
+Meyer Inc,Proposal,176072.0,EMP913132,Trade Show,2025-03-13,Call next week
+"Sutton, Lawrence and Owens",Negotiation,77059.0,EMP238389,Trade Show,2025-04-23,Call next week
+Mclaughlin-Scott,Prospecting,84707.0,EMP114465,Partner,2025-12-05,Call next week
+"Mcguire, Martin and Garrett",Negotiation,171851.0,EMP490146,Referral,2026-03-09,Schedule demo
+"Carson, Vaughan and Chan",Closed Won,29984.0,EMP858862,Partner,2025-09-14,Email follow-up
+Blevins Ltd,Closed Lost,54961.0,EMP525696,Trade Show,2026-01-23,Arrange site visit
+"Sanchez, Perez and Mann",Closed Won,183715.0,EMP276517,Referral,2026-03-22,Schedule demo
+"Wang, Thomas and Walsh",Negotiation,100413.0,EMP196130,Referral,2026-02-13,Call next week
+Charles PLC,Closed Lost,143366.0,EMP598740,Trade Show,2025-03-15,
+"Thompson, Garcia and Davis",Qualification,92868.0,EMP443961,Cold Call,2026-04-01,Arrange site visit
+"Mcdonald, Deleon and Lane",Closed Lost,170870.0,EMP100802,Webinar,2025-07-17,Email follow-up
+Erickson and Sons,Proposal,171893.0,EMP498683,Partner,2025-08-24,
+Brown-Cook,Closed Lost,131058.0,EMP532384,Cold Call,2026-03-02,Schedule demo
+"Russell, Whitehead and Terrell",Proposal,76580.0,EMP971025,Partner,2025-05-07,Arrange site visit
+"Allen, Parsons and Watkins",Qualification,28596.0,EMP584342,Partner,2025-12-18,Email follow-up
+Wright PLC,Qualification,193512.0,EMP982892,Trade Show,2025-11-15,Call next week
+Chavez Inc,Closed Won,99684.0,EMP119937,Webinar,2026-01-04,Schedule demo
+Fisher-Stone,Proposal,199094.0,EMP839490,Webinar,2025-05-21,Schedule demo
+Page Ltd,Closed Lost,49670.0,EMP791853,Trade Show,2025-04-08,Schedule demo
+"Rios, Mcneil and Bradshaw",Closed Lost,97288.0,EMP152673,Referral,2025-11-05,Schedule demo
+Davis-Banks,Qualification,41371.0,EMP200133,Trade Show,2025-09-17,Email follow-up
+Young-Holland,Qualification,40040.0,EMP814086,Partner,2026-02-07,Call next week
+Miller-Thomas,Closed Lost,102065.0,EMP682698,Referral,2026-02-06,Email follow-up
+Hughes Ltd,Closed Won,110185.0,EMP106965,Referral,2025-09-20,Arrange site visit
+Williams-Frank,Prospecting,23171.0,EMP180182,Cold Call,2025-11-02,
+Dixon-Ingram,Qualification,33202.0,EMP847517,Webinar,2026-02-02,Arrange site visit
+Carr-Carroll,Qualification,83441.0,EMP227635,Partner,2025-08-05,Arrange site visit
+"Lee, Monroe and Adams",Negotiation,199395.0,EMP915457,Trade Show,2025-05-29,Email follow-up
+Zimmerman-Gonzalez,Qualification,66924.0,EMP385106,Partner,2026-03-26,Arrange site visit
+Baker-Powell,Qualification,146979.0,EMP620480,Cold Call,2025-07-31,Email follow-up
+"Jimenez, Sampson and Jackson",Prospecting,190839.0,EMP815106,Trade Show,2025-11-07,Call next week
+Clark LLC,Closed Lost,13244.0,EMP637379,Partner,2025-11-17,Schedule demo
+"Mann, Olsen and Sandoval",Negotiation,56938.0,EMP823653,Trade Show,2025-11-09,
+Collins-Howell,Closed Lost,31766.0,EMP457092,Webinar,2025-03-23,
+Rivera and Sons,Negotiation,163969.0,EMP869734,Partner,2025-08-17,Arrange site visit
+"Martinez, Howard and Le",Prospecting,18696.0,EMP111849,Cold Call,2025-05-09,Schedule demo
+Alexander-Mcdaniel,Negotiation,120982.0,EMP647159,Trade Show,2026-02-25,
+Patterson-Graham,Prospecting,172971.0,EMP865740,Trade Show,2025-09-11,Arrange site visit
+Silva-Downs,Negotiation,193426.0,EMP303757,Webinar,2025-07-01,Email follow-up
+"Owen, Anderson and Smith",Prospecting,54077.0,EMP214455,Webinar,2025-11-12,Arrange site visit
+"Trevino, Hughes and Castillo",Proposal,114517.0,EMP383454,Trade Show,2025-05-07,Email follow-up
+Walsh-Davis,Negotiation,132431.0,EMP427027,Webinar,2026-03-20,Schedule demo
+Leonard LLC,Prospecting,71656.0,EMP322461,Trade Show,2025-12-20,Call next week
+"Jackson, Ramirez and Martinez",Proposal,124563.0,EMP489897,Webinar,2025-03-31,Arrange site visit
+"Byrd, Smith and Thomas",Qualification,13970.0,EMP615585,Referral,2025-12-09,Schedule demo
+Morgan LLC,Prospecting,104343.0,EMP340090,Referral,2026-02-06,
+Bradford-Sanchez,Qualification,66300.0,EMP553448,Trade Show,2025-09-15,Email follow-up
+"Duncan, Green and Jackson",Qualification,179553.0,EMP966278,Partner,2026-04-09,Arrange site visit
+Ross-Garcia,Negotiation,140818.0,EMP487406,Partner,2026-03-23,Arrange site visit
+Rivera and Sons,Proposal,73917.0,EMP391709,Webinar,2026-01-01,Email follow-up
+Gardner-Mason,Proposal,117855.0,EMP142934,Trade Show,2025-09-12,Email follow-up
+Oneal-Garcia,Prospecting,15219.0,EMP738003,Referral,2025-05-05,
+"Roberts, Brown and Mccall",Closed Won,163843.0,EMP748341,Webinar,2025-04-08,Arrange site visit
+Sutton Group,Closed Won,191187.0,EMP164905,Cold Call,2025-07-18,Email follow-up
+Martin LLC,Prospecting,150638.0,EMP633495,Partner,2025-10-31,Arrange site visit
+"Jackson, Bush and Duncan",Closed Won,140351.0,EMP345146,Trade Show,2025-07-17,Email follow-up
+"Gray, Yu and Garcia",Closed Won,178010.0,EMP758887,Partner,2025-06-27,Arrange site visit
+Mccoy Group,Closed Won,50218.0,EMP498404,Cold Call,2025-09-13,Arrange site visit
+Scott Group,Negotiation,91012.0,EMP598989,Cold Call,2025-11-21,Email follow-up
+Ford PLC,Prospecting,22404.0,EMP766071,Referral,2025-03-30,Schedule demo
+"Castro, Richardson and Coleman",Closed Won,23962.0,EMP171592,Trade Show,2025-05-26,Arrange site visit
+Chapman PLC,Closed Lost,79028.0,EMP260448,Trade Show,2025-12-17,
+Campbell PLC,Closed Won,13016.0,EMP317654,Trade Show,2025-09-16,
+Kennedy-Farrell,Prospecting,132629.0,EMP898313,Trade Show,2025-12-05,
+"Mcdonald, Garner and Mckee",Prospecting,149492.0,EMP204378,Trade Show,2025-12-09,Email follow-up
+Nelson-Martin,Proposal,26591.0,EMP247571,Trade Show,2025-06-22,
+Mccullough LLC,Closed Won,81437.0,EMP955032,Referral,2025-03-17,Schedule demo
+"Johnson, Wells and Kramer",Negotiation,62068.0,EMP254661,Cold Call,2025-11-12,
+"Mitchell, Wright and Hendrix",Closed Won,96579.0,EMP492776,Cold Call,2025-06-22,Call next week
+Daniel-Cardenas,Prospecting,189113.0,EMP568071,Trade Show,2026-02-12,Arrange site visit
+Gonzalez Group,Closed Won,19297.0,EMP767689,Webinar,2025-10-14,
+"Guzman, Arnold and Johnson",Proposal,60802.0,EMP204137,Webinar,2025-12-04,Call next week
+Mcclain-Conner,Qualification,94073.0,EMP781152,Cold Call,2025-12-11,Arrange site visit
+Richardson-Gonzalez,Closed Won,190460.0,EMP299073,Referral,2025-09-27,
+Jones and Sons,Negotiation,115474.0,EMP886599,Cold Call,2025-10-23,Arrange site visit
+"Miller, Stone and Powers",Proposal,189727.0,EMP628153,Trade Show,2025-11-03,Email follow-up
+"Sullivan, Ramirez and Miller",Prospecting,103309.0,EMP532689,Referral,2025-06-24,Email follow-up
+Stephens Ltd,Prospecting,70127.0,EMP698248,Cold Call,2025-09-27,
+"Cooper, Melendez and Gonzalez",Closed Lost,168154.0,EMP793535,Partner,2025-06-09,
+Decker-Camacho,Prospecting,57183.0,EMP799331,Trade Show,2025-10-04,Arrange site visit
+Cole-Palmer,Closed Won,16428.0,EMP229511,Trade Show,2025-07-26,Schedule demo
+Brown-Williams,Closed Won,41843.0,EMP520301,Cold Call,2025-10-25,Call next week
+Gray-Gutierrez,Qualification,66856.0,EMP617428,Cold Call,2025-05-08,Arrange site visit
+"Dominguez, Bowman and Hall",Proposal,77083.0,EMP318363,Trade Show,2026-01-13,
+Bonilla-Spencer,Proposal,83056.0,EMP249317,Cold Call,2025-04-09,
+"Graham, Roberts and Washington",Prospecting,110715.0,EMP489226,Webinar,2025-10-21,Schedule demo
+Craig-Reynolds,Prospecting,13912.0,EMP259498,Cold Call,2025-10-31,Call next week
+Klein-Dickson,Prospecting,87790.0,EMP659143,Partner,2025-08-29,Call next week
+"Bowen, Turner and Kelley",Qualification,158425.0,EMP220595,Cold Call,2025-08-29,Email follow-up
+Barnes-Mcintyre,Proposal,93754.0,EMP736497,Referral,2025-06-24,Email follow-up
+"Barton, Reed and Coleman",Qualification,107982.0,EMP657912,Webinar,2025-09-28,Call next week
+Collins-Maldonado,Closed Lost,144232.0,EMP790143,Partner,2026-03-22,Arrange site visit
+Hall-Johnson,Qualification,110497.0,EMP606924,Referral,2025-03-22,
+Moore-Underwood,Closed Lost,121750.0,EMP756249,Trade Show,2026-04-09,Schedule demo
+Wiley-Parsons,Prospecting,171034.0,EMP854266,Trade Show,2025-07-21,Call next week
+Hahn Inc,Prospecting,35711.0,EMP198622,Partner,2025-07-22,
+Banks and Sons,Proposal,95270.0,EMP716747,Referral,2026-01-07,Call next week
+Pena Ltd,Negotiation,39166.0,EMP209404,Referral,2026-03-14,Schedule demo
+Leonard-White,Qualification,11627.0,EMP101581,Webinar,2025-11-18,Email follow-up
+Alexander-Rubio,Proposal,176209.0,EMP444484,Trade Show,2025-03-21,Call next week
+Moore and Sons,Closed Lost,57594.0,EMP832278,Cold Call,2025-05-01,Arrange site visit
+Guerrero Group,Closed Lost,74095.0,EMP523405,Webinar,2026-02-06,Arrange site visit
+"Campbell, Yates and Turner",Proposal,71164.0,EMP559977,Cold Call,2025-04-21,Email follow-up
+Willis LLC,Prospecting,191770.0,EMP185421,Partner,2025-12-30,Call next week
+Wolf-Jones,Prospecting,180653.0,EMP627113,Cold Call,2025-04-01,
+"Dawson, Carter and Conrad",Negotiation,116379.0,EMP179504,Trade Show,2026-03-30,Email follow-up
+Schultz-Kelley,Negotiation,49191.0,EMP655190,Trade Show,2026-04-07,Email follow-up
+Gray Inc,Qualification,20154.0,EMP274777,Cold Call,2026-01-13,Call next week
+Williams-Norton,Closed Lost,144015.0,EMP757066,Webinar,2025-11-23,Email follow-up
+Wood LLC,Closed Won,60655.0,EMP987762,Partner,2025-08-29,
+Brown-Johnson,Closed Lost,86664.0,EMP532334,Trade Show,2026-02-06,Email follow-up
+Moore PLC,Prospecting,131611.0,EMP387630,Cold Call,2026-01-05,Email follow-up
+Harrison Inc,Prospecting,38168.0,EMP832056,Webinar,2025-06-20,
+"Taylor, Meza and Castro",Prospecting,193155.0,EMP959810,Cold Call,2026-03-30,Schedule demo
+Jones Inc,Proposal,157101.0,EMP730591,Cold Call,2025-04-07,Call next week
+"Waters, Wilson and Hoover",Proposal,192143.0,EMP319982,Partner,2025-11-14,Call next week
+Reynolds-Wilson,Closed Won,112979.0,EMP816466,Webinar,2025-08-21,Call next week
+"Heath, Benitez and Acosta",Prospecting,102412.0,EMP212416,Webinar,2025-09-24,
+Fernandez and Sons,Qualification,112541.0,EMP875486,Referral,2025-05-21,Email follow-up
+Blair-Henderson,Proposal,175788.0,EMP641783,Webinar,2025-09-20,Schedule demo
+Miller PLC,Closed Won,98693.0,EMP710787,Cold Call,2025-05-08,Schedule demo
+Cross PLC,Qualification,157536.0,EMP589223,Trade Show,2025-11-25,Email follow-up
+Davis Group,Negotiation,112932.0,EMP303944,Cold Call,2025-10-10,Call next week
+Rice-Nguyen,Negotiation,101072.0,EMP533465,Webinar,2025-05-31,Call next week
+"Armstrong, Long and Parker",Closed Won,147822.0,EMP766358,Partner,2026-02-11,Schedule demo
+"Steele, Hernandez and Sullivan",Proposal,151231.0,EMP850491,Trade Show,2025-09-19,Schedule demo
+Moss-Dunlap,Qualification,187181.0,EMP474507,Cold Call,2025-09-12,Arrange site visit
+"Brooks, Smith and Thomas",Proposal,12304.0,EMP809311,Trade Show,2026-04-05,Schedule demo
+"Maldonado, Clark and Leach",Closed Won,172553.0,EMP628395,Partner,2025-03-30,Schedule demo
+Wilson Group,Closed Won,168151.0,EMP483786,Webinar,2025-10-02,Schedule demo
+"Webb, Martinez and Church",Closed Lost,99820.0,EMP271007,Referral,2025-05-10,
+Brennan and Sons,Negotiation,42422.0,EMP197537,Partner,2025-11-05,Schedule demo
+"Bell, Burgess and Gonzalez",Proposal,111717.0,EMP591165,Partner,2026-04-07,Email follow-up
+"Davis, Mcguire and Thomas",Negotiation,172638.0,EMP729792,Partner,2025-09-24,Arrange site visit
+Flores-Walters,Negotiation,75995.0,EMP655711,Partner,2025-06-01,Email follow-up
+"Lambert, Sanchez and Lloyd",Closed Won,57080.0,EMP502737,Cold Call,2025-07-15,Schedule demo
+Bernard Group,Qualification,194194.0,EMP316045,Cold Call,2025-08-08,Arrange site visit
+"Kelly, Little and Hall",Prospecting,152024.0,EMP566277,Trade Show,2025-09-10,Email follow-up
+Burch Group,Negotiation,118879.0,EMP476447,Partner,2026-04-13,Arrange site visit
+"Nelson, Marsh and Gillespie",Proposal,101400.0,EMP826429,Partner,2025-05-31,Call next week
+Garner LLC,Closed Won,120759.0,EMP447255,Trade Show,2026-04-04,Call next week
+"Miller, Rogers and Butler",Proposal,24442.0,EMP727887,Webinar,2026-01-22,Call next week
+"Adams, Rios and Daugherty",Negotiation,171071.0,EMP867826,Webinar,2025-12-07,Email follow-up
+"White, Wood and Sampson",Closed Won,163392.0,EMP737463,Cold Call,2025-11-17,
+"Walters, Jackson and Gonzalez",Closed Lost,51177.0,EMP792209,Webinar,2025-06-05,Email follow-up
+"Bishop, Jones and Mitchell",Negotiation,135603.0,EMP704319,Cold Call,2025-08-16,Email follow-up
+"Gregory, Scott and Johnson",Closed Lost,53994.0,EMP166379,Referral,2026-02-26,
+"Moore, Jackson and Sullivan",Qualification,102610.0,EMP869814,Partner,2025-08-02,Arrange site visit
+"Dunn, Gonzalez and Levy",Closed Lost,89424.0,EMP670521,Partner,2026-04-02,Call next week
+"Daniels, Mathews and Lopez",Negotiation,29823.0,EMP198552,Referral,2025-05-11,Call next week
+"Barrett, Watkins and Nixon",Proposal,53048.0,EMP550967,Partner,2026-01-20,Email follow-up
+Diaz-Wise,Prospecting,29928.0,EMP365821,Cold Call,2026-03-31,Email follow-up
+Barnes and Sons,Closed Lost,107093.0,EMP128515,Cold Call,2025-11-17,Arrange site visit
+Booth-Perez,Qualification,41071.0,EMP371981,Trade Show,2025-04-12,

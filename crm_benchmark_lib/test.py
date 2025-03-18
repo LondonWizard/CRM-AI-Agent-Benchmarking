@@ -9,7 +9,7 @@ from .evaluator import load_questions
 from typing import Callable
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.CRITICAL)
+logger.setLevel(logging.DEBUG)
 
 def run_tests_on_all_csvs(agent_callable: Callable[[str, pd.DataFrame], str]) -> float:
     """

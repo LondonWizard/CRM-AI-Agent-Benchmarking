@@ -1,15 +1,45 @@
-# leaderboard.html
 {% extends 'base.html' %}
 {% block content %}
-<h2>Leaderboard</h2>
-<table border="1">
-  <tr><th>User</th><th>Agent Name</th><th>Score</th></tr>
-  {% for row in scores %}
-  <tr>
-    <td>{{row.username}}</td>
-    <td>{{row.agent_name}}</td>
-    <td>{{row.score}}</td>
-  </tr>
-  {% endfor %}
-</table>
+<div class="leaderboard-container">
+    <h2 class="animate__animated animate__fadeInUp">Leaderboard</h2>
+    
+    <div class="leaderboard-wrapper slide-up">
+        {% if scores %}
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>User</th>
+                        <th>Agent Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in scores %}
+                    <tr class="leaderboard-row">
+                        <td class="rank">{{ loop.index }}</td>
+                        <td>{{ row.username }}</td>
+                        <td>{{ row.agent_name }}</td>
+                        <td class="score">{{ row.score }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="empty-state">
+                <p>No scores recorded yet. Be the first to submit!</p>
+            </div>
+        {% endif %}
+    </div>
+    
+    {% if 'username' in session %}
+    <div class="leaderboard-actions animate__animated animate__fadeIn animate__delay-1s">
+        <a href="{{ url_for('profile') }}" class="btn btn-primary">View Your API Key</a>
+    </div>
+    {% else %}
+    <div class="leaderboard-actions animate__animated animate__fadeIn animate__delay-1s">
+        <a href="{{ url_for('register') }}" class="btn btn-primary">Register to Participate</a>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}
