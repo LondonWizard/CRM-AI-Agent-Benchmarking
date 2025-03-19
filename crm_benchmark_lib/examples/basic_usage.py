@@ -220,103 +220,103 @@ def main():
     # Create a client
     client = BenchmarkClient(
         api_key=API_KEY,
-        server_url="http://localhost:5000",
+        server_url="http://18.218.96.234/",
         show_progress=True
     )
     
     # Run the benchmark and submit results
     print("\nRunning benchmark with parallel processing...")
-    try:
-        results = client.run_and_submit(
-            agent_callable=my_agent_4o_mini,
-            agent_name="ChatGPT-4o-mini",
-            parallel=True,
-            visualize=True
-        )
+    # try:
+    #     results = client.run_and_submit(
+    #         agent_callable=my_agent_4o_mini,
+    #         agent_name="ChatGPT-4o-mini",
+    #         parallel=True,
+    #         visualize=True
+    #     )
         
-        # Handle results
-        if isinstance(results, dict):
-            if "status" in results and results["status"] == "error":
-                print(f"\nError: {results.get('message', 'Unknown error')}")
-            else:
-                score = results.get('overall_average', 0)
-                print(f"\nFinal Score: {score:.2f}%")
+    #     # Handle results
+    #     if isinstance(results, dict):
+    #         if "status" in results and results["status"] == "error":
+    #             print(f"\nError: {results.get('message', 'Unknown error')}")
+    #         else:
+    #             score = results.get('overall_average', 0)
+    #             print(f"\nFinal Score: {score:.2f}%")
                 
-                # Check submission status
-                submission = results.get('submission', {})
-                if submission.get('status') == 'success':
-                    print(f"Score successfully submitted for: {submission.get('username', 'Unknown')}")
-                else:
-                    print(f"Failed to submit score: {submission.get('message', 'Unknown error')}")
-                    if 'request_payload' in submission:
-                        print(f"Submission payload: {submission['request_payload']}")
-        else:
-            print(f"Unexpected results format: {results}")
+    #             # Check submission status
+    #             submission = results.get('submission', {})
+    #             if submission.get('status') == 'success':
+    #                 print(f"Score successfully submitted for: {submission.get('username', 'Unknown')}")
+    #             else:
+    #                 print(f"Failed to submit score: {submission.get('message', 'Unknown error')}")
+    #                 if 'request_payload' in submission:
+    #                     print(f"Submission payload: {submission['request_payload']}")
+    #     else:
+    #         print(f"Unexpected results format: {results}")
             
-    except Exception as e:
-        print(f"Error running benchmark: {e}")
-        raise
-    try:
-        results = client.run_and_submit(
-            agent_callable=my_agent_4o,
-            agent_name="ChatGPT-4o",
-            parallel=True,
-            visualize=True
-        )
+    # except Exception as e:
+    #     print(f"Error running benchmark: {e}")
+    #     raise
+    # try:
+    #     results = client.run_and_submit(
+    #         agent_callable=my_agent_4o,
+    #         agent_name="ChatGPT-4o",
+    #         parallel=True,
+    #         visualize=True
+    #     )
         
-        # Handle results
-        if isinstance(results, dict):
-            if "status" in results and results["status"] == "error":
-                print(f"\nError: {results.get('message', 'Unknown error')}")
-            else:
-                score = results.get('overall_average', 0)
-                print(f"\nFinal Score: {score:.2f}%")
+    #     # Handle results
+    #     if isinstance(results, dict):
+    #         if "status" in results and results["status"] == "error":
+    #             print(f"\nError: {results.get('message', 'Unknown error')}")
+    #         else:
+    #             score = results.get('overall_average', 0)
+    #             print(f"\nFinal Score: {score:.2f}%")
                 
-                # Check submission status
-                submission = results.get('submission', {})
-                if submission.get('status') == 'success':
-                    print(f"Score successfully submitted for: {submission.get('username', 'Unknown')}")
-                else:
-                    print(f"Failed to submit score: {submission.get('message', 'Unknown error')}")
-                    if 'request_payload' in submission:
-                        print(f"Submission payload: {submission['request_payload']}")
-        else:
-            print(f"Unexpected results format: {results}")
+    #             # Check submission status
+    #             submission = results.get('submission', {})
+    #             if submission.get('status') == 'success':
+    #                 print(f"Score successfully submitted for: {submission.get('username', 'Unknown')}")
+    #             else:
+    #                 print(f"Failed to submit score: {submission.get('message', 'Unknown error')}")
+    #                 if 'request_payload' in submission:
+    #                     print(f"Submission payload: {submission['request_payload']}")
+    #     else:
+    #         print(f"Unexpected results format: {results}")
             
-    except Exception as e:
-        print(f"Error running benchmark: {e}")
-        raise
+    # except Exception as e:
+    #     print(f"Error running benchmark: {e}")
+    #     raise
 
-    try:
-        results = client.run_and_submit(
-            agent_callable=my_agent_o3_mini,
-            agent_name="ChatGPT-o3-mini",
-            parallel=True,
-            visualize=True
-        )
+    # try:
+    #     results = client.run_and_submit(
+    #         agent_callable=my_agent_o3_mini,
+    #         agent_name="ChatGPT-o3-mini",
+    #         parallel=True,
+    #         visualize=True
+    #     )
         
-        # Handle results
-        if isinstance(results, dict):
-            if "status" in results and results["status"] == "error":
-                print(f"\nError: {results.get('message', 'Unknown error')}")
-            else:
-                score = results.get('overall_average', 0)
-                print(f"\nFinal Score: {score:.2f}%")
+    #     # Handle results
+    #     if isinstance(results, dict):
+    #         if "status" in results and results["status"] == "error":
+    #             print(f"\nError: {results.get('message', 'Unknown error')}")
+    #         else:
+    #             score = results.get('overall_average', 0)
+    #             print(f"\nFinal Score: {score:.2f}%")
                 
-                # Check submission status
-                submission = results.get('submission', {})
-                if submission.get('status') == 'success':
-                    print(f"Score successfully submitted for: {submission.get('username', 'Unknown')}")
-                else:
-                    print(f"Failed to submit score: {submission.get('message', 'Unknown error')}")
-                    if 'request_payload' in submission:
-                        print(f"Submission payload: {submission['request_payload']}")
-        else:
-            print(f"Unexpected results format: {results}")
+    #             # Check submission status
+    #             submission = results.get('submission', {})
+    #             if submission.get('status') == 'success':
+    #                 print(f"Score successfully submitted for: {submission.get('username', 'Unknown')}")
+    #             else:
+    #                 print(f"Failed to submit score: {submission.get('message', 'Unknown error')}")
+    #                 if 'request_payload' in submission:
+    #                     print(f"Submission payload: {submission['request_payload']}")
+    #     else:
+    #         print(f"Unexpected results format: {results}")
             
-    except Exception as e:
-        print(f"Error running benchmark: {e}")
-        raise
+    # except Exception as e:
+    #     print(f"Error running benchmark: {e}")
+    #     raise
 
     try:
         results = client.run_and_submit(
