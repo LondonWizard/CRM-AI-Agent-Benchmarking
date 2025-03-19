@@ -365,9 +365,34 @@ def agent_details(agent_name):
     if not submissions:
         abort(404)
     
-    # Prepare data for charts
+    # Get latest submission
     latest_submission = submissions[0]
     dataset_scores = latest_submission.dataset_scores or {}
+    
+    # Get username from the latest submission
+    username = latest_submission.username
+    
+    # Get rank of this agent
+    subquery = db.session.query(
+        Scoreboard.agent_name,
+        func.max(Scoreboard.score).label('max_score')
+    ).group_by(Scoreboard.agent_name).subquery()
+    
+    rank_query = db.session.query(
+        func.count('*') + 1
+    ).filter(
+        subquery.c.max_score > latest_submission.score
+    )
+    
+    rank = rank_query.scalar() or 1
+    
+    # Calculate additional metrics
+    submission_count = len(submissions)
+    best_score = max(sub.score for sub in submissions)
+    
+    # Prepare first and latest submission dates
+    first_submission = submissions[-1].created_at
+    latest_submission_date = latest_submission.created_at
     
     # Prepare historical data
     history_data = [{
@@ -381,7 +406,15 @@ def agent_details(agent_name):
         agent_name=agent_name,
         latest_score=latest_submission.score,
         dataset_scores=dataset_scores,
-        history=history_data
+        history=history_data,
+        username=username,
+        rank=rank,
+        submission_history=submissions,
+        submission_count=submission_count,
+        best_score=best_score,
+        first_submission=first_submission,
+        latest_submission=latest_submission_date,
+        latest_submission_id=latest_submission.id
     )
 
 @app.route('/submit_agent_score_api', methods=['POST'])

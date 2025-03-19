@@ -26,7 +26,7 @@ from urllib3.util.retry import Retry
 
 # Configure logging
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.ERROR)
 
 # Default server URL for API submission
 DEFAULT_SERVER_URL = "http://localhost:5000"

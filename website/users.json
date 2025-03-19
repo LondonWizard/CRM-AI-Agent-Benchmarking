@@ -4,5 +4,17 @@
     "password_hash": "scrypt:32768:8:1$DN51XMySo3hLpoS8$d5954c67e3c9dd9c553aec8a045c6ef53081014e7f2be0718f4bdb3bc4e338bcd92e1c0aa33ada85e663229dddb89cf3ff4c7305351051fbe25920a7e0d86b2c",
     "api_key": "crm-ed41d521443a456814a9aedf67ef53855925fbbc3f028c05",
     "is_admin": true
+  },
+  {
+    "username": "maxsmeyer",
+    "password_hash": "scrypt:32768:8:1$olrsODsSZd1vqOxw$5f6f099922696be09b37f242ff7e9293a971f27abdc6723d120380b7beb3b5ef5bd051582c4a6e9d6dd6fec68c1f335eb83f3d9c4428a0918812a07df9913643",
+    "api_key": "crm-fe85ae5785b6e483d658e3fe0816f877cb3f24adf084751b",
+    "is_admin": true
+  },
+  {
+    "username": "maxsmeyer",
+    "password_hash": "scrypt:32768:8:1$dvx9kNXI7XJXBJ1Q$28c9b7f34ad196272bd4076928b37ad2820a1edd6bdf735ae55567a4194ea049db55e80e079eeaf128d082ed95f08f2866ee471ba7ac6d9ac96c3ab95c806d5c",
+    "api_key": "crm-a9c0d68ef00df832fad3159a6befa7ccc92c1551fe1b2699",
+    "is_admin": false
   }
 ]

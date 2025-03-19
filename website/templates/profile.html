@@ -68,28 +68,7 @@ results = client.run_and_submit(
 )</code></pre>
                     </div>
                     
-                    <div class="mt-4">
-                        <h4 class="font-semibold mb-2">Using Direct API</h4>
-                        <pre class="bg-dark-400 p-3 rounded-lg overflow-x-auto text-sm"><code>import requests
 
-response = requests.post(
-    "{{ request.host_url }}submit_agent_score_api",
-    json={
-        "api_key": "{{ api_key }}",
-        "agent_name": "My CRM Agent",
-        "score": 85.5,
-        "dataset_scores": {
-            "D1": 90.0,
-            "D2": 82.5,
-            "D3": 85.0,
-            "D4": 88.0,
-            "D5": 82.0
-        }
-    }
-)
-
-print(response.json())</code></pre>
-                    </div>
                 </div>
             </div>
         </div>

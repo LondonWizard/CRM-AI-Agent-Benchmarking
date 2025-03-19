@@ -1,0 +1,105 @@
+record_type,name,stage,amount,probability,last_activity_days,notes
+Opportunity,Northbound,Proposal,175000.0,80.0,5,High confidence deal based on champion feedback
+Opportunity,DeltaOne,Proposal,225000.0,75.0,3,Strong signals from decision makers
+Opportunity,Optima,Qualification,150000.0,25.0,92,No response from prospect
+Opportunity,RoverTech,Proposal,180000.0,30.0,95,Prospect went dark
+Lead,Kemp-Bridges,Closed Won,118861.0,45.0,9,Following up next week
+Lead,Adams-Manning,Prospecting,137915.0,29.0,11,Initial contact made
+Lead,"Miller, Winters and Luna",Closed Lost,118824.0,16.0,20,Scheduled demo
+Opportunity,"Lee, Costa and Hernandez",Closed Lost,75375.0,28.0,15,Scheduled demo
+Opportunity,Novak-Tucker,Qualification,115988.0,57.0,36,Following up next week
+Meeting,"Howard, Gibson and King",Qualification,125560.0,55.0,35,Scheduled demo
+Opportunity,Frey LLC,Closed Lost,56453.0,64.0,69,Initial contact made
+Lead,Mercado-Sanchez,Closed Lost,132677.0,51.0,6,Need to qualify budget
+Opportunity,Reid and Sons,Closed Won,151213.0,58.0,37,Following up next week
+Opportunity,Bell and Sons,,169993.0,18.0,52,Scheduled demo
+Opportunity,"Lee, Price and Nguyen",Prospecting,86293.0,13.0,78,Following up next week
+Lead,"Reed, Brock and Baxter",Qualification,95698.0,37.0,77,Following up next week
+Lead,"Stein, Summers and Smith",Closed Won,165489.0,62.0,66,Following up next week
+Lead,"Cameron, Hernandez and Melton",,110017.0,25.0,55,Need to qualify budget
+Opportunity,Harrison and Sons,Closed Won,95532.0,25.0,49,Need to qualify budget
+Meeting,"Pope, Fletcher and Gilmore",Qualification,115823.0,11.0,55,Need to qualify budget
+Meeting,Lowery-Hensley,Prospecting,131041.0,15.0,27,Scheduled demo
+Opportunity,Hamilton-Vincent,Prospecting,71661.0,33.0,8,Need to qualify budget
+Meeting,Moody-Schroeder,Qualification,113811.0,48.0,11,Following up next week
+Opportunity,Campbell Ltd,,141218.0,61.0,84,Following up next week
+Meeting,Smith LLC,,154969.0,60.0,69,Initial contact made
+Lead,Nunez-Taylor,,134261.0,39.0,6,Need to qualify budget
+Opportunity,Blackwell Ltd,Qualification,152228.0,62.0,44,Following up next week
+Opportunity,"Page, Fuentes and Pollard",Qualification,155769.0,34.0,33,Need to qualify budget
+Meeting,Moore Group,,168946.0,30.0,42,Scheduled demo
+Lead,Williams-Bates,Qualification,167809.0,44.0,23,Initial contact made
+Meeting,"Evans, Rodriguez and Harris",,56056.0,15.0,50,Need to qualify budget
+Lead,"Gomez, Gilbert and May",,78615.0,26.0,67,Following up next week
+Meeting,"Black, Trujillo and Mitchell",Prospecting,81976.0,15.0,72,Scheduled demo
+Opportunity,"Mckenzie, Barnes and Hodges",Closed Lost,66534.0,44.0,51,Initial contact made
+Meeting,Green-Glover,Prospecting,91338.0,18.0,26,Initial contact made
+Opportunity,"Cunningham, Ortiz and Mitchell",Closed Lost,102376.0,11.0,17,Need to qualify budget
+Opportunity,Norris-Hendricks,Qualification,65144.0,64.0,68,Need to qualify budget
+Lead,Anderson Inc,Prospecting,136954.0,36.0,24,Following up next week
+Lead,"Sanchez, Lang and Anderson",,164369.0,37.0,20,Need to qualify budget
+Meeting,Cunningham-Mcclain,Closed Won,135060.0,28.0,51,Need to qualify budget
+Lead,Stevenson-Lopez,Qualification,158326.0,61.0,46,Following up next week
+Opportunity,Clark-Perez,Closed Won,155989.0,36.0,58,Need to qualify budget
+Opportunity,Santos-Young,Closed Won,94466.0,29.0,26,Scheduled demo
+Meeting,"Mendez, Collins and Vasquez",Qualification,108041.0,19.0,23,Scheduled demo
+Opportunity,Pierce-Vaughan,Closed Lost,89633.0,62.0,9,Scheduled demo
+Meeting,Martinez-Harmon,Prospecting,66808.0,53.0,53,Following up next week
+Lead,Trujillo-Ortega,,99078.0,20.0,9,Scheduled demo
+Opportunity,Robinson Ltd,Prospecting,160663.0,57.0,41,Following up next week
+Opportunity,Larson-Johnson,Closed Lost,145765.0,37.0,24,Following up next week
+Lead,Waller-Oconnor,Closed Won,63305.0,44.0,13,Need to qualify budget
+Meeting,Ellis LLC,Closed Lost,169116.0,37.0,74,Scheduled demo
+Lead,Cook Group,,155901.0,52.0,11,Following up next week
+Opportunity,Smith-Diaz,Closed Lost,58705.0,14.0,2,Following up next week
+Meeting,Herman LLC,,57409.0,47.0,8,Need to qualify budget
+Lead,"Roberts, Williamson and Gonzalez",Closed Lost,120865.0,49.0,74,Need to qualify budget
+Meeting,Waller Inc,,92490.0,42.0,80,Initial contact made
+Meeting,Rogers Inc,Closed Won,141905.0,44.0,78,Scheduled demo
+Opportunity,Wells Group,Prospecting,59263.0,19.0,2,Following up next week
+Opportunity,Mills-Taylor,,140487.0,48.0,41,Following up next week
+Lead,Spence Ltd,,167884.0,31.0,6,Following up next week
+Lead,"Benson, King and Gonzalez",,116340.0,62.0,9,Need to qualify budget
+Opportunity,Nguyen-Miller,Closed Lost,122461.0,18.0,27,Initial contact made
+Lead,"Miller, Hood and Russell",Closed Won,119695.0,53.0,34,Scheduled demo
+Meeting,Martin-Young,Closed Won,87719.0,48.0,37,Scheduled demo
+Opportunity,Hall LLC,,85372.0,25.0,66,Following up next week
+Meeting,Hoffman Group,Closed Lost,116470.0,28.0,52,Scheduled demo
+Opportunity,Austin-Cobb,,165135.0,33.0,16,Scheduled demo
+Opportunity,Jones Ltd,,74128.0,40.0,56,Following up next week
+Meeting,Roach and Sons,Qualification,151827.0,43.0,35,Initial contact made
+Lead,"Smith, Webb and Walker",Closed Lost,125681.0,55.0,55,Following up next week
+Lead,Henderson-Harper,,53799.0,41.0,22,Following up next week
+Meeting,Mercer-Tucker,Closed Won,53535.0,65.0,52,Following up next week
+Meeting,Campbell Inc,Closed Won,147758.0,47.0,30,Initial contact made
+Meeting,Gonzales-Browning,Prospecting,133681.0,40.0,76,Following up next week
+Opportunity,Shaffer-Chen,Closed Won,88780.0,37.0,69,Following up next week
+Meeting,"Nguyen, Young and King",Closed Won,87188.0,46.0,70,Scheduled demo
+Opportunity,Serrano-Smith,,102932.0,48.0,81,Scheduled demo
+Lead,Garcia-Mckinney,,158021.0,62.0,8,Need to qualify budget
+Opportunity,Perez Inc,Qualification,138870.0,64.0,58,Scheduled demo
+Lead,Wells-Douglas,Closed Won,145350.0,28.0,18,Following up next week
+Opportunity,"Wood, Gordon and Richards",,139057.0,24.0,50,Scheduled demo
+Lead,"Frazier, Waters and Newman",,70567.0,33.0,78,Following up next week
+Lead,Singh PLC,Closed Won,99384.0,25.0,11,Following up next week
+Lead,"Rivera, Hodge and Martin",,76757.0,38.0,69,Scheduled demo
+Opportunity,Taylor-Nichols,,68176.0,42.0,37,Following up next week
+Meeting,Cortez-Estrada,Prospecting,80563.0,55.0,2,Initial contact made
+Opportunity,"Martinez, Thomas and Mcintosh",Prospecting,92890.0,42.0,2,Following up next week
+Lead,Ramirez-Williams,,130632.0,24.0,5,Need to qualify budget
+Opportunity,"Murphy, Perry and Levine",Qualification,103166.0,23.0,48,Scheduled demo
+Lead,Wang-Hudson,Prospecting,51902.0,50.0,23,Need to qualify budget
+Lead,"Yates, Wilcox and Ball",Closed Lost,144088.0,55.0,36,Scheduled demo
+Meeting,"Smith, Taylor and Bond",,96149.0,62.0,11,Need to qualify budget
+Lead,"Thomas, Strong and West",,168380.0,47.0,23,Initial contact made
+Lead,"Crawford, Smith and Martinez",,58121.0,41.0,46,Following up next week
+Opportunity,Wilson and Sons,,166933.0,33.0,41,Following up next week
+Opportunity,Johnson-Gray,Prospecting,87545.0,46.0,73,Scheduled demo
+Lead,Jones and Sons,Qualification,130086.0,22.0,29,Need to qualify budget
+Lead,Madden-Robertson,,151599.0,17.0,7,Initial contact made
+Lead,"Buchanan, Gilbert and Sullivan",Prospecting,51470.0,41.0,74,Scheduled demo
+Lead,"Thomas, Fitzgerald and Miller",Qualification,147534.0,60.0,45,Need to qualify budget
+Lead,Knapp Group,Closed Won,129006.0,39.0,25,Initial contact made
+Meeting,"Allen, Collins and Smith",,94981.0,57.0,72,Initial contact made
+Meeting,Byrd-Simpson,,111117.0,64.0,53,Following up next week
+Opportunity,"Jenkins, Williams and Romero",Qualification,129907.0,56.0,9,Scheduled demo
