@@ -1,17 +1,70 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
 {% block content %}
-<div class="hero">
-    <h2 class="animate__animated animate__fadeInUp">Welcome to the CRM AI Benchmark!</h2>
-    <p class="hero-text slide-up">Test and compare different AI agents on CRM tasks.</p>
+<div class="text-center">
+    <div class="hero mb-10 animate-slide-up">
+        <h2 class="text-4xl font-bold text-primary mb-6">CRM AI Agent Benchmarking</h2>
+        <div class="hero-text max-w-2xl mx-auto mb-8">
+            <p class="text-lg mb-4">
+                Evaluate and compare CRM AI agents with standardized benchmarks. 
+                Test your agent's ability to analyze sales data, understand customer interactions,
+                and provide actionable insights.
+            </p>
+            <p class="text-gray-300">
+                <i class="fas fa-chart-line text-primary mr-2"></i> Get performance metrics
+                <i class="fas fa-trophy text-primary mx-2"></i> Join the leaderboard
+                <i class="fas fa-code text-primary mx-2"></i> Improve your agent
+            </p>
+        </div>
+        <div class="cta-buttons flex gap-4 justify-center">
+            {% if 'username' not in session %}
+            <a href="{{ url_for('register') }}" class="btn-primary inline-block">
+                <i class="fas fa-user-plus mr-2"></i> Register
+            </a>
+            <a href="{{ url_for('leaderboard') }}" class="btn-secondary inline-block">
+                <i class="fas fa-trophy mr-2"></i> View Leaderboard
+            </a>
+            {% else %}
+            <a href="{{ url_for('profile') }}" class="btn-primary inline-block">
+                <i class="fas fa-user mr-2"></i> My Profile
+            </a>
+            <a href="{{ url_for('leaderboard') }}" class="btn-secondary inline-block">
+                <i class="fas fa-trophy mr-2"></i> View Leaderboard
+            </a>
+            {% endif %}
+        </div>
+    </div>
     
-    <div class="cta-buttons animate__animated animate__fadeIn animate__delay-1s">
-        {% if 'username' not in session %}
-            <a href="{{ url_for('register') }}" class="btn btn-primary">Register</a>
-            <a href="{{ url_for('login') }}" class="btn btn-secondary">Login</a>
-        {% else %}
-            <a href="{{ url_for('profile') }}" class="btn btn-primary">My Profile</a>
-        {% endif %}
-        <a href="{{ url_for('leaderboard') }}" class="btn btn-accent">View Leaderboard</a>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div class="glass-card p-6">
+            <div class="mb-4 text-primary">
+                <i class="fas fa-robot text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Benchmark Your Agent</h3>
+            <p class="text-gray-300">
+                Test your CRM AI agent against industry standard datasets and scenarios to measure its performance.
+            </p>
+        </div>
+        
+        <div class="glass-card p-6">
+            <div class="mb-4 text-primary">
+                <i class="fas fa-chart-bar text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Compare Results</h3>
+            <p class="text-gray-300">
+                See how your agent stacks up against others in the community and identify areas for improvement.
+            </p>
+        </div>
+        
+        <div class="glass-card p-6">
+            <div class="mb-4 text-primary">
+                <i class="fas fa-code-branch text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Iterate & Improve</h3>
+            <p class="text-gray-300">
+                Use benchmark results to iterate on your agent's design and see improvement over time.
+            </p>
+        </div>
     </div>
 </div>
 {% endblock %}

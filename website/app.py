@@ -21,6 +21,7 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf.csrf import CSRFProtect, CSRFError
 import cryptography
+from sqlalchemy.sql import func, and_
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)  # Generate a secure random key
@@ -49,108 +50,67 @@ JSON_USERS_PATH = os.path.join(os.path.dirname(__file__), "users.json")
 
 class User(db.Model):
     """User model for authentication and API key storage"""
-    __tablename__ = 'users'  # Explicitly name the table to avoid SQLite issues
+    __tablename__ = 'users'
     
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
-    password = db.Column(db.String(256), nullable=False)  # Store password hash, not plain password
+    password = db.Column(db.String(256), nullable=False)
     api_key = db.Column(db.String(100), unique=True, nullable=False)
+    is_admin = db.Column(db.Boolean, default=False)  # New admin column
     created_at = db.Column(db.DateTime, server_default=db.func.current_timestamp())
     
-    # Add relationship to scores - we'll use the `backref` approach instead of a complex relationship
+    # Add relationship to scores
     scores = db.relationship('Scoreboard', backref='user_obj', lazy=True, 
-                            cascade="all, delete-orphan")
+                           cascade="all, delete-orphan")
 
 class Scoreboard(db.Model):
     """Scoreboard model for tracking benchmark scores"""
-    __tablename__ = 'scoreboard'  # Explicitly name the table
+    __tablename__ = 'scoreboard'
     
     id = db.Column(db.Integer, primary_key=True)
-    # Define username as a proper foreign key to users.username
     username = db.Column(db.String(50), db.ForeignKey('users.username'), nullable=False, index=True)
     agent_name = db.Column(db.String(50), nullable=False)
     score = db.Column(db.Float, nullable=False)
     created_at = db.Column(db.DateTime, server_default=db.func.current_timestamp())
+    dataset_scores = db.Column(db.JSON)  # Store individual dataset scores
+    
+    __table_args__ = (
+        db.Index('idx_agent_score', 'agent_name', 'score'),  # Index for faster leaderboard queries
+    )
 
 # -----------------------------------------------------------------------------
 # Database Setup
 # -----------------------------------------------------------------------------
 
 def setup_database():
-    """
-    Set up the database tables. If there's a schema change, 
-    this will recreate the tables.
-    """
+    """Set up the database tables and ensure admin user exists."""
     with app.app_context():
         try:
-            # Try to query to check if the schema is compatible
-            User.query.first()
-            Scoreboard.query.first()
-            print("Database schema is compatible")
-        except Exception as e:
-            print(f"Database schema issue detected: {e}")
-            print("Recreating database tables...")
-            
-            # Load existing users from JSON as backup
-            users_data = []
-            if os.path.exists(JSON_USERS_PATH):
-                try:
-                    with open(JSON_USERS_PATH, 'r', encoding='utf-8') as f:
-                        users_data = json.load(f)
-                except Exception as json_err:
-                    print(f"Error loading users.json: {json_err}")
-            
-            # Try to backup existing scores if any
-            existing_scores = []
-            try:
-                # Connect directly to the database to extract data
-                import sqlite3
-                conn = sqlite3.connect(db_path)
-                cursor = conn.cursor()
-                
-                # Check if the scoreboard table exists
-                cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='scoreboard'")
-                if cursor.fetchone():
-                    cursor.execute("SELECT username, agent_name, score FROM scoreboard")
-                    existing_scores = cursor.fetchall()
-                    
-                conn.close()
-            except Exception as db_err:
-                print(f"Error backing up existing scores: {db_err}")
-            
-            # Recreate tables
-            db.drop_all()
             db.create_all()
             
-            # Restore users from backup first (since they're referenced by foreign keys)
-            print("Restoring users from backup...")
-            for user_entry in users_data:
-                username = user_entry.get('username')
-                password_hash = user_entry.get('password_hash')
-                api_key = user_entry.get('api_key')
+            # Make maxsmeyer an admin if they exist
+            admin_user = User.query.filter_by(username='maxsmeyer').first()
+            if admin_user:
+                admin_user.is_admin = True
+                db.session.commit()
                 
-                if username and password_hash and api_key:
-                    new_user = User(username=username, password=password_hash, api_key=api_key)
-                    db.session.add(new_user)
+                # Update users.json to reflect admin status
+                with open(JSON_USERS_PATH, 'r', encoding='utf-8') as f:
+                    users_data = json.load(f)
+                
+                for user in users_data:
+                    if user['username'] == 'maxsmeyer':
+                        user['is_admin'] = True
+                        break
+                
+                with open(JSON_USERS_PATH, 'w', encoding='utf-8') as f:
+                    json.dump(users_data, f, indent=2)
+                    
+            print("Database setup complete")
             
-            # Commit users to ensure they exist before adding scores that reference them
-            db.session.commit()
-            
-            # Restore scores if any (only for users that exist)
-            print("Restoring scores from backup...")
-            valid_usernames = [u.username for u in User.query.all()]
-            restored_count = 0
-            
-            for score_entry in existing_scores:
-                username, agent_name, score = score_entry
-                # Only restore scores for users that exist (to satisfy foreign key)
-                if username in valid_usernames:
-                    new_score = Scoreboard(username=username, agent_name=agent_name, score=score)
-                    db.session.add(new_score)
-                    restored_count += 1
-            
-            db.session.commit()
-            print(f"Database tables recreated successfully. Restored {restored_count} scores.")
+        except Exception as e:
+            print(f"Error during database setup: {e}")
+            db.session.rollback()
 
 # -----------------------------------------------------------------------------
 # Create DB if not exists
@@ -168,32 +128,28 @@ def create_tables():
 # Helpers
 # -----------------------------------------------------------------------------
 
-def save_user_to_json(username, password_hash, api_key):
-    """
-    Mirror the new user's data to 'users.json'.
-    """
-    # Load existing data
+def save_user_to_json(username, password_hash, api_key, is_admin=False):
+    """Mirror the new user's data to 'users.json'."""
     try:
         with open(JSON_USERS_PATH, 'r', encoding='utf-8') as f:
             users_data = json.load(f)
     except Exception:
         users_data = []
 
-    # Append the new user
     new_user_entry = {
         "username": username,
         "password_hash": password_hash,
-        "api_key": api_key
+        "api_key": api_key,
+        "is_admin": is_admin
     }
     users_data.append(new_user_entry)
 
-    # Write back
     with open(JSON_USERS_PATH, 'w', encoding='utf-8') as f:
         json.dump(users_data, f, indent=2)
 
 def generate_secure_api_key():
     """Generate a secure API key for users"""
-    return secrets.token_hex(24)  # 48 characters, more secure
+    return f"crm-{secrets.token_hex(24)}"  # 48 characters plus prefix
 
 def login_required(f):
     """Decorator to require login for certain routes"""
@@ -201,6 +157,23 @@ def login_required(f):
         if 'username' not in session:
             flash("Please login to access this page.", "error")
             return redirect(url_for('login', next=request.url))
+        return f(*args, **kwargs)
+    decorated_function.__name__ = f.__name__
+    return decorated_function
+
+# Add admin required decorator
+def admin_required(f):
+    """Decorator to require admin access for certain routes"""
+    def decorated_function(*args, **kwargs):
+        if 'username' not in session:
+            flash("Please login to access this page.", "error")
+            return redirect(url_for('login'))
+        
+        user = User.query.filter_by(username=session['username']).first()
+        if not user or not user.is_admin:
+            flash("Admin access required.", "error")
+            return redirect(url_for('index'))
+            
         return f(*args, **kwargs)
     decorated_function.__name__ = f.__name__
     return decorated_function
@@ -227,6 +200,7 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        api_key = generate_secure_api_key()  # This generates a 48-char hex key
 
         # Basic validation
         if not username or not password:
@@ -243,9 +217,6 @@ def register():
             flash("Username already taken.", "error")
             return redirect(url_for('register'))
 
-        # Generate an API key
-        api_key = generate_secure_api_key()
-        
         # Hash the password
         password_hash = generate_password_hash(password)
 
@@ -311,66 +282,164 @@ def logout():
 
 @app.route('/leaderboard')
 def leaderboard():
-    """
-    Shows the top 10 scores in descending order.
-    """
-    scores = Scoreboard.query.order_by(Scoreboard.score.desc()).limit(10).all()
-    return render_template('leaderboard.html', scores=scores)
+    """Display the leaderboard with pagination."""
+    page = request.args.get('page', 1, type=int)
+    per_page = 10
+
+    # Use a subquery to get the latest submission for each agent per user
+    latest_scores = db.session.query(
+        Scoreboard.username,
+        Scoreboard.agent_name,
+        func.max(Scoreboard.created_at).label('max_created_at')
+    ).group_by(Scoreboard.username, Scoreboard.agent_name).subquery()
+
+    # Join with the original table to get the full records
+    scores = db.session.query(Scoreboard)\
+        .join(
+            latest_scores,
+            db.and_(
+                Scoreboard.username == latest_scores.c.username,
+                Scoreboard.agent_name == latest_scores.c.agent_name,
+                Scoreboard.created_at == latest_scores.c.max_created_at
+            )
+        )\
+        .order_by(Scoreboard.score.desc())
+
+    # Paginate the results
+    pagination = scores.paginate(page=page, per_page=per_page, error_out=False)
+    entries = pagination.items
+
+    return render_template(
+        'leaderboard.html',
+        scores=entries,
+        pagination=pagination
+    )
 
 
 @app.route('/profile')
 @login_required
 def profile():
-    """
-    Displays the logged-in user's info, including API key.
-    """
+    """Displays the logged-in user's info and scores."""
     username = session['username']
     user = User.query.filter_by(username=username).first()
     if not user:
         flash("No user found. Please register.", "error")
         return redirect(url_for('register'))
+    
+    # Get latest submission for each agent with their dataset scores
+    agent_scores = db.session.query(
+        Scoreboard.agent_name,
+        func.max(Scoreboard.score).label('best_score'),
+        func.count(Scoreboard.id).label('submission_count'),
+        # Get the dataset_scores from the latest submission
+        Scoreboard.dataset_scores
+    ).filter_by(username=username)\
+     .group_by(Scoreboard.agent_name)\
+     .order_by(func.max(Scoreboard.score).desc())\
+     .all()
+    
+    # Convert SQLAlchemy objects to dictionaries
+    agent_scores_list = []
+    for score in agent_scores:
+        agent_scores_list.append({
+            'agent_name': score.agent_name,
+            'best_score': score.best_score,
+            'submission_count': score.submission_count,
+            'latest_dataset_scores': score.dataset_scores or {}
+        })
+    
+    return render_template(
+        'profile.html',
+        username=user.username,
+        api_key=user.api_key,
+        agent_scores=agent_scores_list
+    )
 
-    return render_template('profile.html', username=user.username, api_key=user.api_key)
-
-# The submit_score route has been removed in favor of using the GitHub library
-# for score submissions: https://github.com/LondonWizard/CRM-AI-Agent-Benchmarking
+@app.route('/agent/<agent_name>')
+def agent_details(agent_name):
+    """Display detailed history for a specific agent."""
+    # Get all submissions for this agent, ordered by date
+    submissions = Scoreboard.query.filter_by(agent_name=agent_name)\
+        .order_by(Scoreboard.created_at.desc()).all()
+    
+    if not submissions:
+        abort(404)
+    
+    # Prepare data for charts
+    latest_submission = submissions[0]
+    dataset_scores = latest_submission.dataset_scores or {}
+    
+    # Prepare historical data
+    history_data = [{
+        'date': sub.created_at.strftime('%Y-%m-%d %H:%M'),
+        'score': sub.score,
+        'dataset_scores': sub.dataset_scores or {}
+    } for sub in submissions]
+    
+    return render_template(
+        'agent_details.html',
+        agent_name=agent_name,
+        latest_score=latest_submission.score,
+        dataset_scores=dataset_scores,
+        history=history_data
+    )
 
 @app.route('/submit_agent_score_api', methods=['POST'])
-@csrf.exempt  # API endpoints need CSRF exemption
+@csrf.exempt
 def submit_agent_score_api():
-    """
-    This endpoint is for automated posting from your main script or benchmark pipeline.
-    It expects 'api_key', 'agent_name', and 'score' in the form data (or JSON).
-    We look up the user by the provided API key, and if valid, record the score.
-    Returns JSON indicating success/failure.
-    """
-    # Rate limiting would be implemented here in production
+    """Submit agent score with dataset details."""
+    if not request.is_json:
+        return {"status": "error", "message": "Content-Type must be application/json"}, 400
     
-    # Get data from form or JSON
-    api_key = request.form.get('api_key') or request.json.get('api_key') if request.is_json else None
-    agent_name = request.form.get('agent_name') or request.json.get('agent_name') if request.is_json else None
-    score_str = request.form.get('score') or request.json.get('score') if request.is_json else None
+    data = request.json
+    api_key = data.get('api_key')
+    agent_name = data.get('agent_name')
+    score = data.get('score')
+    dataset_scores = data.get('dataset_scores', {})
 
-    if not (api_key and agent_name and score_str):
-        return {"status": "error", "message": "Missing fields (api_key, agent_name, score)."}, 400
+    if not all([api_key, agent_name, score]):
+        return {"status": "error", "message": "Missing required fields"}, 400
 
-    # Validate score
     try:
-        score = float(score_str)
+        score = float(score)
     except ValueError:
-        return {"status": "error", "message": "Invalid score format."}, 400
+        return {"status": "error", "message": "Invalid score format"}, 400
 
-    # Find user by API key
     user = User.query.filter_by(api_key=api_key).first()
     if not user:
-        return {"status": "error", "message": "Invalid API key."}, 403
+        return {"status": "error", "message": "Invalid API key"}, 403
 
-    # Insert scoreboard record
-    entry = Scoreboard(username=user.username, agent_name=agent_name, score=score)
+    # Create new score entry with dataset scores
+    entry = Scoreboard(
+        username=user.username,
+        agent_name=agent_name,
+        score=score,
+        dataset_scores=dataset_scores
+    )
     db.session.add(entry)
     db.session.commit()
 
-    return {"status": "success", "message": "Score saved.", "username": user.username}, 200
+    return {
+        "status": "success",
+        "message": "Score saved",
+        "username": user.username
+    }, 200
+
+# Add delete submission route
+@app.route('/delete_submission/<int:submission_id>', methods=['POST'])
+@admin_required
+@csrf.exempt
+def delete_submission(submission_id):
+    """Delete a submission from the leaderboard (admin only)"""
+    submission = Scoreboard.query.get_or_404(submission_id)
+    
+    try:
+        db.session.delete(submission)
+        db.session.commit()
+        return {"status": "success", "message": "Submission deleted"}, 200
+    except Exception as e:
+        db.session.rollback()
+        return {"status": "error", "message": str(e)}, 500
 
 # Error handlers
 @app.errorhandler(CSRFError)

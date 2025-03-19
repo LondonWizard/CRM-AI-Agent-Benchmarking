@@ -1,22 +1,28 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
 {% block content %}
-<div class="error-container">
-    <div class="error-content scale-in">
-        <h2 class="animate__animated animate__fadeInUp">Error {{ error_code }}</h2>
-        <div class="error-icon animate__animated animate__pulse animate__infinite">
-            {% if error_code == 404 %}
-                <span>🔍</span>
-            {% elif error_code == 500 %}
-                <span>⚠️</span>
-            {% else %}
-                <span>❌</span>
-            {% endif %}
+<div class="max-w-md mx-auto text-center">
+    <div class="glass-card p-8">
+        <div class="text-center mb-6">
+            <div class="text-6xl text-red-500 mb-4">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-red-400 mb-2">Error {{ error_code }}</h2>
+            <p class="text-gray-300">{{ error_message }}</p>
         </div>
-        <p class="error-message">{{ message }}</p>
-        <p>Sorry for the inconvenience. Please try again or return to the homepage.</p>
         
-        <div class="error-actions animate__animated animate__fadeIn animate__delay-1s">
-            <a href="{{ url_for('index') }}" class="btn btn-primary">Return Home</a>
+        <div class="bg-dark-300 p-4 rounded-lg mb-6">
+            <p class="text-red-300 text-sm">{{ error_description }}</p>
+        </div>
+        
+        <div class="flex justify-center gap-4">
+            <a href="{{ url_for('index') }}" class="btn-primary inline-block">
+                <i class="fas fa-home mr-2"></i> Home
+            </a>
+            
+            <button onclick="window.history.back()" class="btn-secondary inline-block">
+                <i class="fas fa-arrow-left mr-2"></i> Go Back
+            </button>
         </div>
     </div>
 </div>

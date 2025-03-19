@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.CRITICAL)
 
 # If you don't already have a root logger configured, you can use:
-# logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 # or create a handler. For brevity, we'll trust an external config or basicConfig.
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -44,7 +44,7 @@ def evaluate_response_with_variants(
     what is considered correct, acceptable, or wrong, to an OpenAI model (o3-mini).
 
     We ask the model to provide a single float between 0.0 and 1.0 (two decimals).
-    If it fails to parse, we default to 0.0.
+    If it fails to parse, we default to 0.1.
 
     Returns: (score: float, debug_info: str)
     """
@@ -62,8 +62,14 @@ between 0.00 and 1.00 (inclusive). Output ONLY that float with two decimals, not
 
 Scoring Guidelines:
 - 1.00 means the agent's answer is fully correct (or acceptable).
-- 0.00 means the agent is completely incorrect or contradicts known facts.
-- A value between 0.00 and 1.00 is allowed if partially correct.
+- 0.01 means the agent is completely incorrect or contradicts known facts.
+- A value between 0.01 and 1.00 is allowed if partially correct.
+- If the agent's response is not relevant to the question, score 0.10.
+- If the agent's response is fully incorrect, score 0.01.
+- If the agent's response is partially correct, score 0.50.
+- If the agent's response is mostly correct, score 0.75.
+- If the agent's response is fully correct, score 1.00.
+- If the agent's response is in between any of the above, score the appropriate value between 0.01 and 1.00.
 
 Question's Correct/Acceptable/Wrong Data:
 - MAIN correct statement: {main_answer}
@@ -77,6 +83,7 @@ CSV Data (for context):
 {csv_data}
 
 Return only the numeric score in the format: XX.XX (two decimals, e.g., 0.75).
+Always return a score between 0.01 and 1.00.
 """
 
     logger.debug("=== EVALUATION PROMPT ===\n%s", prompt.strip())

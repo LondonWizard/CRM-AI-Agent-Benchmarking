@@ -1,24 +1,38 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
 {% block content %}
-<div class="auth-container">
-    <h2 class="animate__animated animate__fadeInUp">Register</h2>
-    <form method="POST" class="auth-form slide-up">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required autofocus />
-        </div>
+<div class="max-w-md mx-auto">
+    <div class="glass-card p-8">
+        <h2 class="text-2xl font-bold text-primary mb-6 text-center">
+            <i class="fas fa-user-plus mr-2"></i> Create Account
+        </h2>
         
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required />
-        </div>
+        <form method="POST" action="{{ url_for('register') }}" class="space-y-6">
+            <div class="space-y-2">
+                <label for="username" class="block font-medium">Username</label>
+                <input type="text" id="username" name="username" required 
+                       placeholder="Choose a unique username"
+                       class="w-full p-3 bg-dark-100 border border-dark-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary">
+            </div>
+            
+            <div class="space-y-2">
+                <label for="password" class="block font-medium">Password</label>
+                <input type="password" id="password" name="password" required 
+                       placeholder="Enter a secure password"
+                       class="w-full p-3 bg-dark-100 border border-dark-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary">
+            </div>
+            
+            <div class="pt-2">
+                <button type="submit" class="btn-primary w-full py-3 text-center font-medium rounded-lg">
+                    <i class="fas fa-user-plus mr-2"></i> Register
+                </button>
+            </div>
+        </form>
         
-        <button type="submit" class="btn btn-primary">Register</button>
-    </form>
-    
-    <div class="auth-links animate__animated animate__fadeIn animate__delay-1s">
-        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+        <div class="mt-6 text-center text-gray-400">
+            Already have an account? 
+            <a href="{{ url_for('login') }}" class="text-primary hover:text-primary-hover">Log in here</a>
+        </div>
     </div>
 </div>
 {% endblock %}

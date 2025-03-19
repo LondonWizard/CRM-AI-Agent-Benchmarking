@@ -8,11 +8,9 @@ We've minimized random clutter so the primary "trends" are obvious.
 """
 
 import os
-import pandas as pd
 import random
 import string
-
-from crm_benchmark_lib.data_generation import (
+from data_generation import (
     generate_dataset_for_d1,
     generate_dataset_for_d2,
     generate_dataset_for_d3,
@@ -20,45 +18,48 @@ from crm_benchmark_lib.data_generation import (
     generate_dataset_for_d5
 )
 
-OUTPUT_FOLDER = "generated_csvs"
+# Determine the output folder relative to this script
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_FOLDER = os.path.join(SCRIPT_DIR, "generated_csvs")
 
 def random_suffix(length=5):
     """Helper to generate a random string suffix for uniqueness."""
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(length))
 
-def main():
+def ensure_output_directory():
+    """Create the output directory if it doesn't exist."""
     if not os.path.exists(OUTPUT_FOLDER):
         os.makedirs(OUTPUT_FOLDER)
+        print(f"Created directory: {OUTPUT_FOLDER}")
 
-    # For each dataset (D1..D5), generate 5 CSVs with random variations
-    for i in range(1, 6):
+def main():
+    """Generate 5 variations of each dataset (D1-D5)."""
+    ensure_output_directory()
+    
+    # Generator functions for each dataset
+    generators = {
+        'D1': generate_dataset_for_d1,
+        'D2': generate_dataset_for_d2,
+        'D3': generate_dataset_for_d3,
+        'D4': generate_dataset_for_d4,
+        'D5': generate_dataset_for_d5
+    }
+    
+    # Generate 5 variations for each dataset
+    for dataset_name, generator_func in generators.items():
         for file_index in range(1, 6):
-            if i == 1:
-                df = generate_dataset_for_d1()
-                prefix = "D1"
-            elif i == 2:
-                df = generate_dataset_for_d2()
-                prefix = "D2"
-            elif i == 3:
-                df = generate_dataset_for_d3()
-                prefix = "D3"
-            elif i == 4:
-                df = generate_dataset_for_d4()
-                prefix = "D4"
-            else:
-                df = generate_dataset_for_d5()
-                prefix = "D5"
-
-            # Optionally, add a small “twist” of random variation in the data
-            # so each file isn’t identical. For example, shuffle rows or
-            # add a minor change in a numeric field.
-
-
+            # Create a unique filename with random suffix
             suffix = random_suffix()
-            filename = f"{prefix}_file{file_index}_{suffix}.csv"
+            filename = f"{dataset_name}_file{file_index}_{suffix}.csv"
             filepath = os.path.join(OUTPUT_FOLDER, filename)
-            df.to_csv(filepath, index=False)
-            print(f"Generated: {filepath}")
+            
+            try:
+                # Generate the dataset with the specific output path
+                df = generator_func(csv_path=filepath)
+                print(f"Generated: {filepath}")
+            except Exception as e:
+                print(f"Error generating {dataset_name} dataset: {e}")
+                continue
 
 if __name__ == "__main__":
     main()

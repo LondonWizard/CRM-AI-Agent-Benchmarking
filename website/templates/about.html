@@ -1,51 +1,137 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
 {% block content %}
-<div class="about-container">
-    <h2 class="animate__animated animate__fadeInUp">About the CRM AI Benchmark</h2>
+<div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-primary mb-8 text-center">
+        <i class="fas fa-info-circle mr-2"></i> About the CRM Benchmark
+    </h2>
     
-    <div class="about-section slide-up">
-        <h3>What is the CRM AI Benchmark?</h3>
-        <p>The CRM AI Benchmark is a standardized testing framework designed to evaluate the performance of AI agents in customer relationship management tasks. By providing consistent metrics and scenarios, we allow developers to compare different AI solutions objectively.</p>
+    <div class="glass-card p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-bullseye mr-2"></i> Purpose
+        </h3>
+        <p class="text-gray-300 mb-4">
+            The CRM AI Agent Benchmark is designed to evaluate AI-powered assistants on their ability to analyze
+            CRM data, understand sales patterns, and provide actionable insights to sales professionals.
+        </p>
+        <p class="text-gray-300">
+            By standardizing evaluation datasets and questions, we provide a fair comparison between different
+            AI approaches, allowing developers to understand their strengths and weaknesses.
+        </p>
     </div>
     
-    <div class="about-section slide-up">
-        <h3>How it Works</h3>
-        <p>AI agents are tested on a variety of CRM-related challenges, including:</p>
-        <ul class="feature-list">
-            <li><span class="accent-icon">🤖</span> Customer inquiry classification</li>
-            <li><span class="accent-icon">📊</span> Lead qualification prediction</li>
-            <li><span class="accent-icon">🔄</span> Smart follow-up generation</li>
-            <li><span class="accent-icon">📝</span> Content personalization</li>
-            <li><span class="accent-icon">⏱️</span> Response time optimization</li>
-        </ul>
-        <p>Each agent receives a score based on accuracy, efficiency, and effectiveness across these tasks.</p>
+    <div class="glass-card p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-clipboard-list mr-2"></i> Benchmark Details
+        </h3>
+        <p class="text-gray-300 mb-4">
+            The benchmark consists of five datasets, each focusing on different aspects of CRM data analysis:
+        </p>
+        
+        <div class="space-y-4 mb-4">
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-chart-line mr-2"></i> Dataset 1: Pipeline Insights
+                </h4>
+                <p class="text-gray-300">
+                    Tests ability to analyze sales pipeline metrics, identify bottlenecks, and forecast outcomes.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-envelope mr-2"></i> Dataset 2: Email Analysis
+                </h4>
+                <p class="text-gray-300">
+                    Evaluates understanding of customer communications, sentiment analysis, and key topic extraction.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-handshake mr-2"></i> Dataset 3: Sales Records
+                </h4>
+                <p class="text-gray-300">
+                    Focuses on historical sales data analysis, win/loss patterns, and deal value optimization.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-clipboard-check mr-2"></i> Dataset 4: Rule Compliance
+                </h4>
+                <p class="text-gray-300">
+                    Tests ability to identify sales reps following or breaking specific process rules and policies.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-users mr-2"></i> Dataset 5: Performance Trends
+                </h4>
+                <p class="text-gray-300">
+                    Evaluates identification of top/bottom performers and understanding performance trends over time.
+                </p>
+            </div>
+        </div>
+        
+        <p class="text-gray-300">
+            Each dataset includes multiple questions ranging from simple metrics to complex analytical insights,
+            with scoring based on accuracy and relevance of responses.
+        </p>
     </div>
     
-    <div class="about-section slide-up">
-        <h3>Getting Started</h3>
-        <p>To benchmark your AI agent:</p>
-        <ol class="steps-list">
-            <li><a href="{{ url_for('register') }}">Register</a> for an account</li>
-            <li>Access your API key from your <a href="{{ url_for('profile') }}">profile</a></li>
-            <li>Use our Python SDK to run the benchmark suite against your agent</li>
-            <li>Submit your scores via the API</li>
-            <li>Compare your results on the <a href="{{ url_for('leaderboard') }}">leaderboard</a></li>
+    <div class="glass-card p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-code mr-2"></i> How to Participate
+        </h3>
+        
+        <ol class="space-y-4 mb-4 list-decimal list-inside text-gray-300">
+            <li class="ml-4">
+                <span class="text-white font-medium">Register an account</span> on this website to receive your API key
+            </li>
+            <li class="ml-4">
+                <span class="text-white font-medium">Install our Python library</span>:
+                <pre class="bg-dark-400 p-2 rounded-lg mt-2 overflow-x-auto"><code>pip install crm-benchmark-lib</code></pre>
+            </li>
+            <li class="ml-4">
+                <span class="text-white font-medium">Create your agent</span> that answers questions based on CRM data
+            </li>
+            <li class="ml-4">
+                <span class="text-white font-medium">Run the benchmark</span> using our library and submit your results
+            </li>
+            <li class="ml-4">
+                <span class="text-white font-medium">Compare your results</span> on the leaderboard
+            </li>
         </ol>
+        
+        <div class="mt-6 flex justify-center">
+            {% if 'username' not in session %}
+            <a href="{{ url_for('register') }}" class="btn-primary inline-block">
+                <i class="fas fa-user-plus mr-2"></i> Register Now
+            </a>
+            {% else %}
+            <a href="{{ url_for('profile') }}" class="btn-primary inline-block">
+                <i class="fas fa-user mr-2"></i> View Your Profile
+            </a>
+            {% endif %}
+        </div>
     </div>
     
-    <div class="about-section slide-up">
-        <h3>Open Source</h3>
-        <p>The CRM AI Benchmark is an open-source project. We welcome contributions from the community to improve our testing methodologies and expand our benchmark scenarios.</p>
-        <p>Visit our <a href="https://github.com/example/crm-ai-benchmark" target="_blank" rel="noopener noreferrer">GitHub repository</a> to learn more about contributing.</p>
-    </div>
-    
-    <div class="cta-buttons animate__animated animate__fadeIn animate__delay-1s">
-        {% if 'username' not in session %}
-            <a href="{{ url_for('register') }}" class="btn btn-primary">Get Started</a>
-        {% else %}
-            <a href="{{ url_for('profile') }}" class="btn btn-primary">View Your API Key</a>
-        {% endif %}
-        <a href="{{ url_for('leaderboard') }}" class="btn btn-accent">View Leaderboard</a>
+    <div id="contact" class="glass-card p-6">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-envelope mr-2"></i> Contact Us
+        </h3>
+        <p class="text-gray-300 mb-4">
+            Have questions about the benchmark or suggestions for improvement?
+            We'd love to hear from you.
+        </p>
+        <p class="text-gray-300">
+            <i class="fas fa-envelope-open-text mr-2 text-primary"></i> Email: <a href="mailto:contact@crmbenchmark.ai" class="text-primary hover:text-primary-hover">contact@crmbenchmark.ai</a>
+        </p>
+        <p class="text-gray-300">
+            <i class="fab fa-github mr-2 text-primary"></i> GitHub: <a href="https://github.com/example/crm-ai-benchmark" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover">github.com/example/crm-ai-benchmark</a>
+        </p>
     </div>
 </div>
 {% endblock %} 

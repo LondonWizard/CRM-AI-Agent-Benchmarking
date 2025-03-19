@@ -7,47 +7,48 @@ This example shows how to create a simple agent and run it against the benchmark
 import sys
 import os
 import pandas as pd
+from openai import OpenAI
+from dotenv import load_dotenv
 
-# Add parent directory to path to import crm_benchmark_lib
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+# Get the absolute path to the crm_benchmark_lib directory
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+LIB_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Add the repository root to Python path
+sys.path.append(REPO_ROOT)
+
+# Load environment variables
+load_dotenv()
+
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Import the library
 from crm_benchmark_lib import BenchmarkClient
 
 # Define a sample agent function
 def my_agent(question: str, data: pd.DataFrame) -> str:
-    """
-    A simple agent that provides basic answers based on the question.
-    
-    This is just a placeholder - you should replace this with your actual agent code.
-    
-    Args:
-        question: The question to answer
-        data: The dataframe containing the data
-        
-    Returns:
-        The agent's response
-    """
-    # This is a very simple example agent
-    if "email" in question.lower():
-        # Simple email-related answer
-        return "Based on the data, the email campaign had a 25% conversion rate."
-    
-    elif "pipeline" in question.lower():
-        # Simple pipeline-related answer
-        return "The sales pipeline shows $1.2M in potential revenue with 15 deals in negotiation."
-    
-    elif "performance" in question.lower():
-        # Simple performance-related answer
-        return "John Smith is the top-performing sales representative with 35 closed deals."
-    
-    # Generic fallback response
-    return "Based on my analysis of the data, the results show positive trends in sales activities."
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": "You are an AI Agent that specializes in CRM and Sales. You will be given a question and a dataframe. You will need to answer the question based on the data. Return only the answer, no other text."},
+            {"role": "user", "content": f"Question: {question}\n\nData: {data.to_string()}"}
+        ]
+    )
+    return response.choices[0].message.content.strip()
+
 
 
 def main():
-    # Replace with your actual API key from the website
-    API_KEY = "YOUR_API_KEY_HERE"
+    # Get API key from environment variable
+    API_KEY = os.getenv("API_KEY")
+    if not API_KEY:
+        print("Warning: API_KEY environment variable not set.")
+        print("Please register at http://localhost:5000/register to get an API key")
+        print("Then set it in your .env file as API_KEY=your_key_here")
+        print("For testing, using a temporary key...")
+        # This should match a key in your Flask server's database
+        API_KEY = "crm-ed41d521443a456814a9aedf67ef53855925fbbc3f028c05"
     
     print("CRM Benchmark Example")
     print("=====================")
@@ -55,29 +56,42 @@ def main():
     # Create a client
     client = BenchmarkClient(
         api_key=API_KEY,
-        server_url="http://localhost:5000",  # Change this to the actual server URL if needed
+        server_url="http://localhost:5000",
         show_progress=True
     )
     
     # Run the benchmark and submit results
     print("\nRunning benchmark with parallel processing...")
-    results = client.run_and_submit(
-        agent_callable=my_agent,
-        agent_name="Example Agent v1.0",
-        parallel=True,
-        visualize=True
-    )
-    
-    # Print final score
-    print(f"\nFinal Score: {results['overall_average']:.2f}%")
-    
-    # Check submission status
-    submission = results.get('submission', {})
-    if submission.get('status') == 'success':
-        print(f"Score successfully submitted to the leaderboard for username: {submission.get('username')}")
-    else:
-        print(f"Failed to submit score: {submission.get('message')}")
-
+    try:
+        results = client.run_and_submit(
+            agent_callable=my_agent,
+            agent_name="ChatGPT-o3-mini",
+            parallel=True,
+            visualize=True
+        )
+        
+        # Handle results
+        if isinstance(results, dict):
+            if "status" in results and results["status"] == "error":
+                print(f"\nError: {results.get('message', 'Unknown error')}")
+            else:
+                score = results.get('overall_average', 0)
+                print(f"\nFinal Score: {score:.2f}%")
+                
+                # Check submission status
+                submission = results.get('submission', {})
+                if submission.get('status') == 'success':
+                    print(f"Score successfully submitted for: {submission.get('username', 'Unknown')}")
+                else:
+                    print(f"Failed to submit score: {submission.get('message', 'Unknown error')}")
+                    if 'request_payload' in submission:
+                        print(f"Submission payload: {submission['request_payload']}")
+        else:
+            print(f"Unexpected results format: {results}")
+            
+    except Exception as e:
+        print(f"Error running benchmark: {e}")
+        raise
 
 if __name__ == "__main__":
     main() 

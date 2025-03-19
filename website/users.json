@@ -1,12 +1,8 @@
 [
   {
     "username": "maxsmeyer",
-    "password_hash": "scrypt:32768:8:1$Kf0BSih2ZMuXCfsx$58c24c02ba1684bc64209d25c91b5d91dd5873a1775eb96c5454635ba7eb9d0fe0a764354e3d8e06be696533a7164d6fa19009e8427c6a5299014d156555cf2d",
-    "api_key": "ee5a92c4c8fa54d8d9e28ae9dd522c6ad7d7e5b7630125f1"
-  },
-  {
-    "username": "maxsmeyer",
-    "password_hash": "scrypt:32768:8:1$4IZcJ2mQkEZjJlFV$39df03ee2a509d37d24d593eb007b3251e8dc3f7a2512cf4329fa979f68465bdcdb9d06d5c9d34bb87012da9d2cb7b39fd2c455fc5e088b1a6b8349c1dae15c8",
-    "api_key": "02cd03a3dc71f4c86c4a5294fb5c332634489b552451321b"
+    "password_hash": "scrypt:32768:8:1$DN51XMySo3hLpoS8$d5954c67e3c9dd9c553aec8a045c6ef53081014e7f2be0718f4bdb3bc4e338bcd92e1c0aa33ada85e663229dddb89cf3ff4c7305351051fbe25920a7e0d86b2c",
+    "api_key": "crm-ed41d521443a456814a9aedf67ef53855925fbbc3f028c05",
+    "is_admin": true
   }
 ]
