@@ -11,7 +11,7 @@
             <i class="fas fa-bullseye mr-2"></i> Purpose
         </h3>
         <p class="text-gray-300 mb-4">
-            The CRM AI Agent Benchmark is designed to evaluate AI-powered assistants on their ability to analyze
+            This chapter of the AI Agent Challenge is designed to evaluate AI-powered assistants on their ability to analyze
             CRM data, understand sales patterns, and provide actionable insights to sales professionals.
         </p>
         <p class="text-gray-300">
@@ -78,6 +78,94 @@
         <p class="text-gray-300">
             Each dataset includes multiple questions ranging from simple metrics to complex analytical insights,
             with scoring based on accuracy and relevance of responses.
+        </p>
+    </div>
+    
+    <!-- New Section: Benchmark Questions -->
+    <div class="glass-card p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-question-circle mr-2"></i> Benchmark Questions
+        </h3>
+        <p class="text-gray-300 mb-4">
+            Below are examples of the types of questions that agents will need to answer for each dataset:
+        </p>
+        
+        <div class="space-y-6 mb-4">
+            <!-- Dataset 1 Questions -->
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-chart-line mr-2"></i> Dataset 1: Pipeline Insights
+                </h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>How many deals are currently in the Negotiation stage, and what is the total Amount of those Negotiation deals?</li>
+                    <li>Which Lead Source has produced the most close won deals, and what was the conversion ratio?</li>
+                    <li>Identify the largest deal in the dataset (by Amount) and specify which sales Owner is responsible for it.</li>
+                    <li>Which deals have missing data?</li>
+                    <li>Which two records likely refer to the same client, and what steps should you take to resolve the duplicate to maintain data cleanliness?</li>
+                </ul>
+            </div>
+            
+            <!-- Dataset 2 Questions -->
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-envelope mr-2"></i> Dataset 2: Email Analysis
+                </h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>What is the sentiment of this email thread (e.g. positive, neutral, or negative), and what key concern is the customer expressing?</li>
+                    <li>Based on the conversation, what stage of the sales process is this opportunity likely in, and what is the prospect's main objection or hesitation?</li>
+                    <li>Summarize the key points of the exchange and suggest an appropriate next step for the sales rep to move the deal forward.</li>
+                    <li>Based on all email threads from the past, look at closed lost deals and identify which one has the highest potential to be re-engaged.</li>
+                </ul>
+            </div>
+            
+            <!-- Dataset 3 Questions -->
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-handshake mr-2"></i> Dataset 3: Sales Records
+                </h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Update XYZ opportunity's Stage to Closed Won.</li>
+                    <li>Calculate the expected total forecasted revenue from these opportunities and identify which deals to mark as high-confidence wins for this quarter.</li>
+                    <li>Which opportunities should be flagged as at-risk, and why?</li>
+                    <li>Here are 10 upcoming leads and 100 historical leads (some sold, some not). Rank the 10 leads based on the historical data, and explain.</li>
+                    <li>Here is a transcript of a meeting. Provide notes, analysis, and specific employee notes.</li>
+                    <li>Draft a sales follow-up email to the MavTech deal (just lost in the final stage).</li>
+                </ul>
+            </div>
+            
+            <!-- Dataset 4 Questions -->
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-clipboard-check mr-2"></i> Dataset 4: Rule Compliance
+                </h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>Rule 1 (Send follow-up emails within 3 days): List 5 sales reps who always follow this rule.</li>
+                    <li>Rule 2 (Always personalize follow-ups): Do sales reps who follow this rule deliver more revenue than those who do not? If so, how much?</li>
+                    <li>Rule 3 (Close deals that are in the pipeline for more than 30 days): How many sales reps are compliant with this rule?</li>
+                    <li>Rule 4 (Do not offer more than 10% discount): How many sales reps are compliant with this rule?</li>
+                    <li>Rule 5: How many sales reps are compliant with this rule (whatever the specific rule #5 might be)?</li>
+                </ul>
+            </div>
+            
+            <!-- Dataset 5 Questions -->
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary mb-2">
+                    <i class="fas fa-users mr-2"></i> Dataset 5: Performance Trends
+                </h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li>What performance trend do you observe over the year, and what might this imply for the next quarter's focus or targets?</li>
+                    <li>Which 5 sales reps have the biggest revenue results?</li>
+                    <li>Which sales rep is performing more effectively, and what metrics support that conclusion (consider a 50% win rate, 40% quota attainment, and 10% average deal size)?</li>
+                    <li>At which stage of the funnel is the largest drop-off occurring? Offer a recommendation to improve conversion at that stage.</li>
+                    <li>Provide strategic recommendations to improve overall sales performance. (Think in terms of training, process changes, resource allocation, or pipeline adjustments.)</li>
+                    <li>List the common sales pipeline stages (e.g., Prospecting, Qualification, Proposal, etc.) and briefly describe what happens in each stage.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class="text-gray-300">
+            Agents are scored based on their ability to provide accurate, insightful, and actionable responses to these questions,
+            considering the context and specific requirements of each scenario.
         </p>
     </div>
     
