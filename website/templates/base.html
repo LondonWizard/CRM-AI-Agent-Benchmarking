@@ -66,6 +66,9 @@
                     <a href="{{ url_for('about') }}" class="nav-link relative">
                         <i class="fas fa-info-circle mr-1"></i> About
                     </a>
+                    <a href="{{ url_for('faq') }}" class="nav-link relative">
+                        <i class="fas fa-question-circle mr-1"></i> FAQ
+                    </a>
                     <a href="{{ url_for('leaderboard') }}" class="nav-link relative">
                         <i class="fas fa-trophy mr-1"></i> Leaderboard
                     </a>
@@ -124,6 +127,7 @@
             <p class="text-gray-400 mb-3">&copy; 2023 CRM AI Benchmark. All rights reserved.</p>
             <div class="footer-links flex justify-center gap-6">
                 <a href="{{ url_for('about') }}" class="text-primary hover:text-primary-hover transition">About</a>
+                <a href="{{ url_for('faq') }}" class="text-primary hover:text-primary-hover transition">FAQ</a>
                 <a href="https://github.com/example/crm-ai-benchmark" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover transition">
                     <i class="fab fa-github mr-1"></i> GitHub
                 </a>
