@@ -22,9 +22,21 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf.csrf import CSRFProtect, CSRFError
 import cryptography
 from sqlalchemy.sql import func, and_
+from dotenv import load_dotenv
 
-app = Flask(__name__)
+load_dotenv()
+
+app = Flask(__name__, static_url_path='/static')
+# Replace this line
 app.secret_key = secrets.token_hex(32)  # Generate a secure random key
+
+# With this
+if os.environ.get('FLASK_ENV') == 'production':
+    # Use a fixed secret key in production
+    app.secret_key = 'your-fixed-secret-key-here'  # Replace with a secure random string
+else:
+    # Use a random key for development
+    app.secret_key = secrets.token_hex(32)
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)  # Session expires after 7 days
 app.config['SESSION_COOKIE_SECURE'] = False  # Set to False for development without HTTPS
 app.config['SESSION_COOKIE_HTTPONLY'] = True  # Prevent JavaScript access to session cookie
