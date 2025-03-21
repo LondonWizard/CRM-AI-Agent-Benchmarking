@@ -200,8 +200,13 @@ def index():
 
 @app.route('/about')
 def about():
-    """About page with information about the benchmark"""
+    """About page with benchmark information"""
     return render_template('about.html')
+
+@app.route('/faq')
+def faq():
+    """FAQ page with commonly asked questions"""
+    return render_template('faq.html')
 
 @app.route('/register', methods=['GET','POST'])
 def register():

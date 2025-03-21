@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold text-primary mb-8 text-center">
+        <i class="fas fa-question-circle mr-2"></i> Frequently Asked Questions
+    </h2>
+    
+    <div class="glass-card p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-info-circle mr-2"></i> About the Benchmark
+        </h3>
+        
+        <div class="space-y-6">
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">What is the CRM AI Agent Benchmark?</h4>
+                <p class="text-gray-300 mt-2">
+                    The CRM AI Agent Benchmark is a standardized evaluation framework designed to test AI assistants on their ability to analyze CRM data, understand sales patterns, and provide actionable insights to sales professionals. It helps compare different AI approaches across standardized datasets and questions.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">What types of datasets are used in the benchmark?</h4>
+                <p class="text-gray-300 mt-2">
+                    The benchmark uses five distinct datasets, each focusing on different aspects of CRM analysis:
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>Pipeline Insights: Analysis of sales pipeline metrics</li>
+                        <li>Email Analysis: Understanding customer communications</li>
+                        <li>Sales Records: Historical sales data analysis</li>
+                        <li>Rule Compliance: Identifying adherence to sales policies</li>
+                        <li>Performance Trends: Evaluating sales rep performance</li>
+                    </ul>
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">How are agents scored in the benchmark?</h4>
+                <p class="text-gray-300 mt-2">
+                    Agents receive scores based on the accuracy and relevance of their responses across all five datasets. Each dataset contributes to the overall score, and individual dataset scores are also recorded to identify specific strengths and weaknesses.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="glass-card p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-user-plus mr-2"></i> Participation & Submission
+        </h3>
+        
+        <div class="space-y-6">
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">How do I register to participate?</h4>
+                <p class="text-gray-300 mt-2">
+                    To participate, create an account on this website by clicking the "Register" button in the navigation menu. After registration, you'll receive an API key that you can use to submit your agent's scores.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">How do I submit my agent's scores?</h4>
+                <p class="text-gray-300 mt-2">
+                    After registering, you can use the API key displayed on your profile page to submit your agent's scores via the API endpoint. Detailed submission instructions are available on your profile page after logging in.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">Can I submit multiple agents?</h4>
+                <p class="text-gray-300 mt-2">
+                    Yes, you can submit scores for multiple different agents using the same API key. Each agent will be displayed separately on the leaderboard with its own performance metrics.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">Can I update my agent's scores?</h4>
+                <p class="text-gray-300 mt-2">
+                    Yes, you can submit updated scores for your agents as you improve them. The leaderboard will display the most recent submission for each agent.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="glass-card p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-trophy mr-2"></i> Leaderboard & Results
+        </h3>
+        
+        <div class="space-y-6">
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">How is the leaderboard calculated?</h4>
+                <p class="text-gray-300 mt-2">
+                    The leaderboard ranks agents based on their overall score across all five datasets. The score is calculated as a weighted average, with each dataset contributing equally to the final score.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">How often is the leaderboard updated?</h4>
+                <p class="text-gray-300 mt-2">
+                    The leaderboard is updated in real-time as new submissions are received through the API.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">What information is shown for each agent?</h4>
+                <p class="text-gray-300 mt-2">
+                    Each agent entry on the leaderboard displays the agent name, overall score, and individual scores for each of the five datasets. You can click on an agent's name to view more detailed performance information.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="glass-card p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-cog mr-2"></i> Technical Questions
+        </h3>
+        
+        <div class="space-y-6">
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">What API format is used for submissions?</h4>
+                <p class="text-gray-300 mt-2">
+                    Submissions are made via a POST request to the API endpoint with your API key for authentication. The submission should include your agent's name and scores for each dataset in JSON format.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">What technologies does this benchmark site use?</h4>
+                <p class="text-gray-300 mt-2">
+                    This site is built with Flask (Python web framework), SQLite for the database, and uses Tailwind CSS for styling. The entire platform is designed to be lightweight and easy to use.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">Is there a GitHub repository for this benchmark?</h4>
+                <p class="text-gray-300 mt-2">
+                    Yes, you can find the benchmark code, datasets, and evaluation scripts on GitHub. The link is available in the footer of this website.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="glass-card p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-primary">
+            <i class="fas fa-question mr-2"></i> Additional Help
+        </h3>
+        
+        <div class="space-y-6">
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">I'm having trouble with my submission, who can I contact?</h4>
+                <p class="text-gray-300 mt-2">
+                    If you're experiencing technical issues or have questions about the benchmark, please visit the About page's contact section or reach out via GitHub.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">How can I contribute to improving the benchmark?</h4>
+                <p class="text-gray-300 mt-2">
+                    We welcome contributions and feedback to improve the benchmark. You can suggest improvements, report issues, or contribute code through the GitHub repository.
+                </p>
+            </div>
+            
+            <div class="bg-dark-300 p-4 rounded-lg">
+                <h4 class="font-semibold text-primary">Will there be future versions of this benchmark?</h4>
+                <p class="text-gray-300 mt-2">
+                    Yes, this is "Chapter 1: Sales Challenge" of the AI Agents Challenge. Future chapters will focus on different aspects of AI agent capabilities in various business contexts.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
