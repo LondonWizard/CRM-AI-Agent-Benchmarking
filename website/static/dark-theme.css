@@ -1,14 +1,98 @@
 /**
- * Custom dark theme styles for CRM Benchmark
- * This file contains styles that complement Tailwind CSS
+ * Enhanced dark theme styles for AI Agents Challenge
+ * A modern, elegant dark theme with improved animations and effects
  */
 
-/* Navigation link styling with animated underline */
+/* Base animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Page transitions */
+.enter-animation {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.exit-animation {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Navigation link styling with improved animated underline */
 .nav-link {
     color: #b3b3b3;
     font-weight: 500;
     position: relative;
     transition: all 0.3s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
 }
 
 .nav-link::after {
@@ -16,15 +100,16 @@
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -4px;
+    bottom: -2px;
     left: 0;
     background-color: #7289da;
-    transition: width 0.3s ease;
+    transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .nav-link:hover,
 .active-nav {
     color: #ffffff;
+    background-color: rgba(114, 137, 218, 0.1);
 }
 
 .nav-link:hover::after,
@@ -32,47 +117,114 @@
     width: 100%;
 }
 
-/* Card styling with glass effect */
+/* Enhanced card styling with glass effect */
 .glass-card {
     background-color: rgba(44, 47, 51, 0.6);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(64, 68, 75, 0.7);
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
 }
 
-/* Custom button styles */
+.glass-card:hover {
+    border-color: rgba(114, 137, 218, 0.4);
+}
+
+/* Glass card variations */
+.glass-card.primary {
+    border-left: 4px solid #7289da;
+}
+
+.glass-card.success {
+    border-left: 4px solid #43b581;
+}
+
+.glass-card.warning {
+    border-left: 4px solid #faa61a;
+}
+
+.glass-card.danger {
+    border-left: 4px solid #f04747;
+}
+
+/* Custom button styles with improved interactions */
 .btn-primary {
     background-color: #7289da;
     color: #ffffff;
     font-weight: 500;
-    padding: 0.5rem 1.25rem;
-    border-radius: 0.375rem;
-    transition: all 0.2s ease;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     border: none;
     box-shadow: 0 2px 10px rgba(114, 137, 218, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary:hover {
     background-color: #5f73bc;
     box-shadow: 0 4px 15px rgba(114, 137, 218, 0.4);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(114, 137, 218, 0.3);
+}
+
+/* Button ripple effect */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+
+.btn-primary:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
 }
 
 .btn-secondary {
-    background-color: #40444b;
+    background-color: #2c2f33;
     color: #ffffff;
     font-weight: 500;
-    padding: 0.5rem 1.25rem;
-    border-radius: 0.375rem;
-    transition: all 0.2s ease;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border: 1px solid rgba(114, 137, 218, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
-    background-color: #2c2f33;
+    background-color: #23272a;
     border-color: rgba(114, 137, 218, 0.5);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(1px);
 }
 
 .btn-danger {
@@ -80,31 +232,37 @@
     color: #ef4444;
     border: 1px solid rgba(220, 38, 38, 0.3);
     font-weight: 500;
-    padding: 0.5rem 1.25rem;
-    border-radius: 0.375rem;
-    transition: all 0.2s ease;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .btn-danger:hover {
     background-color: rgba(220, 38, 38, 0.3);
     border-color: rgba(220, 38, 38, 0.5);
+    transform: translateY(-2px);
 }
 
-/* Form elements */
+.btn-danger:active {
+    transform: translateY(1px);
+}
+
+/* Form elements with improved focus states */
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="number"],
 textarea,
 select {
-    background-color: #40444b;
-    border: 1px solid #2c2f33;
+    background-color: #2c2f33;
+    border: 1px solid #40444b;
     color: #ffffff;
     padding: 0.75rem 1rem;
-    border-radius: 0.375rem;
+    border-radius: 0.5rem;
     outline: none;
     width: 100%;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 1rem;
 }
 
 input[type="text"]:focus,
@@ -114,16 +272,17 @@ input[type="number"]:focus,
 textarea:focus,
 select:focus {
     border-color: #7289da;
-    box-shadow: 0 0 0 2px rgba(114, 137, 218, 0.3);
+    box-shadow: 0 0 0 3px rgba(114, 137, 218, 0.3);
+    background-color: #23272a;
 }
 
-/* Code blocks */
+/* Code blocks with enhanced styling */
 code,
 pre {
     font-family: 'Fira Code', 'Courier New', monospace;
     background-color: #1e1e1e;
     border: 1px solid #40444b;
-    border-radius: 0.375rem;
+    border-radius: 0.5rem;
 }
 
 code {
@@ -133,61 +292,111 @@ code {
 }
 
 pre {
-    padding: 1rem;
+    padding: 1.25rem;
     overflow-x: auto;
+    line-height: 1.6;
 }
 
 pre code {
     background: none;
     border: none;
     padding: 0;
+    color: #e5e7eb;
 }
 
-/* Leaderboard table */
+/* Enhanced leaderboard table */
 .leaderboard-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+    margin: 1.5rem 0;
 }
 
 .leaderboard-table th {
     background-color: #1e1e1e;
     color: #7289da;
     text-align: left;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-bottom: 2px solid #40444b;
     font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
 }
 
 .leaderboard-table td {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid #40444b;
+    transition: background-color 0.2s ease;
 }
 
 .leaderboard-table tr:hover td {
-    background-color: rgba(114, 137, 218, 0.05);
+    background-color: rgba(114, 137, 218, 0.08);
 }
 
-.leaderboard-table .rank-1 td {
-    background-color: rgba(255, 215, 0, 0.05);
+.leaderboard-table .rank-1 {
+    background-color: rgba(255, 215, 0, 0.08);
 }
 
-.leaderboard-table .rank-2 td {
-    background-color: rgba(192, 192, 192, 0.05);
+.leaderboard-table .rank-2 {
+    background-color: rgba(192, 192, 192, 0.08);
 }
 
-.leaderboard-table .rank-3 td {
-    background-color: rgba(205, 127, 50, 0.05);
+.leaderboard-table .rank-3 {
+    background-color: rgba(205, 127, 50, 0.08);
 }
 
-/* Loader animation */
+.leaderboard-table .rank-1 td:first-child,
+.leaderboard-table .rank-2 td:first-child,
+.leaderboard-table .rank-3 td:first-child {
+    position: relative;
+}
+
+.leaderboard-table .rank-1 td:first-child::before {
+    content: '🏆';
+    margin-right: 0.5rem;
+}
+
+.leaderboard-table .rank-2 td:first-child::before {
+    content: '🥈';
+    margin-right: 0.5rem;
+}
+
+.leaderboard-table .rank-3 td:first-child::before {
+    content: '🥉';
+    margin-right: 0.5rem;
+}
+
+/* Loader animation with gradient */
 .loader {
-    border: 3px solid rgba(64, 68, 75, 0.3);
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    border-top: 3px solid #7289da;
-    width: 24px;
-    height: 24px;
+    background: linear-gradient(to right, #7289da, #5f73bc);
     animation: spin 1s linear infinite;
+    position: relative;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #1e1e1e;
+    border-radius: 50%;
+}
+
+.loader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: #7289da;
 }
 
 @keyframes spin {
@@ -200,14 +409,19 @@ pre code {
     }
 }
 
-/* Badge styles */
+/* Badge styles with subtle hover effect */
 .badge {
     font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
+    padding: 0.35rem 0.85rem;
     border-radius: 9999px;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
+    transition: all 0.2s ease;
+}
+
+.badge:hover {
+    transform: translateY(-1px);
 }
 
 .badge-primary {
@@ -230,7 +444,7 @@ pre code {
     color: #ef4444;
 }
 
-/* Progress bar */
+/* Progress bar with animation */
 .progress-container {
     background-color: #1e1e1e;
     border-radius: 9999px;
@@ -240,52 +454,146 @@ pre code {
 
 .progress-bar {
     height: 100%;
-    background-color: #7289da;
+    background: linear-gradient(90deg, #6366f1, #7289da);
     border-radius: 9999px;
-    transition: width 0.3s ease;
+    transition: width 1s ease-out;
 }
 
 /* Progress bar fill that uses CSS custom properties */
 .progress-bar-fill {
     width: var(--score-width, 0%);
-    transition: width 0.5s ease;
+    background: linear-gradient(90deg, #6366f1, #7289da);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Media queries for responsive design */
-@media (max-width: 768px) {
-    .content {
-        padding: 1.5rem;
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
     }
 }
 
-/* Tooltip styling */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: help;
-}
-
-.tooltip .tooltip-text {
-    visibility: hidden;
-    width: 200px;
-    background-color: #2c2f33;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 0.5rem;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -100px;
+/* Animate on scroll elements */
+.will-animate {
     opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 0.875rem;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid #40444b;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.tooltip:hover .tooltip-text {
-    visibility: visible;
+.will-animate.fade-up {
+    transform: translateY(20px);
+}
+
+.will-animate.fade-right {
+    transform: translateX(-20px);
+}
+
+.will-animate.fade-left {
+    transform: translateX(20px);
+}
+
+.will-animate.scale-up {
+    transform: scale(0.95);
+}
+
+.will-animate.appeared {
     opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Hero section styling */
+.hero-section {
+    position: relative;
+    background-color: #1a1a1a;
+    background-image: radial-gradient(circle, rgba(114, 137, 218, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    overflow: hidden;
+}
+
+.hero-title {
+    transition: transform 0.3s ease-out;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(114, 137, 218, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Gradient text */
+.gradient-text {
+    background: linear-gradient(90deg, #7289da, #5f73bc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Typing cursor effect */
+.typed-text {
+    display: inline-block;
+}
+
+/* Advanced card hover effects */
+.feature-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(114, 137, 218, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+/* Subtle scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #40444b;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7289da;
 }

@@ -25,6 +25,9 @@
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-in-out',
                         'slide-up': 'slideUp 0.6s ease-out',
+                        'slide-right': 'slideInRight 0.6s ease-out',
+                        'pulse': 'pulse 2s infinite ease-in-out',
+                        'gradient-flow': 'gradientFlow 3s ease infinite',
                     },
                     keyframes: {
                         fadeIn: {
@@ -34,6 +37,20 @@
                         slideUp: {
                             '0%': { transform: 'translateY(20px)', opacity: '0' },
                             '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        pulse: {
+                            '0%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                            '100%': { transform: 'scale(1)' },
+                        },
+                        gradientFlow: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' },
                         }
                     }
                 }
@@ -124,11 +141,11 @@
         </main>
         
         <footer class="py-6 border-t border-dark-100 text-center animate-fade-in">
-            <p class="text-gray-400 mb-3">&copy; 2023 CRM AI Benchmark. All rights reserved.</p>
+            <p class="text-gray-400 mb-3">&copy; 2025 AI Agents Challenge. All rights reserved.</p>
             <div class="footer-links flex justify-center gap-6">
                 <a href="{{ url_for('about') }}" class="text-primary hover:text-primary-hover transition">About</a>
                 <a href="{{ url_for('faq') }}" class="text-primary hover:text-primary-hover transition">FAQ</a>
-                <a href="https://github.com/example/crm-ai-benchmark" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover transition">
+                <a href="https://github.com/example/ai-agents-challenge" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover transition">
                     <i class="fab fa-github mr-1"></i> GitHub
                 </a>
                 <a href="{{ url_for('about') }}#contact" class="text-primary hover:text-primary-hover transition">Contact</a>
@@ -136,28 +153,7 @@
         </footer>
     </div>
     
-    <script>
-        // Highlight current page in navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentUrl = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentUrl) {
-                    link.classList.add('active-nav');
-                }
-            });
-            
-            // Auto-dismiss flash messages
-            const flashMessages = document.querySelectorAll('.message');
-            if (flashMessages.length > 0) {
-                setTimeout(() => {
-                    flashMessages.forEach(msg => {
-                        msg.style.opacity = '0';
-                        setTimeout(() => msg.remove(), 500);
-                    });
-                }, 5000);
-            }
-        });
-    </script>
+    <!-- Enhanced JS animations -->
+    <script src="{{ url_for('static', filename='animations.js') }}"></script>
 </body>
 </html>

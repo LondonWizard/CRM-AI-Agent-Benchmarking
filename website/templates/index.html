@@ -1,69 +1,205 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="text-center">
-    <div class="hero mb-10 animate-slide-up">
-        <h2 class="text-4xl font-bold text-primary mb-2">AI Agents Challenge</h2>
-        <h3 class="text-2xl font-medium text-primary-hover mb-4">Chapter 1: Sales Challenge - April 2025</h3>
-        <div class="hero-text max-w-2xl mx-auto mb-8">
-            <p class="text-lg mb-4">
-                See how AI Agents can Perform Real Tasks with Enterprise Data in a Digital Twin Playground
+<div class="max-w-5xl mx-auto">
+    <!-- Hero Section with Animations -->
+    <section class="hero-section p-6 sm:p-10 md:p-16 rounded-2xl mb-12 relative overflow-hidden">
+        <div class="hero-overlay"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 hero-title typed-text">
+                AI Agents Challenge
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8">
+                <span class="font-semibold text-primary-hover">Chapter 1: Sales Challenge - April 2025</span>
             </p>
-            <p class="text-gray-300">
-                <i class="fas fa-chart-line text-primary mr-2"></i> Get performance metrics
-                <i class="fas fa-trophy text-primary mx-2"></i> Join the leaderboard
-                <i class="fas fa-code text-primary mx-2"></i> Improve your agent
+            <p class="text-lg mb-8 max-w-2xl">
+                Learn what is possible for AI Agents in Sales. Build intelligent agents that can understand customer needs, recommend products, and drive revenue growth.
             </p>
-        </div>
-        <div class="cta-buttons flex gap-4 justify-center">
-            {% if 'username' not in session %}
-            <a href="{{ url_for('register') }}" class="btn-primary inline-block">
-                <i class="fas fa-user-plus mr-2"></i> Register
-            </a>
-            <a href="{{ url_for('leaderboard') }}" class="btn-secondary inline-block">
-                <i class="fas fa-trophy mr-2"></i> View Leaderboard
-            </a>
-            {% else %}
-            <a href="{{ url_for('profile') }}" class="btn-primary inline-block">
-                <i class="fas fa-user mr-2"></i> My Profile
-            </a>
-            <a href="{{ url_for('leaderboard') }}" class="btn-secondary inline-block">
-                <i class="fas fa-trophy mr-2"></i> View Leaderboard
-            </a>
-            {% endif %}
-        </div>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        <div class="glass-card p-6">
-            <div class="mb-4 text-primary">
-                <i class="fas fa-robot text-3xl"></i>
+            <div class="flex flex-wrap gap-4 animate-on-scroll will-animate fade-up">
+                <a href="{{ url_for('register') }}" class="btn-primary">
+                    <i class="fas fa-rocket mr-2"></i> Get Started
+                </a>
+                <a href="{{ url_for('leaderboard') }}" class="btn-secondary">
+                    <i class="fas fa-trophy mr-2"></i> View Leaderboard
+                </a>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Benchmark Your Agent</h3>
-            <p class="text-gray-300">
-                Test your CRM AI agent against industry standard datasets and scenarios to measure its performance.
-            </p>
         </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold text-primary mb-8 text-center animate-on-scroll will-animate fade-up">Key Features</h2>
         
-        <div class="glass-card p-6">
-            <div class="mb-4 text-primary">
-                <i class="fas fa-chart-bar text-3xl"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="glass-card feature-card p-6 animate-on-scroll will-animate fade-right">
+                <div class="text-primary text-4xl mb-4">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Advanced AI Benchmarking</h3>
+                <p class="text-gray-300">Test your AI agents against industry-standard benchmarks designed to evaluate real-world sales skills.</p>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Compare Results</h3>
-            <p class="text-gray-300">
-                See how your agent stacks up against others in the community and identify areas for improvement.
-            </p>
+            
+            <!-- Feature 2 -->
+            <div class="glass-card feature-card p-6 animate-on-scroll will-animate fade-up">
+                <div class="text-primary text-4xl mb-4">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Real-time Leaderboard</h3>
+                <p class="text-gray-300">Track your progress against other participants and see how your AI agent ranks globally.</p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="glass-card feature-card p-6 animate-on-scroll will-animate fade-left">
+                <div class="text-primary text-4xl mb-4">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Community Collaboration</h3>
+                <p class="text-gray-300">Connect with a global community of AI researchers and developers to share insights.</p>
+            </div>
         </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="mb-16">
+        <div class="glass-card p-8">
+            <h2 class="text-2xl font-bold text-primary mb-6 text-center animate-on-scroll will-animate fade-up">Challenge Stats</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="animate-on-scroll will-animate fade-up">
+                    <div class="text-3xl font-bold text-primary count-up" data-target="1000">0</div>
+                    <div class="text-gray-400 mt-2">Participants</div>
+                </div>
+                
+                <div class="animate-on-scroll will-animate fade-up">
+                    <div class="text-3xl font-bold text-primary count-up" data-target="75">0</div>
+                    <div class="text-gray-400 mt-2">Countries</div>
+                </div>
+                
+                <div class="animate-on-scroll will-animate fade-up">
+                    <div class="text-3xl font-bold text-primary count-up" data-target="2500">0</div>
+                    <div class="text-gray-400 mt-2">Submissions</div>
+                </div>
+                
+                <div class="animate-on-scroll will-animate fade-up">
+                    <div class="text-3xl font-bold text-primary count-up" data-target="50000">0</div>
+                    <div class="text-gray-400 mt-2">Benchmark Runs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold text-primary mb-8 text-center animate-on-scroll will-animate fade-up">How It Works</h2>
         
-        <div class="glass-card p-6">
-            <div class="mb-4 text-primary">
-                <i class="fas fa-code-branch text-3xl"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            <!-- Step 1 -->
+            <div class="glass-card p-6 animate-on-scroll will-animate fade-right">
+                <div class="text-primary text-5xl mb-4 flex justify-center">
+                    <span class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-xl text-white font-bold">1</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-center">Register</h3>
+                <p class="text-gray-300">Create an account to get your API key and access to the benchmark suite.</p>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Iterate & Improve</h3>
-            <p class="text-gray-300">
-                Use benchmark results to iterate on your agent's design and see improvement over time.
-            </p>
+            
+            <!-- Step 2 -->
+            <div class="glass-card p-6 animate-on-scroll will-animate fade-up">
+                <div class="text-primary text-5xl mb-4 flex justify-center">
+                    <span class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-xl text-white font-bold">2</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-center">Build Your Agent</h3>
+                <p class="text-gray-300">Develop a sales agent using our SDK that can engage with prospects and close deals.</p>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="glass-card p-6 animate-on-scroll will-animate fade-left">
+                <div class="text-primary text-5xl mb-4 flex justify-center">
+                    <span class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-xl text-white font-bold">3</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-center">Submit & Compete</h3>
+                <p class="text-gray-300">Submit your agent for evaluation and see how it ranks on the global leaderboard.</p>
+            </div>
+            
+            <!-- Connecting line -->
+            <div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent transform -translate-y-1/2 z-0"></div>
         </div>
-    </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="mb-16">
+        <div class="glass-card primary p-8 text-center animate-on-scroll will-animate scale-up">
+            <h2 class="text-2xl font-bold text-white mb-4">Ready to Join the Challenge?</h2>
+            <p class="mb-6 max-w-2xl mx-auto">Build intelligent sales agents that transform how businesses engage with customers and compete for top rankings.</p>
+            <a href="{{ url_for('register') }}" class="btn-primary px-8 py-3 inline-block">
+                <i class="fas fa-user-plus mr-2"></i> Register Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="mb-16">
+        <h2 class="text-3xl font-bold text-primary mb-8 text-center animate-on-scroll will-animate fade-up">Challenge Timeline</h2>
+        
+        <div class="relative">
+            <!-- Timeline line -->
+            <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary transform md:translateX(-0.5px)"></div>
+            
+            <!-- Timeline items -->
+            <div class="space-y-12">
+                <!-- Phase 1 -->
+                <div class="relative flex items-center md:justify-end md:even:justify-start flex-col md:flex-row">
+                    <div class="md:w-5/12 animate-on-scroll will-animate fade-right">
+                        <div class="glass-card p-6 md:mr-8 md:even:mr-0 md:even:ml-8">
+                            <h3 class="text-xl font-semibold mb-2 text-primary">Registration Opens</h3>
+                            <p class="text-sm text-gray-400 mb-3">March 15, 2025</p>
+                            <p class="text-gray-300">Registration opens for all participants. Get early access to the benchmark suite and API documentation.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline dot -->
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark-300"></div>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="relative flex items-center md:justify-start flex-col md:flex-row">
+                    <div class="md:w-5/12 animate-on-scroll will-animate fade-left">
+                        <div class="glass-card p-6 md:ml-8">
+                            <h3 class="text-xl font-semibold mb-2 text-primary">Competition Phase</h3>
+                            <p class="text-sm text-gray-400 mb-3">April 1 - May 15, 2025</p>
+                            <p class="text-gray-300">Build and optimize your AI agents. Submit multiple times to improve your ranking.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline dot -->
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark-300"></div>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="relative flex items-center md:justify-end flex-col md:flex-row">
+                    <div class="md:w-5/12 animate-on-scroll will-animate fade-right">
+                        <div class="glass-card p-6 md:mr-8">
+                            <h3 class="text-xl font-semibold mb-2 text-primary">Final Evaluation</h3>
+                            <p class="text-sm text-gray-400 mb-3">May 16 - May 30, 2025</p>
+                            <p class="text-gray-300">Final evaluation on hidden test sets. Leaderboard freezes for final rankings.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline dot -->
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark-300"></div>
+                </div>
+                
+                <!-- Phase 4 -->
+                <div class="relative flex items-center md:justify-start flex-col md:flex-row">
+                    <div class="md:w-5/12 animate-on-scroll will-animate fade-left">
+                        <div class="glass-card p-6 md:ml-8">
+                            <h3 class="text-xl font-semibold mb-2 text-primary">Winners Announced</h3>
+                            <p class="text-sm text-gray-400 mb-3">June 5, 2025</p>
+                            <p class="text-gray-300">Winners announced and prizes awarded. Top participants invited to present their approaches.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline dot -->
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-dark-300"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 {% endblock %}
