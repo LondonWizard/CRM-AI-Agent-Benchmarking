@@ -46,6 +46,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='dark-theme.css') }}">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </head>
 <body class="bg-dark-400 text-white min-h-screen flex flex-col font-[Inter]">
     <div class="container mx-auto px-4 flex flex-col min-h-screen max-w-7xl">
@@ -157,6 +160,13 @@
                     });
                 }, 5000);
             }
+        });
+
+        // Initialize syntax highlighting
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
         });
     </script>
 </body>

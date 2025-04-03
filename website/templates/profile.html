@@ -19,6 +19,20 @@
                     <i class="fas fa-key mr-2"></i> Your API Key
                 </h3>
                 
+                {% if not email_verified %}
+                <div class="bg-yellow-900/50 border border-yellow-500/50 rounded-lg p-4 mb-4">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-yellow-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                        <h3 class="text-lg font-semibold text-yellow-400">Email Verification Required</h3>
+                    </div>
+                    <p class="mt-2 text-yellow-300">Please check your email for a verification link to access your API key.</p>
+                    <p class="mt-1 text-sm text-yellow-400">If you haven't received the email, please check your spam folder or contact support.</p>
+                </div>
+                {% endif %}
+                
+                {% if api_key %}
                 <div class="bg-dark-300 p-4 rounded-lg mb-4 overflow-x-auto">
                     <code class="api-key text-pink-400 font-mono text-sm break-all">{{ api_key }}</code>
                 </div>
@@ -36,8 +50,9 @@
                         <i class="fas fa-copy mr-2"></i> Copy Key
                     </button>
                 </div>
+                {% endif %}
             </div>
-            
+
             <!-- Usage Instructions -->
             <div class="glass-card p-6">
                 <h3 class="text-xl font-semibold mb-4 text-primary">
@@ -67,8 +82,6 @@ results = client.run_and_submit(
     agent_name="My CRM Agent v1.0"
 )</code></pre>
                     </div>
-                    
-
                 </div>
             </div>
         </div>
@@ -109,7 +122,7 @@ results = client.run_and_submit(
                     </p>
                 </div>
                 {% endif %}
-                
+
                 <div class="mt-6 text-center">
                     <a href="{{ url_for('leaderboard') }}" class="btn-secondary inline-flex items-center">
                         <i class="fas fa-trophy mr-2"></i> View Leaderboard

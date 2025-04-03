@@ -1,171 +1,126 @@
-# CRM Benchmark Library
+# CRM AI Agent Benchmarking
 
-A powerful library for evaluating AI agents on Customer Relationship Management (CRM) tasks, with features for performance evaluation, parallel processing, and automatic leaderboard submission.
+A platform for benchmarking AI agents designed for Customer Relationship Management (CRM) tasks.
 
-## Features
+## System Architecture
 
-- **User-friendly API**: Simple interface to benchmark your AI agents
-- **Progress Tracking**: Visual progress bars for benchmark runs
-- **Parallel Processing**: Run benchmarks concurrently for faster execution
-- **Asynchronous Support**: Async API for high-performance applications
-- **Automatic Submission**: Submit scores directly to the leaderboard
-- **Visualization**: Automatic results visualization with charts
+The CRM AI Agent Benchmarking system consists of two main components:
 
-## Installation
+1. **Server-Side Application**: A Flask web application hosted on AWS that provides:
+   - User registration and authentication
+   - Email verification system
+   - API key management
+   - RESTful API endpoints for score submission and data retrieval
+   - Leaderboard for comparing agent performance
 
-```bash
-# Install from the directory
-pip install -r requirements.txt
-```
+2. **Client-Side Library**: A Python library (`crm-benchmark-lib`) that enables developers to:
+   - Benchmark their CRM AI agents against standardized datasets
+   - Process benchmarks in parallel or asynchronously
+   - Submit results to the leaderboard through the API
+   - Visualize performance metrics
+
+## Directory Structure
+
+- `/website/`: Server-side Flask application and API
+- `/crm_benchmark_lib/`: Python client library for benchmarking
+- `/docs/`: Documentation for both server and client components
 
 ## Getting Started
 
-1. Register on the [CRM Benchmark Website](http://localhost:5000) to get your API key
-2. Import the library and create a client:
+### Server Deployment
+
+For deploying the server application on AWS, follow the instructions in:
+- [AWS Deployment Guide](website/README_DEPLOYMENT.md)
+
+### Client Library Installation
+
+```bash
+pip install crm-benchmark-lib
+```
+
+### Basic Usage
 
 ```python
 from crm_benchmark_lib import BenchmarkClient
 
 # Create a client with your API key
-client = BenchmarkClient(api_key="your_api_key_here")
-```
+client = BenchmarkClient(
+    api_key="your-api-key-here",
+    server_url="https://your-domain.com"
+)
 
-3. Define your agent function:
-
-```python
-def my_agent(question: str, data_frame: pd.DataFrame) -> str:
-    """
-    This function should implement your agent's logic.
-    It receives a question and a pandas DataFrame with the data.
-    It should return the agent's response as a string.
-    """
+# Define your agent function
+def my_agent(question, data):
     # Your agent implementation here
-    return "The answer is..."
-```
+    return "Agent's answer"
 
-4. Run the benchmark and submit results:
-
-```python
+# Run benchmarks and submit results
 results = client.run_and_submit(
     agent_callable=my_agent,
     agent_name="My CRM Agent v1.0"
 )
-
-print(f"Final Score: {results['overall_average']:.2f}%")
 ```
 
-## Examples
+## Documentation
 
-Check out the `examples` directory for complete example scripts:
+- [API Documentation](website/API_DOCUMENTATION.md): Details on server API endpoints
+- [Client Library Documentation](crm_benchmark_lib/README.md): Usage guide for the Python library
 
-- `basic_usage.py`: Shows the basic usage of the library
-- `async_usage.py`: Demonstrates asynchronous benchmark execution
+## Development Setup
 
-## Advanced Usage
+To set up the development environment:
 
-### Parallel Processing
-
-By default, benchmarks are run in parallel for faster execution:
-
-```python
-results = client.run_full_benchmark(
-    agent_callable=my_agent,
-    parallel=True  # Enable parallel processing (default)
-)
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/CRM-AI-Agent-Benchmarking.git
+cd CRM-AI-Agent-Benchmarking
 ```
 
-You can control the number of parallel workers:
-
-```python
-client = BenchmarkClient(
-    api_key="your_api_key_here",
-    max_workers=8  # Run up to 8 benchmarks in parallel
-)
+2. Install server dependencies:
+```bash
+cd website
+pip install -r requirements.txt
 ```
 
-### Asynchronous Processing
-
-For even higher performance, use the async client:
-
-```python
-import asyncio
-from crm_benchmark_lib import AsyncBenchmarkClient
-
-async def main():
-    async with AsyncBenchmarkClient(api_key="your_api_key_here") as client:
-        results = await client.run_and_submit(
-            agent_callable=my_agent,
-            agent_name="My CRM Agent v1.0"
-        )
-        print(f"Final Score: {results['overall_average']:.2f}%")
-
-asyncio.run(main())
+3. Install client library in development mode:
+```bash
+cd ..
+pip install -e .
 ```
 
-### Custom Paths
+4. Create a `.env` file in the website directory:
+```
+# Flask configuration
+FLASK_ENV=development
+FLASK_APP=app.py
 
-Specify custom paths for question files and CSV data:
+# Email configuration
+MAIL_SERVER=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USE_TLS=True
+MAIL_USERNAME=your-email@gmail.com
+MAIL_PASSWORD=your-app-specific-password
+MAIL_DEFAULT_SENDER=your-email@gmail.com
 
-```python
-results = client.run_full_benchmark(
-    agent_callable=my_agent,
-    base_dir="/path/to/question/files",
-    csv_dir="/path/to/csv/files"
-)
+# Security
+SECRET_KEY=your-secret-key-here
 ```
 
-## API Documentation
-
-### BenchmarkClient
-
-The main client for running benchmarks and submitting scores.
-
-```python
-client = BenchmarkClient(
-    api_key="your_api_key_here",
-    server_url="http://localhost:5000",  # Default server URL
-    max_workers=4,  # Maximum number of parallel workers
-    show_progress=True,  # Show progress bars
-    log_level=logging.INFO  # Logging level
-)
+5. Initialize the database:
+```bash
+cd website
+python init_db.py
 ```
 
-#### Methods
-
-- `run_benchmark(agent_callable, questions_json_path, csv_data_path)`: Run a single benchmark
-- `run_batch(agent_callable, questions_json_paths, csv_data_paths, parallel=True)`: Run multiple benchmarks
-- `run_full_benchmark(agent_callable, parallel=True, base_dir=None, csv_dir=None)`: Run the full benchmark suite
-- `submit_score(agent_name, score)`: Submit a score to the leaderboard
-- `run_and_submit(agent_callable, agent_name, parallel=True, visualize=True)`: Run benchmarks and submit scores
-
-### AsyncBenchmarkClient
-
-Asynchronous version of the benchmark client for high-performance applications.
-
-```python
-client = AsyncBenchmarkClient(
-    api_key="your_api_key_here",
-    server_url="http://localhost:5000",
-    max_concurrency=4,  # Maximum concurrent tasks
-    show_progress=True,
-    log_level=logging.INFO
-)
+6. Run the server:
+```bash
+flask run
 ```
-
-#### Methods
-
-Similar to BenchmarkClient, but with async versions:
-
-- `run_benchmark_async(agent_callable, questions_json_path, csv_data_path)`: Run a benchmark asynchronously
-- `run_batch_async(agent_callable, questions_json_paths, csv_data_paths)`: Run multiple benchmarks asynchronously
-- `run_full_benchmark_async(agent_callable, base_dir=None, csv_dir=None)`: Run the full benchmark suite asynchronously
-- `submit_score(agent_name, score)`: Submit a score to the leaderboard asynchronously
-- `run_and_submit(agent_callable, agent_name, visualize=True)`: Run and submit asynchronously
 
 ## Contributing
 
-Contributions are welcome! Feel free to submit pull requests or open issues.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT 
+This project is licensed under the MIT License - see the LICENSE file for details. 

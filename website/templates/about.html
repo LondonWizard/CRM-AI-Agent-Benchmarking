@@ -1,225 +1,146 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold text-primary mb-8 text-center">
-        <i class="fas fa-info-circle mr-2"></i> About the CRM Benchmark
-    </h2>
-    
-    <div class="glass-card p-6 mb-8">
-        <h3 class="text-xl font-semibold mb-4 text-primary">
-            <i class="fas fa-bullseye mr-2"></i> Purpose
-        </h3>
-        <p class="text-gray-300 mb-4">
-            This chapter of the AI Agent Challenge is designed to evaluate AI-powered assistants on their ability to analyze
-            CRM data, understand sales patterns, and provide actionable insights to sales professionals.
-        </p>
-        <p class="text-gray-300">
-            By standardizing evaluation datasets and questions, we provide a fair comparison between different
-            AI approaches, allowing developers to understand their strengths and weaknesses.
-        </p>
-    </div>
-    
-    <div class="glass-card p-6 mb-8">
-        <h3 class="text-xl font-semibold mb-4 text-primary">
-            <i class="fas fa-clipboard-list mr-2"></i> Benchmark Details
-        </h3>
-        <p class="text-gray-300 mb-4">
-            The benchmark consists of five datasets, each focusing on different aspects of CRM data analysis:
-        </p>
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-primary mb-6">About CRM AI Agent Benchmarking</h1>
         
-        <div class="space-y-4 mb-4">
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-chart-line mr-2"></i> Dataset 1: Pipeline Insights
-                </h4>
-                <p class="text-gray-300">
-                    Tests ability to analyze sales pipeline metrics, identify bottlenecks, and forecast outcomes.
-                </p>
-            </div>
-            
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-envelope mr-2"></i> Dataset 2: Email Analysis
-                </h4>
-                <p class="text-gray-300">
-                    Evaluates understanding of customer communications, sentiment analysis, and key topic extraction.
-                </p>
-            </div>
-            
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-handshake mr-2"></i> Dataset 3: Sales Records
-                </h4>
-                <p class="text-gray-300">
-                    Focuses on historical sales data analysis, win/loss patterns, and deal value optimization.
-                </p>
-            </div>
-            
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-clipboard-check mr-2"></i> Dataset 4: Rule Compliance
-                </h4>
-                <p class="text-gray-300">
-                    Tests ability to identify sales reps following or breaking specific process rules and policies.
-                </p>
-            </div>
-            
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-users mr-2"></i> Dataset 5: Performance Trends
-                </h4>
-                <p class="text-gray-300">
-                    Evaluates identification of top/bottom performers and understanding performance trends over time.
-                </p>
-            </div>
+        <div class="glass-card p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-primary mb-4">Overview</h2>
+            <p class="text-gray-300 mb-4">
+                The CRM AI Agent Benchmarking platform is designed to help developers and researchers evaluate the performance of their AI agents in Customer Relationship Management (CRM) scenarios. By providing standardized datasets and evaluation metrics, we enable fair comparisons between different AI agent implementations.
+            </p>
+            <p class="text-gray-300">
+                Our platform consists of two main components: a server-side API hosted on AWS that manages the leaderboard and user accounts, and a client-side Python library that developers can use to benchmark their agents locally and submit scores to the leaderboard.
+            </p>
         </div>
         
-        <p class="text-gray-300">
-            Each dataset includes multiple questions ranging from simple metrics to complex analytical insights,
-            with scoring based on accuracy and relevance of responses.
-        </p>
-    </div>
-    
-    <!-- New Section: Benchmark Questions -->
-    <div class="glass-card p-6 mb-8">
-        <h3 class="text-xl font-semibold mb-4 text-primary">
-            <i class="fas fa-question-circle mr-2"></i> Benchmark Questions
-        </h3>
-        <p class="text-gray-300 mb-4">
-            Below are examples of the types of questions that agents will need to answer for each dataset:
-        </p>
-        
-        <div class="space-y-6 mb-4">
-            <!-- Dataset 1 Questions -->
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-chart-line mr-2"></i> Dataset 1: Pipeline Insights
-                </h4>
-                <ul class="list-disc list-inside text-gray-300 space-y-2">
-                    <li>How many deals are currently in the Negotiation stage, and what is the total Amount of those Negotiation deals?</li>
-                    <li>Which Lead Source has produced the most close won deals, and what was the conversion ratio?</li>
-                    <li>Identify the largest deal in the dataset (by Amount) and specify which sales Owner is responsible for it.</li>
-                    <li>Which deals have missing data?</li>
-                    <li>Which two records likely refer to the same client, and what steps should you take to resolve the duplicate to maintain data cleanliness?</li>
+        <div class="glass-card p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-primary mb-4">System Architecture</h2>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Server-Side Components</h3>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                    <li>Flask web application running on AWS EC2</li>
+                    <li>SQLite database for storing user data and submission history</li>
+                    <li>Email verification system for user registration</li>
+                    <li>RESTful API endpoints for score submission and data retrieval</li>
+                    <li>Secure user authentication with API keys</li>
                 </ul>
             </div>
-            
-            <!-- Dataset 2 Questions -->
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-envelope mr-2"></i> Dataset 2: Email Analysis
-                </h4>
-                <ul class="list-disc list-inside text-gray-300 space-y-2">
-                    <li>What is the sentiment of this email thread (e.g. positive, neutral, or negative), and what key concern is the customer expressing?</li>
-                    <li>Based on the conversation, what stage of the sales process is this opportunity likely in, and what is the prospect's main objection or hesitation?</li>
-                    <li>Summarize the key points of the exchange and suggest an appropriate next step for the sales rep to move the deal forward.</li>
-                    <li>Based on all email threads from the past, look at closed lost deals and identify which one has the highest potential to be re-engaged.</li>
-                </ul>
-            </div>
-            
-            <!-- Dataset 3 Questions -->
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-handshake mr-2"></i> Dataset 3: Sales Records
-                </h4>
-                <ul class="list-disc list-inside text-gray-300 space-y-2">
-                    <li>Update XYZ opportunity's Stage to Closed Won.</li>
-                    <li>Calculate the expected total forecasted revenue from these opportunities and identify which deals to mark as high-confidence wins for this quarter.</li>
-                    <li>Which opportunities should be flagged as at-risk, and why?</li>
-                    <li>Here are 10 upcoming leads and 100 historical leads (some sold, some not). Rank the 10 leads based on the historical data, and explain.</li>
-                    <li>Here is a transcript of a meeting. Provide notes, analysis, and specific employee notes.</li>
-                    <li>Draft a sales follow-up email to the MavTech deal (just lost in the final stage).</li>
-                </ul>
-            </div>
-            
-            <!-- Dataset 4 Questions -->
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-clipboard-check mr-2"></i> Dataset 4: Rule Compliance
-                </h4>
-                <ul class="list-disc list-inside text-gray-300 space-y-2">
-                    <li>Rule 1 (Send follow-up emails within 3 days): List 5 sales reps who always follow this rule.</li>
-                    <li>Rule 2 (Always personalize follow-ups): Do sales reps who follow this rule deliver more revenue than those who do not? If so, how much?</li>
-                    <li>Rule 3 (Close deals that are in the pipeline for more than 30 days): How many sales reps are compliant with this rule?</li>
-                    <li>Rule 4 (Do not offer more than 10% discount): How many sales reps are compliant with this rule?</li>
-                    <li>Rule 5: How many sales reps are compliant with this rule (whatever the specific rule #5 might be)?</li>
-                </ul>
-            </div>
-            
-            <!-- Dataset 5 Questions -->
-            <div class="bg-dark-300 p-4 rounded-lg">
-                <h4 class="font-semibold text-primary mb-2">
-                    <i class="fas fa-users mr-2"></i> Dataset 5: Performance Trends
-                </h4>
-                <ul class="list-disc list-inside text-gray-300 space-y-2">
-                    <li>What performance trend do you observe over the year, and what might this imply for the next quarter's focus or targets?</li>
-                    <li>Which 5 sales reps have the biggest revenue results?</li>
-                    <li>Which sales rep is performing more effectively, and what metrics support that conclusion (consider a 50% win rate, 40% quota attainment, and 10% average deal size)?</li>
-                    <li>At which stage of the funnel is the largest drop-off occurring? Offer a recommendation to improve conversion at that stage.</li>
-                    <li>Provide strategic recommendations to improve overall sales performance. (Think in terms of training, process changes, resource allocation, or pipeline adjustments.)</li>
-                    <li>List the common sales pipeline stages (e.g., Prospecting, Qualification, Proposal, etc.) and briefly describe what happens in each stage.</li>
+            <div>
+                <h3 class="text-xl font-semibold mb-2">Client-Side Library</h3>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                    <li>Python library (crm-benchmark-lib) for local benchmarking</li>
+                    <li>Support for parallel and asynchronous processing</li>
+                    <li>Automatic retry mechanism for API communication</li>
+                    <li>Progress tracking and visualization tools</li>
+                    <li>Detailed performance metrics and analysis</li>
                 </ul>
             </div>
         </div>
         
-        <p class="text-gray-300">
-            Agents are scored based on their ability to provide accurate, insightful, and actionable responses to these questions,
-            considering the context and specific requirements of each scenario.
-        </p>
-    </div>
-    
-    <div class="glass-card p-6 mb-8">
-        <h3 class="text-xl font-semibold mb-4 text-primary">
-            <i class="fas fa-code mr-2"></i> How to Participate
-        </h3>
-        
-        <ol class="space-y-4 mb-4 list-decimal list-inside text-gray-300">
-            <li class="ml-4">
-                <span class="text-white font-medium">Register an account</span> on this website to receive your API key
-            </li>
-            <li class="ml-4">
-                <span class="text-white font-medium">Install our Python library</span>:
-                <pre class="bg-dark-400 p-2 rounded-lg mt-2 overflow-x-auto"><code>pip install crm-benchmark-lib</code></pre>
-            </li>
-            <li class="ml-4">
-                <span class="text-white font-medium">Create your agent</span> that answers questions based on CRM data
-            </li>
-            <li class="ml-4">
-                <span class="text-white font-medium">Run the benchmark</span> using our library and submit your results
-            </li>
-            <li class="ml-4">
-                <span class="text-white font-medium">Compare your results</span> on the leaderboard
-            </li>
-        </ol>
-        
-        <div class="mt-6 flex justify-center">
-            {% if 'username' not in session %}
-            <a href="{{ url_for('register') }}" class="btn-primary inline-block">
-                <i class="fas fa-user-plus mr-2"></i> Register Now
-            </a>
-            {% else %}
-            <a href="{{ url_for('profile') }}" class="btn-primary inline-block">
-                <i class="fas fa-user mr-2"></i> View Your Profile
-            </a>
-            {% endif %}
+        <div class="glass-card p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-primary mb-4">Installation Guide</h2>
+            
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">1. Register and Get API Key</h3>
+                <p class="text-gray-300 mb-2">
+                    Before using the benchmarking library, you'll need to register for an account and obtain an API key:
+                </p>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-300">
+                    <li>Register at <a href="{{ url_for('register') }}" class="text-primary hover:underline">Create an Account</a></li>
+                    <li>Verify your email address by clicking the link in the verification email</li>
+                    <li>Log in to your account</li>
+                    <li>Visit your profile page to view your API key</li>
+                </ol>
+            </div>
+            
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">2. Install the Python Library</h3>
+                <p class="text-gray-300 mb-2">
+                    Install the benchmarking library using pip:
+                </p>
+                <pre class="bg-dark-400 p-3 rounded-lg overflow-x-auto text-sm"><code class="language-bash">pip install crm-benchmark-lib</code></pre>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-2">3. Configure and Run</h3>
+                <p class="text-gray-300 mb-2">
+                    Create a Python script to benchmark your agent:
+                </p>
+                <pre class="bg-dark-400 p-3 rounded-lg overflow-x-auto text-sm"><code class="language-python">from crm_benchmark_lib import BenchmarkClient
+
+# Create a client with your API key
+client = BenchmarkClient(
+    api_key="your-api-key-here",
+    server_url="https://your-domain.com"
+)
+
+# Define your agent function
+def my_agent(question, data):
+    # Your agent implementation here
+    return "Agent's answer"
+
+# Run benchmarks and submit results
+results = client.run_and_submit(
+    agent_callable=my_agent,
+    agent_name="My CRM Agent v1.0"
+)
+
+print(f"Final Score: {results.get('overall_average', 0):.2f}%")</code></pre>
+            </div>
         </div>
-    </div>
-    
-    <div id="contact" class="glass-card p-6">
-        <h3 class="text-xl font-semibold mb-4 text-primary">
-            <i class="fas fa-envelope mr-2"></i> Contact Us
-        </h3>
-        <p class="text-gray-300 mb-4">
-            Have questions about the benchmark or suggestions for improvement?
-            We'd love to hear from you.
-        </p>
-        <p class="text-gray-300">
-            <i class="fas fa-envelope-open-text mr-2 text-primary"></i> Email: <a href="mailto:contact@crmbenchmark.ai" class="text-primary hover:text-primary-hover">contact@crmbenchmark.ai</a>
-        </p>
-        <p class="text-gray-300">
-            <i class="fab fa-github mr-2 text-primary"></i> GitHub: <a href="https://github.com/example/crm-ai-benchmark" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover">github.com/example/crm-ai-benchmark</a>
-        </p>
+        
+        <div class="glass-card p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-primary mb-4">API Documentation</h2>
+            <p class="text-gray-300 mb-4">
+                Our system provides two ways to interact with the benchmark platform:
+            </p>
+            
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Python Library (Recommended)</h3>
+                <p class="text-gray-300">
+                    The recommended approach is to use our Python library, which handles all the benchmark execution and API communication for you. See the <a href="https://github.com/yourusername/CRM-AI-Agent-Benchmarking/blob/main/crm_benchmark_lib/README.md" class="text-primary hover:underline" target="_blank">Library Documentation</a> for detailed usage instructions.
+                </p>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-2">Direct API Access</h3>
+                <p class="text-gray-300 mb-2">
+                    For advanced users who prefer to implement their own client, you can directly access our RESTful API endpoints:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                    <li><code>/submit_agent_score_api</code> - Submit a benchmark score</li>
+                    <li><code>/api/leaderboard</code> - Retrieve the current leaderboard</li>
+                    <li><code>/api/agent/{agent_name}</code> - Get details about a specific agent</li>
+                </ul>
+                <p class="text-gray-300 mt-2">
+                    See our <a href="https://github.com/yourusername/CRM-AI-Agent-Benchmarking/blob/main/website/API_DOCUMENTATION.md" class="text-primary hover:underline" target="_blank">API Documentation</a> for detailed endpoint specifications.
+                </p>
+            </div>
+        </div>
+        
+        <div class="glass-card p-6">
+            <h2 class="text-2xl font-semibold text-primary mb-4">Contact and Support</h2>
+            <p class="text-gray-300 mb-4">
+                If you encounter any issues or have questions about the platform, please contact us:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                <li>Email: <a href="mailto:aiagentchallenge@gmail.com" class="text-primary hover:underline">aiagentchallenge@gmail.com</a></li>
+                <li>GitHub: <a href="https://github.com/yourusername/CRM-AI-Agent-Benchmarking" class="text-primary hover:underline" target="_blank">Project Repository</a></li>
+            </ul>
+        </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add syntax highlighting
+        if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        }
+    });
+</script>
 {% endblock %} 
