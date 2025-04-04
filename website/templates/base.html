@@ -63,6 +63,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='dark-theme.css') }}">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </head>
 <body class="bg-dark-400 text-white min-h-screen flex flex-col font-[Inter]">
     <div class="container mx-auto px-4 flex flex-col min-h-screen max-w-7xl">
@@ -153,7 +156,35 @@
         </footer>
     </div>
     
-    <!-- Enhanced JS animations -->
-    <script src="{{ url_for('static', filename='animations.js') }}"></script>
+    <script>
+        // Highlight current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUrl = window.location.pathname;
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentUrl) {
+                    link.classList.add('active-nav');
+                }
+            });
+            
+            // Auto-dismiss flash messages
+            const flashMessages = document.querySelectorAll('.message');
+            if (flashMessages.length > 0) {
+                setTimeout(() => {
+                    flashMessages.forEach(msg => {
+                        msg.style.opacity = '0';
+                        setTimeout(() => msg.remove(), 500);
+                    });
+                }, 5000);
+            }
+        });
+
+        // Initialize syntax highlighting
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        });
+    </script>
 </body>
 </html>

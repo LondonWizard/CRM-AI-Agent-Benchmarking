@@ -10,30 +10,134 @@
         <form method="POST" action="{{ url_for('register') }}" class="space-y-6">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
             <div class="space-y-2">
-                <label for="username" class="block font-medium">Username</label>
+                <label for="username" class="block font-medium text-gray-200">Username</label>
                 <input type="text" id="username" name="username" required 
                        placeholder="Choose a unique username"
-                       class="w-full p-3 bg-dark-100 border border-dark-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary">
+                       class="w-full p-3 bg-dark-100 border border-dark-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 hover:border-primary/50">
             </div>
             
             <div class="space-y-2">
-                <label for="password" class="block font-medium">Password</label>
-                <input type="password" id="password" name="password" required 
-                       placeholder="Enter a secure password"
-                       class="w-full p-3 bg-dark-100 border border-dark-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary">
+                <label for="email" class="block font-medium text-gray-200">Email</label>
+                <input type="email" id="email" name="email" required 
+                       placeholder="Enter your email address"
+                       class="w-full p-3 bg-dark-100 border border-dark-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 hover:border-primary/50">
+            </div>
+            
+            <div class="space-y-2">
+                <label for="password" class="block font-medium text-gray-200">Password</label>
+                <div class="relative">
+                    <input type="password" id="password" name="password" required 
+                           placeholder="Enter a secure password"
+                           class="w-full p-3 bg-dark-100 border border-dark-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 hover:border-primary/50">
+                    <button type="button" onclick="togglePassword('password')" 
+                            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary transition-colors duration-300">
+                        <i class="fas fa-eye" id="toggleIconPassword"></i>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-400 mt-1">Password must be at least 8 characters long</p>
+            </div>
+            
+            <div class="space-y-2">
+                <label for="confirm_password" class="block font-medium text-gray-200">Confirm Password</label>
+                <div class="relative">
+                    <input type="password" id="confirm_password" name="confirm_password" required 
+                           placeholder="Confirm your new password"
+                           class="w-full p-3 bg-dark-100 border border-dark-200 rounded-lg focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 hover:border-primary/50">
+                    <button type="button" onclick="togglePassword('confirm_password')" 
+                            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary transition-colors duration-300">
+                        <i class="fas fa-eye" id="toggleIconConfirm"></i>
+                    </button>
+                </div>
             </div>
             
             <div class="pt-2">
-                <button type="submit" class="btn-primary w-full py-3 text-center font-medium rounded-lg">
-                    <i class="fas fa-user-plus mr-2"></i> Register
+                <button type="submit" 
+                        class="btn-primary w-full py-3 text-center font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    <i class="fas fa-user-plus mr-2"></i> Create Account
                 </button>
             </div>
         </form>
         
         <div class="mt-6 text-center text-gray-400">
             Already have an account? 
-            <a href="{{ url_for('login') }}" class="text-primary hover:text-primary-hover">Log in here</a>
+            <a href="{{ url_for('login') }}" 
+               class="text-primary hover:text-primary-hover transition-colors duration-300">
+                Log in here
+            </a>
         </div>
     </div>
 </div>
+
+<script>
+function togglePassword(inputId) {
+    const passwordInput = document.getElementById(inputId);
+    const toggleIcon = document.getElementById(`toggleIcon${inputId === 'password' ? 'Password' : 'Confirm'}`);
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+    }
+}
+
+// Password validation
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirm_password');
+    
+    form.addEventListener('submit', function(e) {
+        if (password.value !== confirmPassword.value) {
+            e.preventDefault();
+            alert('Passwords do not match!');
+            return;
+        }
+        
+        if (password.value.length < 8) {
+            e.preventDefault();
+            alert('Password must be at least 8 characters long!');
+            return;
+        }
+    });
+});
+</script>
+
+<style>
+.glass-card {
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #3b82f6, #10b981);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #2563eb, #059669);
+}
+
+/* Input field hover effect */
+input:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Focus effect */
+input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* Label hover effect */
+label:hover {
+    color: #3b82f6;
+}
+</style>
 {% endblock %}
